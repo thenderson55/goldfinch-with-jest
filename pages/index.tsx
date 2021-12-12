@@ -14,7 +14,6 @@ const Home: NextPage = () => {
       {/* <p>{session ? session.user.email : "Nobody"}</p> */}
       <h1 role="header">The value of customKey is</h1>
       <button>Open dialog</button>
-      PUBLIC ENV: {process.env.NEXT_PUBLIC_DB_CONNECTION}
       <Link
         href={`
             /users
