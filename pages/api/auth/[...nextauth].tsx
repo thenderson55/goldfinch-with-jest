@@ -31,23 +31,23 @@ export default NextAuth({
     // }),
   ],
   adapter: MongoDBAdapter(clientPromise),
-  session: {
-    strategy: "jwt",
-  },
-  jwt: {
-    secret: "nfoiwuebhfo3w",
-  },
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id;
-      }
-      return token;
-    },
-    async session({ session, token }) {
-      // @ts-ignore
-      session.user.id = token.id;
-      return session;
-    },
-  },
+  // session: {
+  //   strategy: "jwt",
+  // },
+  // jwt: {
+  //   secret: "nfoiwuebhfo3w",
+  // },
+  // callbacks: {
+  //   async jwt({ token, user }) {
+  //     if (user) {
+  //       token.id = user.id;
+  //     }
+  //     return token;
+  //   },
+  //   async session({ session, token }) {
+  //     // @ts-ignore
+  //     session.user.id = token.id;
+  //     return session;
+  //   },
+  // },
 });
