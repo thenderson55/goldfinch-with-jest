@@ -18,12 +18,14 @@ if (process.env.NODE_ENV === "development") {
   // In development mode, use a global variable so that the value
   // is preserved across module reloads caused by HMR (Hot Module Replacement).
   if (!global._mongoClientPromise) {
+    // @ts-ignore
     client = new MongoClient(uri, options);
     global._mongoClientPromise = client.connect();
   }
   clientPromise = global._mongoClientPromise;
 } else {
   // In production mode, it's best to not use a global variable.
+  // @ts-ignore
   client = new MongoClient(uri, options);
   clientPromise = client.connect();
 }
@@ -61,6 +63,7 @@ const connectToDatabase = async () => {
   };
 
   // Connect to cluster
+  // @ts-ignore
   let client = new MongoClient(MONGODB_URI, opts);
   await client.connect();
   let db = client.db(MONGODB_DB);

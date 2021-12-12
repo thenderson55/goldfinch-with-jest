@@ -45,6 +45,7 @@ export default NextAuth({
       return token;
     },
     async session({ session, token }) {
+      // @ts-ignore
       session.user.id = token.id;
       return session;
     },
