@@ -1,11 +1,6 @@
-import { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
+import { NextPage } from "next";
 import Link from "next/link";
-import Image from "next/Image";
-import imageLoader from "../imageLoader";
-import { Character, GetCharacterResults } from "../types";
 import styles from "./index.module.scss";
-import { useSession } from "next-auth/react";
 
 const Home: NextPage = () => {
   // const { data: session, status } = useSession();
