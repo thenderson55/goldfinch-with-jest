@@ -1,19 +1,33 @@
 import { GetServerSideProps } from "next/types";
 import React from "react";
-import { connectToDatabase } from "../../lib/mongodb";
+import { client, connectToDatabase } from "../../lib/mongodb";
 
 function PropertiesList({ properties }) {
+  const bookProperty = async (id) => {
+    const data = await fetch(
+      `http://localhost:3000/api/airbnb/book?property_id=${id}`
+    );
+    console.log("RESPONSE", data);
+    const response = await data.json();
+    console.log("Data", response);
+  };
   return (
     <div className="container p-3">
       {properties.map((property) => {
         return (
-          <div key={property.id}>
+          <div key={property._id}>
             <p>{property.name}</p>
+            <p>ID: {property._id}</p>
+            <button
+              className="btn btn-warning m-3"
+              onClick={() => bookProperty(property._id)}
+            >
+              BOOK
+            </button>
           </div>
         );
       })}
       <button className="btn btn-primary m-3">KindaCode.com</button>
-      <button className="btn btn-warning m-3">Hello</button>
 
       <div className="dropdown m-3">
         <button
@@ -65,8 +79,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
     .toArray();
 
   const properties = JSON.parse(JSON.stringify(data));
+  console.log("PROP", properties);
   const shipwrecks = JSON.parse(JSON.stringify(dataGeo));
-  console.log("SHIP", shipwrecks);
+  // console.log("SHIP", shipwrecks)
 
   return {
     props: {
