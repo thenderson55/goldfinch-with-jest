@@ -32,6 +32,7 @@ if (process.env.NODE_ENV === "development") {
 
 const MONGODB_URI = process.env.MONGODB_URI;
 const MONGODB_DB = process.env.MONGODB_DB;
+const MONGODB_DB_GEO = process.env.MONGODB_DB_GEO;
 
 // check the MongoDB URI
 if (!MONGODB_URI) {
@@ -45,6 +46,7 @@ if (!MONGODB_DB) {
 
 let cachedClient = null;
 let cachedDb = null;
+let cachedDbGeo = null;
 
 const connectToDatabase = async () => {
   // check the cached.
@@ -67,14 +69,17 @@ const connectToDatabase = async () => {
   let client = new MongoClient(MONGODB_URI, opts);
   await client.connect();
   let db = client.db(MONGODB_DB);
+  let dbGeo = client.db(MONGODB_DB_GEO);
 
   // set cache
   cachedClient = client;
   cachedDb = db;
+  cachedDbGeo = dbGeo;
 
   return {
     client: cachedClient,
     db: cachedDb,
+    dbGeo: cachedDbGeo,
   };
 };
 

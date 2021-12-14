@@ -1,8 +1,9 @@
 import { NextPage } from "next";
 import { SessionProvider } from "next-auth/react";
 import { AppProps } from "next/dist/shared/lib/router/router";
+import "bootstrap/dist/css/bootstrap.css";
 import Head from "next/head";
-import React, { ReactElement, ReactNode } from "react";
+import React, { ReactElement, ReactNode, useEffect } from "react";
 import Layout from "../components/Layout/Layout";
 import Navbar from "../components/Layout/Navbar";
 import "../styles/global.css";
@@ -23,6 +24,9 @@ export default function MyApp({
   pageProps: { session, ...pageProps },
 }: AppPropsWithLayout) {
   // const getLayout = Component.getLayout ?? ((page) => page);
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap");
+  }, []);
 
   if (Component.getLayout) {
     return Component.getLayout(<Component {...pageProps} />);
