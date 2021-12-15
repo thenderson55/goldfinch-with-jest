@@ -22,7 +22,6 @@ function UserList({ users }: { users: UserType[] }) {
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await res.json();
-  console.log("Data", data);
 
   return {
     props: {
