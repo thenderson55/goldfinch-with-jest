@@ -4,8 +4,8 @@ import { AppProps } from "next/dist/shared/lib/router/router";
 import "bootstrap/dist/css/bootstrap.css";
 import Head from "next/head";
 import React, { ReactElement, ReactNode, useEffect } from "react";
-import Layout from "../components/Layout/Layout";
-import Navbar from "../components/Layout/Navbar";
+// import Layout from "../components/Layout/Layout";
+// import Navbar from "../components/Layout/Navbar";
 import "../styles/global.css";
 // import "../components/Layout/Navbar.css";
 
@@ -35,13 +35,13 @@ export default function MyApp({
   return (
     <SessionProvider session={session}>
       <Head>
-        <title>Goldfinch Authed</title>
+        <title>Goldfinch</title>
         <meta name="description" content="inventory management" />
       </Head>
-      <Navbar />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      {/* <Navbar /> */}
+      {/* <Layout> */}
+      <Component {...pageProps} />
+      {/* </Layout> */}
     </SessionProvider>
   );
 }

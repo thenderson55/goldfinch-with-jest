@@ -2,9 +2,16 @@ import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 // import "./Navbar.css";
 import styles from "./Navbar.module.scss";
+// import { useRouter } from "next/router";
 
 function Navbar() {
   const { data: session, status } = useSession();
+  // const router = useRouter();
+  // const logout = async () => {
+  //   const authURL = `https://${process.env.AUTH0_ISSUER}/v2/logout`;
+  //   await router.push(authURL);
+  //   await signOut();
+  // };
 
   return (
     <nav className={styles.header}>
