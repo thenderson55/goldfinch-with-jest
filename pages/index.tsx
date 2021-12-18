@@ -9,13 +9,13 @@ const Home: NextPage = () => {
   // const { data: session, status } = useSession();
   return (
     <div className={styles.container}>
-      <Image
+      {/* <Image
         src={seamus}
         alt="Seamus"
         // width="100%"
         layout="fill"
         objectFit="cover"
-      />
+      /> */}
       {/* <p>{session ? session.user.email : "Nobody"}</p> */}
       {/* <h1 role="header">The value of customKey is</h1>
       <button>Open dialog</button>

@@ -1,8 +1,21 @@
 import { GetServerSideProps } from "next/types";
 import React from "react";
-import { client, connectToDatabase } from "../../lib/mongodb";
+import { connectToDatabase } from "../../lib/mongodb";
+// import { useQuery, QueryClient } from "react-query";
+// import { dehydrate } from "react-query/hydration";
 
-function PropertiesList({ properties }) {
+// const queryClient = new QueryClient();
+// const STALE_TIME = 1000;
+
+// const getShipwrecks = async () => {
+//   const data = await fetch(`http://localhost:3000/api/shipwrecks`);
+//   const response = await data.json();
+//   return response;
+// };
+
+function PropertiesList({ properties, shipwrecks }) {
+  // const { data, isLoading } = useQuery("SW", getShipwrecks);
+
   const bookProperty = async (id) => {
     const data = await fetch(
       `http://localhost:3000/api/airbnb/book?property_id=${id}`
@@ -11,8 +24,16 @@ function PropertiesList({ properties }) {
     const response = await data.json();
     console.log("Data", response);
   };
+
   return (
     <div className="container p-3">
+      {shipwrecks.map((shipwreck) => {
+        return (
+          <div key={shipwreck._id}>
+            <p>{shipwreck.chart}</p>
+          </div>
+        );
+      })}
       {properties.map((property) => {
         return (
           <div key={property._id}>
@@ -64,7 +85,15 @@ function PropertiesList({ properties }) {
 export default PropertiesList;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const { db, dbGeo } = await connectToDatabase();
+  const { db } = await connectToDatabase();
+  let res = await fetch("http://localhost:3000/api/shipwrecks", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  let shipwrecks = await res.json();
 
   const data = await db
     .collection("listingsAndReviews")
@@ -72,31 +101,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
     .limit(20)
     .toArray();
 
-  const dataGeo = await dbGeo
-    .collection("shipwrecks")
-    .find({})
-    .limit(20)
-    .toArray();
-
   const properties = JSON.parse(JSON.stringify(data));
-  console.log("PROP", properties);
-  const shipwrecks = JSON.parse(JSON.stringify(dataGeo));
-  // console.log("SHIP", shipwrecks)
 
   return {
     props: {
-      // data: session ? "My collection of blog posts" : "All blog posts",
       properties,
+      shipwrecks: shipwrecks.data,
     },
   };
-  // const session = await getSession(context);
-  // console.log({ session });
-  // if (!session) {
-  //   return {
-  //     redirect: {
-  //       destination: "/api/auth/signin?callBackUrl=http://localhost:3000/blog",
-  //       permanent: false,
-  //     },
-  //   };
-  // }
 };

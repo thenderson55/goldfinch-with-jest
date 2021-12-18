@@ -1,13 +1,17 @@
 import { NextPage } from "next";
 import { SessionProvider } from "next-auth/react";
 import { AppProps } from "next/dist/shared/lib/router/router";
+import { QueryClientProvider, QueryClient, Hydrate } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 import "bootstrap/dist/css/bootstrap.css";
 import Head from "next/head";
 import React, { ReactElement, ReactNode, useEffect } from "react";
 // import Layout from "../components/Layout/Layout";
-// import Navbar from "../components/Layout/Navbar";
+import Navbar from "../components/Layout/Navbar";
 import "../styles/global.css";
 // import "../components/Layout/Navbar.css";
+
+const queryClient = new QueryClient();
 
 // This default export is required in a new `pages/_app.js` file.
 type NextpageWithLayout = NextPage & {
@@ -33,16 +37,21 @@ export default function MyApp({
   }
 
   return (
-    <SessionProvider session={session}>
-      <Head>
-        <title>Goldfinch</title>
-        <meta name="description" content="inventory management" />
-      </Head>
-      {/* <Navbar /> */}
-      {/* <Layout> */}
-      <Component {...pageProps} />
-      {/* </Layout> */}
-    </SessionProvider>
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={pageProps.dehydratedState}>
+        <SessionProvider session={session}>
+          <Head>
+            <title>Goldfinch</title>
+            <meta name="description" content="inventory management" />
+          </Head>
+          <Navbar />
+          {/* <Layout> */}
+          <Component {...pageProps} />
+          {/* </Layout> */}
+        </SessionProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </Hydrate>
+    </QueryClientProvider>
   );
 }
 
