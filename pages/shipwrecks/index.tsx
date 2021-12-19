@@ -1,30 +1,35 @@
 import { GetServerSideProps } from "next/types";
 import React from "react";
-import { connectToDatabase } from "../../lib/mongodb";
+import { dehydrate, QueryClient, useQuery } from "react-query";
 
-function PropertiesList({ properties }) {
-  const bookProperty = async (id) => {
-    const data = await fetch(
-      `http://localhost:3000/api/airbnb/book?property_id=${id}`
-    );
-    console.log("RESPONSE", data);
-    const response = await data.json();
-    console.log("Data", response);
-  };
+// import { useQuery, QueryClient } from "react-query";
+// import { dehydrate } from "react-query/hydration";
+
+const queryClient = new QueryClient();
+const STALE_TIME = 1000;
+
+const fetchShipwrecks = async () => {
+  const data = await fetch("http://localhost:3000/api/shipwrecks", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const response = await data.json();
+  return response;
+};
+
+function PropertiesList() {
+  const { data } = useQuery("shipwrecks", fetchShipwrecks, {
+    staleTime: STALE_TIME,
+  });
 
   return (
     <div className="container p-3">
-      {properties.map((property) => {
+      {data.map((shipwreck) => {
         return (
-          <div key={property._id}>
-            <p>{property.name}</p>
-            <p>ID: {property._id}</p>
-            <button
-              className="btn btn-warning m-3"
-              onClick={() => bookProperty(property._id)}
-            >
-              BOOK
-            </button>
+          <div key={shipwreck._id}>
+            <p>{shipwreck.chart}</p>
           </div>
         );
       })}
@@ -65,19 +70,14 @@ function PropertiesList({ properties }) {
 export default PropertiesList;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const { db } = await connectToDatabase();
-
-  const data = await db
-    .collection("listingsAndReviews")
-    .find({})
-    .limit(20)
-    .toArray();
-
-  const properties = JSON.parse(JSON.stringify(data));
+  await queryClient.prefetchQuery("shipwrecks", fetchShipwrecks, {
+    staleTime: STALE_TIME,
+  });
 
   return {
     props: {
-      properties,
+      // shipwrecks: shipwrecks.data,
+      dehydratedState: dehydrate(queryClient),
     },
   };
 };

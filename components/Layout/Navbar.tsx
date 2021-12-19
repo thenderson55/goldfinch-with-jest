@@ -36,6 +36,16 @@ function Navbar() {
           </Link>
         </li>
         <li>
+          <Link href="/properties">
+            <a>Properties</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/shipwrecks">
+            <a>Shipwrecks</a>
+          </Link>
+        </li>
+        <li>
           <Link href="/blog">
             <a>Blog</a>
           </Link>

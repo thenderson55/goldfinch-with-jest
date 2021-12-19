@@ -21,7 +21,7 @@ export default async function handler(
         .limit(2)
         .toArray();
       const data = JSON.parse(JSON.stringify(shipwrecks));
-      res.json({ status: 200, data });
+      res.json(data);
       break;
   }
 }
