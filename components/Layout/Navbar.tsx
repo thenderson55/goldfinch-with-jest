@@ -50,6 +50,11 @@ function Navbar() {
             <a>Blog</a>
           </Link>
         </li>
+        <li>
+          <Link href="/restaurants">
+            <a>Restaurants</a>
+          </Link>
+        </li>
         {status !== "loading" && !session && (
           <li>
             <Link href="/api/auth/signin">

@@ -2,10 +2,6 @@ import { GetServerSideProps } from "next/types";
 import React from "react";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 
-// import { useQuery, QueryClient } from "react-query";
-// import { dehydrate } from "react-query/hydration";
-
-const queryClient = new QueryClient();
 const STALE_TIME = 1000;
 
 const fetchShipwrecks = async () => {
@@ -17,6 +13,20 @@ const fetchShipwrecks = async () => {
   });
   const response = await data.json();
   return response;
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const queryClient = new QueryClient();
+  // prefetchInfiniteQuery
+  await queryClient.prefetchQuery("shipwrecks", fetchShipwrecks, {
+    staleTime: STALE_TIME,
+  });
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
 };
 
 function PropertiesList() {
@@ -68,16 +78,3 @@ function PropertiesList() {
 }
 
 export default PropertiesList;
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  await queryClient.prefetchQuery("shipwrecks", fetchShipwrecks, {
-    staleTime: STALE_TIME,
-  });
-
-  return {
-    props: {
-      // shipwrecks: shipwrecks.data,
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
-};
