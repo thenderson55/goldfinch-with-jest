@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { useRestuarantsData } from "../../hooks/useRestuarantsData";
 
@@ -19,8 +20,12 @@ function RestaurantsList() {
       {data &&
         data.map((restaurant) => {
           return (
-            <div key={restaurant._id}>
-              <p>{restaurant.name}</p>
+            <div key={restaurant._id} style={{ marginTop: 20 }}>
+              {restaurant.name}
+              <br />
+              <Link href={`/restaurants/${restaurant._id}`}>
+                <a>More info</a>
+              </Link>
             </div>
           );
         })}
