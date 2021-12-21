@@ -1,6 +1,11 @@
-import { useQuery } from "react-query";
+import { useQuery, useQueryClient } from "react-query";
 
-const fetchRestaurant = async (restaurantId) => {
+type RestaurantType = {
+  _id: string;
+};
+
+const fetchRestaurant = async ({ queryKey }) => {
+  const restaurantId = queryKey[1];
   const data = await fetch(
     `http://localhost:3000/api/restaurants/${restaurantId}`,
     {
@@ -15,7 +20,22 @@ const fetchRestaurant = async (restaurantId) => {
 };
 
 export const useRestuarantData = (restaurantId) => {
-  return useQuery(["restaurant", restaurantId], () =>
-    fetchRestaurant(restaurantId)
-  );
+  const queryClient = useQueryClient();
+  return useQuery(["restaurant", restaurantId], fetchRestaurant, {
+    initialData: () => {
+      const restaurants: [RestaurantType] =
+        queryClient.getQueryData("restaurants");
+
+      if (restaurants) {
+        const restaurant = restaurants.find(
+          (restaurant) => restaurant._id === restaurantId
+        );
+        return {
+          data: restaurant,
+        };
+      } else {
+        return undefined;
+      }
+    },
+  });
 };

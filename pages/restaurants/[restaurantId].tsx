@@ -7,10 +7,15 @@ function Restaurant() {
   const restaurantId = router.query.restaurantId;
   const { data, isLoading } = useRestuarantData(restaurantId);
 
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
+
   return (
     <div>
-      <p>Restaurant: {restaurantId}</p>
+      <p>Restaurant query id: {restaurantId}</p>
       <p>Restaurant name: {data?.name}</p>
+      <p>Restaurant id from result: {data?._id}</p>
     </div>
   );
 }
