@@ -33,10 +33,10 @@ function RestaurantsList() {
         <button
           className="btn btn-primary m-3"
           onClick={() => {
-            setLimit((page) => page - 1);
+            setLimit((limit) => limit - 1);
             refetch();
           }}
-          disabled={pageNumber === 1}
+          disabled={limit === 1}
         >
           -
         </button>
@@ -47,6 +47,7 @@ function RestaurantsList() {
             setLimit((page) => page + 1);
             refetch();
           }}
+          disabled={limit === 10}
         >
           +
         </button>
