@@ -3,12 +3,13 @@ import React, { useState } from "react";
 import { useRestuarantsData } from "../../hooks/useRestuarantsData";
 
 function RestaurantsList() {
-  const [limit, setLimit] = useState(3);
+  const [limit, setLimit] = useState(10);
   const [pageNumber, setPageNumber] = useState(1);
   const { isLoading, data, isError, error, refetch } = useRestuarantsData(
     limit,
     pageNumber
   );
+  const numberOfPages = Math.ceil(data?.total / limit);
 
   if (isLoading) {
     return <h2>Loading...</h2>;
@@ -50,8 +51,9 @@ function RestaurantsList() {
           +
         </button>
       </div>
-      {data &&
-        data.map((restaurant) => {
+      <p>Total pages: {numberOfPages}</p>
+      {data.data &&
+        data.data.map((restaurant) => {
           return (
             <div key={restaurant._id} style={{ marginTop: 20 }}>
               {restaurant.name}
@@ -75,6 +77,7 @@ function RestaurantsList() {
           setPageNumber((page) => page + 1);
           refetch();
         }}
+        disabled={pageNumber === numberOfPages}
       >
         NEXT
       </button>

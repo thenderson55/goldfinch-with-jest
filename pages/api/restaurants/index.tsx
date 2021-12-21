@@ -17,11 +17,7 @@ export default async function handler(
       res.json(newPost.ops[0]);
       break;
     case "GET":
-      const totalRestaurants = await db
-        .collection("restaurants")
-        .find()
-        .count();
-      console.log("TOTAL:", totalRestaurants);
+      const total = await db.collection("restaurants").find().count();
 
       const restaurants = await db
         .collection("restaurants")
@@ -32,7 +28,7 @@ export default async function handler(
       const data = JSON.parse(JSON.stringify(restaurants));
 
       if (data) {
-        res.status(200).json(data);
+        res.status(200).json({ data, total });
       } else {
         res.status(401).json(data);
       }
