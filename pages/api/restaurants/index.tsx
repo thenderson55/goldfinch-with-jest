@@ -8,6 +8,8 @@ export default async function handler(
   const client = await clientPromise;
   const db = client.db("sample_restaurants");
 
+  const { page = 1, limit = 3 } = req.query;
+
   switch (req.method) {
     case "POST":
       let bodyObject = JSON.parse(req.body);
@@ -15,13 +17,20 @@ export default async function handler(
       res.json(newPost.ops[0]);
       break;
     case "GET":
+      const totalRestaurants = await db
+        .collection("restaurants")
+        .find()
+        .count();
+      console.log("TOTAL:", totalRestaurants);
+
       const restaurants = await db
         .collection("restaurants")
         .find({})
-        .limit(10)
+        .limit(limit * 1)
+        .skip((page - 1) * limit)
         .toArray();
       const data = JSON.parse(JSON.stringify(restaurants));
-      // res.json(data);
+
       if (data) {
         res.status(200).json(data);
       } else {
