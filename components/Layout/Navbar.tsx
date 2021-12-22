@@ -45,14 +45,19 @@ function Navbar() {
             <a>Shipwrecks</a>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link href="/blog">
             <a>Blog</a>
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link href="/restaurants">
             <a>Restaurants</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/items">
+            <a>Items</a>
           </Link>
         </li>
         {status !== "loading" && !session && (

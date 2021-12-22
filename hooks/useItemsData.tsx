@@ -1,11 +1,11 @@
 import { useQuery } from "react-query";
 
-const fetchRestaurants = async (limit, page) => {
+const fetchItems = async (limit, page) => {
   const limitString = `?limit=${limit}`;
   const pageString = `&page=${page}`;
 
   const data = await fetch(
-    `http://localhost:3000/api/restaurants${limitString}${pageString}`,
+    `http://localhost:3000/api/items${limitString}${pageString}`,
     {
       method: "GET",
       headers: {
@@ -17,10 +17,10 @@ const fetchRestaurants = async (limit, page) => {
   return response;
 };
 
-export const useRestuarantsData = (limit, page) => {
+export const useItemsData = (limit, page) => {
   return useQuery(
-    ["restaurants", limit, page],
-    () => fetchRestaurants(limit, page),
+    ["items", limit, page],
+    () => fetchItems(limit, page),
     {
       keepPreviousData: true,
     }
