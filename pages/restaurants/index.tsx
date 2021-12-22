@@ -17,20 +17,23 @@ function RestaurantsList() {
 
   useEffect(() => {
     if (router.query.limit) {
-      const queryLimit: string = router.query.limit;
-      setLimit(parseInt(queryLimit));
+      const queryLimit = parseInt(router.query.limit as string);
+      setLimit(queryLimit);
     }
     if (router.query.page) {
-      const queryPage: string = router.query.page;
-      setPageNumber(parseInt(queryPage));
+      const queryPage = parseInt(router.query.page as string);
+      setPageNumber(queryPage);
     }
   }, [router]);
 
   const numberOfPages = Math.ceil(data?.total / limit);
 
   const paginationHandler = (newPage) => {
-    console.log("New Page:", newPage);
     router.push(router.pathname + `?limit=${limit}` + `&page=${newPage}`);
+  };
+
+  const limitHandler = (newLimit) => {
+    router.push(router.pathname + `?limit=${newLimit}` + `&page=${pageNumber}`);
   };
 
   if (isLoading) {
@@ -56,7 +59,7 @@ function RestaurantsList() {
           className="btn btn-primary m-3"
           onClick={() => {
             setLimit((limit) => limit - 1);
-            router.push(`?limit=${limit - 1}`);
+            limitHandler(limit - 1);
             refetch();
           }}
           disabled={limit === 1}
@@ -68,7 +71,7 @@ function RestaurantsList() {
           className="btn btn-primary m-3"
           onClick={() => {
             setLimit((limit) => limit + 1);
-            router.push(`?limit=${limit + 1}`);
+            limitHandler(limit + 1);
             refetch();
           }}
           disabled={limit === 10}
