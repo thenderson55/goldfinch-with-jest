@@ -17,7 +17,7 @@ export default async function handler(
         .findOne({ _id: new ObjectId(`${itemId}`) });
 
       const data = JSON.parse(JSON.stringify(item));
-      res.status(200).json(data);
+      res.status(200).json({ ...data, createdAt: item._id.getTimestamp() });
 
       break;
   }
