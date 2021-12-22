@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { useItemsData } from "../../hooks/useItemsData";
+import { useAddItemData, useItemsData } from "../../hooks/useItemsData";
 
 function ItemsList() {
   const router = useRouter();
@@ -16,6 +16,16 @@ function ItemsList() {
     limit,
     pageNumber
   );
+
+  const { mutate: addItem } = useAddItemData();
+
+  const handleAddItemClick = () => {
+    const item = {
+      itemName,
+      artistName,
+    };
+    addItem(item);
+  };
 
   useEffect(() => {
     if (router.query.limit) {
@@ -36,22 +46,6 @@ function ItemsList() {
 
   const limitHandler = (newLimit) => {
     router.push(router.pathname + `?limit=${newLimit}` + `&page=${pageNumber}`);
-  };
-
-  const addItem = async () => {
-    const data = await fetch(`http://localhost:3000/api/items`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: itemName,
-        artist: artistName,
-      }),
-    });
-    console.log("RESPONSE", data);
-    const response = await data.json();
-    console.log("Data", response);
   };
 
   if (isLoading) {
@@ -76,7 +70,7 @@ function ItemsList() {
         value={artistName}
         onChange={(e) => setArtistName(e.target.value)}
       />
-      <button className="btn btn-warning m-3" onClick={() => addItem()}>
+      <button className="btn btn-warning m-3" onClick={handleAddItemClick}>
         Add Item
       </button>
       <div
@@ -116,6 +110,8 @@ function ItemsList() {
           return (
             <div key={item._id} style={{ marginTop: 20 }}>
               {item.name}
+              <br />
+              {item.artist}
               <br />
               <Link href={`/items/${item._id}`}>
                 <a>More info</a>
