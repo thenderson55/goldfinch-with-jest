@@ -1,15 +1,37 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import { useRestuarantsData } from "../../hooks/useRestuarantsData";
 
 function RestaurantsList() {
+  const router = useRouter();
+
+  // console.log("Router:", router);
+
   const [limit, setLimit] = useState(10);
   const [pageNumber, setPageNumber] = useState(1);
   const { isLoading, data, isError, error, refetch } = useRestuarantsData(
     limit,
     pageNumber
   );
+
+  useEffect(() => {
+    if (router.query.limit) {
+      const queryLimit: string = router.query.limit;
+      setLimit(parseInt(queryLimit));
+    }
+    if (router.query.page) {
+      const queryPage: string = router.query.page;
+      setPageNumber(parseInt(queryPage));
+    }
+  }, [router]);
+
   const numberOfPages = Math.ceil(data?.total / limit);
+
+  const paginationHandler = (newPage) => {
+    console.log("New Page:", newPage);
+    router.push(router.pathname + `?limit=${limit}` + `&page=${newPage}`);
+  };
 
   if (isLoading) {
     return <h2>Loading...</h2>;
@@ -34,6 +56,7 @@ function RestaurantsList() {
           className="btn btn-primary m-3"
           onClick={() => {
             setLimit((limit) => limit - 1);
+            router.push(`?limit=${limit - 1}`);
             refetch();
           }}
           disabled={limit === 1}
@@ -44,7 +67,8 @@ function RestaurantsList() {
         <button
           className="btn btn-primary m-3"
           onClick={() => {
-            setLimit((page) => page + 1);
+            setLimit((limit) => limit + 1);
+            router.push(`?limit=${limit + 1}`);
             refetch();
           }}
           disabled={limit === 10}
@@ -52,7 +76,7 @@ function RestaurantsList() {
           +
         </button>
       </div>
-      <p>Total pages: {numberOfPages}</p>
+      <h3>Total pages: {numberOfPages}</h3>
       {data.data &&
         data.data.map((restaurant) => {
           return (
@@ -65,23 +89,36 @@ function RestaurantsList() {
             </div>
           );
         })}
-      <button
-        className="btn btn-primary m-3"
-        onClick={() => setPageNumber((page) => page - 1)}
-        disabled={pageNumber === 1}
-      >
-        PREV
-      </button>
-      <button
-        className="btn btn-primary m-3"
-        onClick={() => {
-          setPageNumber((page) => page + 1);
-          refetch();
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
-        disabled={pageNumber === numberOfPages}
       >
-        NEXT
-      </button>
+        <button
+          className="btn btn-primary m-3"
+          onClick={() => {
+            setPageNumber((page) => page - 1);
+            paginationHandler(pageNumber - 1);
+          }}
+          disabled={pageNumber === 1}
+        >
+          PREV
+        </button>
+        <span>Page number: {pageNumber}</span>
+        <button
+          className="btn btn-primary m-3"
+          onClick={() => {
+            setPageNumber((page) => page + 1);
+            paginationHandler(pageNumber + 1);
+            refetch();
+          }}
+          disabled={pageNumber === numberOfPages}
+        >
+          NEXT
+        </button>
+      </div>
     </div>
   );
 }
