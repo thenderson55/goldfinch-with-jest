@@ -14,6 +14,7 @@ const fetchItems = async (limit, page) => {
     }
   );
   const response = await data.json();
+  console.log("DB RESPONSE: ", response);
   return response;
 };
 

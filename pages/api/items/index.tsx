@@ -5,9 +5,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // const client = await clientPromise;
-  const { db } = await connectToDatabase();
-  // const db = client.db("goldFinchDb");
+  const client = await clientPromise;
+  // const { db } = await connectToDatabase();
+  const db = client.db("goldFinchDb");
+  // console.log("DB: ", db);
 
   const limit = parseInt(req.query.limit as string);
   const page = parseInt(req.query.page as string);
