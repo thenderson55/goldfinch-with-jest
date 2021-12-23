@@ -17,6 +17,8 @@ const Home: NextPage = () => {
         objectFit="cover"
       /> */}
       {/* <p>{session ? session.user.email : "Nobody"}</p> */}
+      <h1 role="header">The value of customKey is</h1>
+      <p>Hello World!</p>
       {/* <h1 role="header">The value of customKey is</h1>
       <button>Open dialog</button>
       <Link

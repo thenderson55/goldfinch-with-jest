@@ -1,12 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { clientPromise } from "../../../lib/mongodb";
+import { clientPromise, connectToDatabase } from "../../../lib/mongodb";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const client = await clientPromise;
-  const db = client.db("goldFinchDb");
+  // const client = await clientPromise;
+  const { db } = await connectToDatabase();
+  // const db = client.db("goldFinchDb");
 
   const limit = parseInt(req.query.limit as string);
   const page = parseInt(req.query.page as string);
