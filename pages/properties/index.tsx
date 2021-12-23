@@ -2,6 +2,24 @@ import { GetServerSideProps } from "next/types";
 import React from "react";
 import { connectToDatabase } from "../../lib/mongodb";
 
+export const getServerSideProps: GetServerSideProps = async () => {
+  const { db } = await connectToDatabase();
+
+  const data = await db
+    .collection("listingsAndReviews")
+    .find({})
+    .limit(20)
+    .toArray();
+
+  const properties = JSON.parse(JSON.stringify(data));
+
+  return {
+    props: {
+      properties,
+    },
+  };
+};
+
 function PropertiesList({ properties }) {
   const bookProperty = async (id) => {
     const data = await fetch(
@@ -63,21 +81,3 @@ function PropertiesList({ properties }) {
 }
 
 export default PropertiesList;
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const { db } = await connectToDatabase();
-
-  const data = await db
-    .collection("listingsAndReviews")
-    .find({})
-    .limit(20)
-    .toArray();
-
-  const properties = JSON.parse(JSON.stringify(data));
-
-  return {
-    props: {
-      properties,
-    },
-  };
-};

@@ -123,14 +123,14 @@ function ItemsList({ items }) {
       <h3>Total pages: {numberOfPages}</h3>
       {items?.map((item) => {
         return (
-          <div key={item._id} style={{ marginTop: 20 }}>
+          <div key={item.name} style={{ marginTop: 20 }}>
             {item.name}
             <br />
             {item.artist}
             <br />
-            <Link href={`/items/${item._id}`}>
+            {/* <Link href={`/items/${item._id}`}>
               <a>More info</a>
-            </Link>
+            </Link> */}
           </div>
         );
       })}
