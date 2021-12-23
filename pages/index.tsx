@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       /> */}
       {/* <p>{session ? session.user.email : "Nobody"}</p> */}
       <h1 role="header">
-        {/* The value of URL env is: {window.document.location.origin} */}
+        The value of URL env is: {globalThis?.window?.innerWidth}
       </h1>
       <p>Hello World!</p>
       {/* <h1 role="header">The value of customKey is</h1>

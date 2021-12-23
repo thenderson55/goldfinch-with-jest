@@ -7,7 +7,7 @@ type RestaurantType = {
 const fetchRestaurant = async ({ queryKey }) => {
   const restaurantId = queryKey[1];
   const data = await fetch(
-    `http://localhost:3000/api/restaurants/${restaurantId}`,
+    `${window.document.location.origin}/api/restaurants/${restaurantId}`,
     {
       method: "GET",
       headers: {
