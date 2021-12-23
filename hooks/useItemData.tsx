@@ -7,7 +7,7 @@ type ItemType = {
 const fetchItem = async ({ queryKey }) => {
   const itemId = queryKey[1];
   const data = await fetch(
-    `${process.env.PUBLIC_URL || "http://localhost:3000"}api/items/${itemId}`,
+    `${window.document.location.origin}/api/items/${itemId}`,
     {
       method: "GET",
       headers: {

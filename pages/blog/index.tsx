@@ -13,7 +13,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!session) {
     return {
       redirect: {
-        destination: "/api/auth/signin?callBackUrl=http://localhost:3000/blog",
+        destination: `/api/auth/signin?callBackUrl=http://${window.document.location.origin}/blog`,
         permanent: false,
       },
     };

@@ -1,6 +1,6 @@
 async function handleLogout(req, res) {
   console.log("SIIGGN  OOUUT");
-  const returnTo = encodeURI("http://localhost:3000/");
+  const returnTo = encodeURI(`${window.document.location.origin}`);
   res.redirect(
     // `https://${process.env.AUTH0_ISSUER}/v2/logout?federated&returnTo=${returnTo}`
     `${process.env.AUTH0_ISSUER}/v2/logout?returnTo=${returnTo}`

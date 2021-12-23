@@ -23,7 +23,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 function PropertiesList({ properties }) {
   const bookProperty = async (id) => {
     const data = await fetch(
-      `http://localhost:3000/api/airbnb/book?property_id=${id}`
+      `${window.document.location.origin}/api/airbnb/book?property_id=${id}`
     );
     console.log("RESPONSE", data);
     const response = await data.json();

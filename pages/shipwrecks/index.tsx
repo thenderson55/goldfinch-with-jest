@@ -5,12 +5,15 @@ import { dehydrate, QueryClient, useQuery } from "react-query";
 const STALE_TIME = 1000;
 
 const fetchShipwrecks = async () => {
-  const data = await fetch("http://localhost:3000/api/shipwrecks", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const data = await fetch(
+    `${window.document.location.origin}/api/shipwrecks`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
   const response = await data.json();
   return response;
 };

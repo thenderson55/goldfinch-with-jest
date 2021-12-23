@@ -5,9 +5,7 @@ const fetchItems = async (limit, page) => {
   const pageString = `&page=${page}`;
 
   const data = await fetch(
-    `${
-      process.env.PUBLIC_URL || "http://localhost:3000"
-    }/api/items${limitString}${pageString}`,
+    `${window.document.location.origin}/api/items${limitString}${pageString}`,
     {
       method: "GET",
       headers: {
@@ -21,7 +19,7 @@ const fetchItems = async (limit, page) => {
 };
 
 const addItem = async (body) => {
-  const data = await fetch(`http://localhost:3000/api/items`, {
+  const data = await fetch(`${window.document.location.origin}/api/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
