@@ -1,37 +1,34 @@
-import { GetServerSideProps } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useAddItemData, useItemsData } from "../../hooks/useItemsData";
-import { connectToDatabase } from "../../lib/mongodb";
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const { db } = await connectToDatabase();
+// export const getServerSideProps: GetServerSideProps = async () => {
+//   const { db } = await connectToDatabase();
 
-  const data = await db.collection("items").find({}).limit(20).toArray();
+//   const data = await db.collection("items").find({}).limit(20).toArray();
 
-  const items = JSON.parse(JSON.stringify(data));
+//   const items = JSON.parse(JSON.stringify(data));
 
-  return {
-    props: {
-      items,
-    },
-  };
-};
+//   return {
+//     props: {
+//       items,
+//     },
+//   };
+// };
 
 function ItemsList({ items }) {
   const router = useRouter();
 
-  // console.log("Router:", router);
   const [itemName, setItemName] = useState("");
   const [artistName, setArtistName] = useState("");
 
   const [limit, setLimit] = useState(10);
   const [pageNumber, setPageNumber] = useState(1);
-  // const { isLoading, data, isError, error, refetch } = useItemsData(
-  //   limit,
-  //   pageNumber
-  // );
+  const { isLoading, data, isError, error, refetch } = useItemsData(
+    limit,
+    pageNumber
+  );
 
   const { mutate: addItem } = useAddItemData();
 
@@ -64,12 +61,12 @@ function ItemsList({ items }) {
     router.push(router.pathname + `?limit=${newLimit}` + `&page=${pageNumber}`);
   };
 
-  // if (isLoading) {
-  //   return <h2>Loading...</h2>;
-  // }
-  // if (isError) {
-  //   return <h2>{error}</h2>;
-  // }
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
+  if (isError) {
+    return <h2>{error}</h2>;
+  }
 
   return (
     <div className="container p-3">
@@ -101,7 +98,7 @@ function ItemsList({ items }) {
           onClick={() => {
             setLimit((limit) => limit - 1);
             limitHandler(limit - 1);
-            // refetch();
+            refetch();
           }}
           disabled={limit === 1}
         >
@@ -113,7 +110,7 @@ function ItemsList({ items }) {
           onClick={() => {
             setLimit((limit) => limit + 1);
             limitHandler(limit + 1);
-            // refetch();
+            refetch();
           }}
           disabled={limit === 10}
         >
@@ -121,7 +118,7 @@ function ItemsList({ items }) {
         </button>
       </div>
       <h3>Total pages: {numberOfPages}</h3>
-      {items?.map((item) => {
+      {/* {items?.map((item) => {
         return (
           <div key={item._id} style={{ marginTop: 20 }}>
             {item.name}
@@ -133,8 +130,8 @@ function ItemsList({ items }) {
             </Link>
           </div>
         );
-      })}
-      {/* {data.data &&
+      })} */}
+      {data.data &&
         data.data.map((item) => {
           return (
             <div key={item._id} style={{ marginTop: 20 }}>
@@ -147,7 +144,7 @@ function ItemsList({ items }) {
               </Link>
             </div>
           );
-        })} */}
+        })}
       <div
         style={{
           display: "flex",
@@ -171,7 +168,7 @@ function ItemsList({ items }) {
           onClick={() => {
             setPageNumber((page) => page + 1);
             paginationHandler(pageNumber + 1);
-            // refetch();
+            refetch();
           }}
           disabled={pageNumber === numberOfPages}
         >

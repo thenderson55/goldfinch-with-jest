@@ -6,8 +6,6 @@ import { useRestuarantsData } from "../../hooks/useRestuarantsData";
 function RestaurantsList() {
   const router = useRouter();
 
-  // console.log("Router:", router);
-
   const [limit, setLimit] = useState(10);
   const [pageNumber, setPageNumber] = useState(1);
   const { isLoading, data, isError, error, refetch } = useRestuarantsData(

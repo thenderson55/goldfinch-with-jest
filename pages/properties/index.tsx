@@ -25,9 +25,7 @@ function PropertiesList({ properties }) {
     const data = await fetch(
       `${window.document.location.origin}/api/airbnb/book?property_id=${id}`
     );
-    console.log("RESPONSE", data);
     const response = await data.json();
-    console.log("Data", response);
   };
 
   return (

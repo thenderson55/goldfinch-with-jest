@@ -1,14 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { clientPromise, connectToDatabase } from "../../../lib/mongodb";
+import { clientPromise } from "../../../lib/mongodb";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // const client = await clientPromise;
-  // const db = client.db("goldFinchDb");
-  const { db } = await connectToDatabase();
-  // console.log("DB: ", db);
+  const client = await clientPromise;
+  const db = client.db("goldFinchDb");
+  // const { db } = await connectToDatabase();
 
   const limit = parseInt(req.query.limit as string);
   const page = parseInt(req.query.page as string);
@@ -16,12 +15,10 @@ export default async function handler(
   switch (req.method) {
     case "POST":
       let bodyObject = req.body;
-      console.log("Body Object:", bodyObject);
       // const response = await db.collection("bookings").insertOne(data);
 
       // res.json(response);
       let newItem = await db.collection("items").insertOne(bodyObject);
-      console.log("Res Object:", newItem);
 
       res.json(newItem);
       break;

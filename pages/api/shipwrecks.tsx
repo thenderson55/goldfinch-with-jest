@@ -34,7 +34,6 @@ export default async function handler(
 //     .find({})
 //     .limit(20)
 //     .toArray();
-//   console.log("YOOO", JSON.parse(JSON.stringify(dataGeo)));
 //   return res.json(JSON.parse(JSON.stringify(dataGeo)));
 // }
 

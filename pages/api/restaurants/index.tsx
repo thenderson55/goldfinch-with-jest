@@ -14,7 +14,6 @@ export default async function handler(
   switch (req.method) {
     case "POST":
       let bodyObject = JSON.parse(req.body);
-      console.log("Body Object:", bodyObject);
       // let newPost = await db.collection("items").insertOne(bodyObject);
       // res.json(newPost.ops[0]);
       break;
