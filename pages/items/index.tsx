@@ -171,7 +171,7 @@ function ItemsList({ items }) {
           onClick={() => {
             setPageNumber((page) => page + 1);
             paginationHandler(pageNumber + 1);
-            refetch();
+            // refetch();
           }}
           disabled={pageNumber === numberOfPages}
         >
