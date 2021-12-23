@@ -5,7 +5,9 @@ const fetchItems = async (limit, page) => {
   const pageString = `&page=${page}`;
 
   const data = await fetch(
-    `http://localhost:3000/api/items${limitString}${pageString}`,
+    `${
+      process.env.PUBLIC_URL || "http://localhost:3000"
+    }/api/items${limitString}${pageString}`,
     {
       method: "GET",
       headers: {
