@@ -5,7 +5,9 @@ const fetchRestaurants = async (limit, page) => {
   const pageString = `&page=${page}`;
 
   const data = await fetch(
-    `http://localhost:3000/api/restaurants${limitString}${pageString}`,
+    `${
+      process.env.PUBLIC_URL || "http://localhost:3000"
+    }/api/restaurants${limitString}${pageString}`,
     {
       method: "GET",
       headers: {

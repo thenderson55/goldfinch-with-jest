@@ -22,6 +22,7 @@ function RestaurantsList() {
     }
     if (router.query.page) {
       const queryPage = parseInt(router.query.page as string);
+
       setPageNumber(queryPage);
     }
   }, [router]);
