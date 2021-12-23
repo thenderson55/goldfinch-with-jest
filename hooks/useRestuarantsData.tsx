@@ -3,11 +3,10 @@ import { useQuery } from "react-query";
 const fetchRestaurants = async (limit, page) => {
   const limitString = `?limit=${limit}`;
   const pageString = `&page=${page}`;
+  console.log("Window:", window.document.location.origin);
 
   const data = await fetch(
-    `${
-      process.env.PUBLIC_URL || "http://localhost:3000"
-    }/api/restaurants${limitString}${pageString}`,
+    `${window.document.location.origin}/api/restaurants${limitString}${pageString}`,
     {
       method: "GET",
       headers: {
