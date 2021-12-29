@@ -17,7 +17,7 @@ import { useAddItemData, useItemsData } from "../../hooks/useItemsData";
 //   };
 // };
 
-function ItemsList({ items }) {
+function ItemsList() {
   const router = useRouter();
 
   const [itemName, setItemName] = useState("");
@@ -51,7 +51,7 @@ function ItemsList({ items }) {
     }
   }, [router]);
 
-  const numberOfPages = Math.ceil(items?.total / limit);
+  const numberOfPages = Math.ceil(data?.total / limit);
 
   const paginationHandler = (newPage) => {
     router.push(router.pathname + `?limit=${limit}` + `&page=${newPage}`);
@@ -117,7 +117,7 @@ function ItemsList({ items }) {
           +
         </button>
       </div>
-      <h3>Total pages: {numberOfPages}</h3>
+      <h3>Total pages: {numberOfPages ? numberOfPages : 0}</h3>
       {/* {items?.map((item) => {
         return (
           <div key={item._id} style={{ marginTop: 20 }}>
