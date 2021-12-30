@@ -14,6 +14,7 @@ export function Counter({ description, defaultCount }: CounterProps) {
       <h2>
         DESC: {description} - DC: {defaultCount}
       </h2>
+      <button onClick={() => setIncrementor(5)}>5</button>
       <label>
         Incrementor:
         <input
@@ -33,7 +34,7 @@ export function Counter({ description, defaultCount }: CounterProps) {
       Current Count: {count}
       <button
         // aria-label="Add to Counter"
-        onClick={() => setCount(count + incrementor)}
+        onClick={() => setTimeout(() => setCount(count + incrementor), 200)}
       >
         +
       </button>
