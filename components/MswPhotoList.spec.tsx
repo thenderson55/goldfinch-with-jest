@@ -1,6 +1,11 @@
 import { setupServer } from "msw/node";
 import { DefaultRequestBody, PathParams, rest } from "msw";
-import { Photo } from "./MswPhotoList";
+import { MswPhotoList, Photo } from "./MswPhotoList";
+import {
+  render,
+  waitForElementToBeRemoved,
+  screen,
+} from "@testing-library/react";
 
 const server = setupServer(
   rest.get<DefaultRequestBody, PathParams, Photo[]>(
@@ -23,3 +28,15 @@ const server = setupServer(
 beforeAll(() => server.listen());
 afterAll(() => server.close());
 // afterEach(() => server.resetHandlers());
+
+describe("after application loads data", () => {
+  beforeEach(async () => {
+    render(<MswPhotoList />);
+    await waitForElementToBeRemoved(() => screen.getByText("Loading..."));
+  });
+
+  it('renders the photos"', () => {
+    const element = screen.getByText("Hawaii");
+    expect(element).toBeInTheDocument();
+  });
+});
