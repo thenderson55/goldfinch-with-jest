@@ -20,6 +20,9 @@ const server = setupServer(
   rest.get<DefaultRequestBody, PathParams, Photo[]>(
     "/api/photos",
     (req, res, ctx) => {
+      // More than one param will be array
+      // const paramsArray = req.url.searchParams.getAll("id") || "Unknown";
+
       const name = req.url.searchParams.get("name") || "Unknown";
       return res(
         // ctx.delay(100),
