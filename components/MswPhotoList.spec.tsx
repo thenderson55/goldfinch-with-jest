@@ -30,7 +30,7 @@ const server = setupServer(
 
 beforeAll(() => server.listen());
 afterAll(() => server.close());
-// afterEach(() => server.resetHandlers());
+afterEach(() => server.resetHandlers());
 
 describe("after application loads data", () => {
   beforeEach(async () => {
@@ -51,6 +51,30 @@ describe("after application loads data", () => {
 
     it('renders the newly loaded data"', () => {
       expect(screen.getByText("Bruno: Hawaii")).toBeInTheDocument();
+    });
+  });
+
+  describe("when clicking Refresh button and server returns error", () => {
+    beforeEach(async () => {
+      server.use(
+        rest.get<DefaultRequestBody, { message: string }>(
+          "/api/photos",
+          (req, res, ctx) => {
+            return res(
+              ctx.status(500),
+              ctx.json({ message: "Sorry, there has been an issue..." })
+            );
+          }
+        )
+      );
+      user.click(screen.getByText("Refresh"));
+      await waitForElementToBeRemoved(() => screen.getByText("Loading..."));
+    });
+
+    it('renders the error keeping the old data"', () => {
+      expect(
+        screen.getByText("Sorry, there has been an issue...")
+      ).toBeInTheDocument();
     });
   });
 });

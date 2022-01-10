@@ -4,11 +4,15 @@ import Image from "next/image";
 import imageLoader from "../imageLoader";
 import styles from "./index.module.scss";
 import seamus from "../public/seamus.jpg";
+import { MswPhotoList } from "../components/MswPhotoList";
 
 const Home: NextPage = () => {
   // const { data: session, status } = useSession();
   return (
     <div className={styles.container}>
+      <h1>Hello World!</h1>
+
+      <MswPhotoList />
       {/* <Image
         src={seamus}
         alt="Seamus"
@@ -20,7 +24,6 @@ const Home: NextPage = () => {
       {/* <h1 role="header">
         The value of URL env is: {globalThis?.window?.innerWidth}
       </h1> */}
-      <p>Hello World!</p>
       {/* <h1 role="header">The value of customKey is</h1>
       <button>Open dialog</button>
       <Link
