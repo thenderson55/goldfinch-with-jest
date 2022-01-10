@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import css from "./PhotoList.module.css";
+import css from "./PhotoList.module.scss";
 export interface Photo {
   id: number;
   title: string;
@@ -7,37 +7,16 @@ export interface Photo {
   favourite: boolean;
 }
 
-// export function MswPhotosList() {
-//   const [refresh, setRefresh] = useState(0);
-//   const [name, setName] = useState("");
-
-//   return (
-//     <div>
-//       <button onClick={() => setRefresh((cr) => ++cr)}>Refresh</button>
-//       <div>
-//         <label>
-//           Your Name:
-//           <input
-//             name="Your name"
-//             value={name}
-//             onChange={(evt) => setName(evt.target.value)}
-//           />
-//         </label>
-//         <List refresh={refresh} name={name} />
-//       </div>
-//     </div>
-//   );
-// }
-
 export function MswPhotoList() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(0);
   const [photos, setPhotos] = useState([]);
   const [error, setError] = useState("");
   const [name, setName] = useState("");
+  const [refresh, setRefresh] = useState(0);
 
   useEffect(() => {
     async function load() {
-      setLoading(true);
+      setLoading((l) => l + 1);
 
       try {
         const response = await fetch(`/api/photos?name=${name}`);
@@ -52,15 +31,24 @@ export function MswPhotoList() {
       } catch (e) {
         setError(e.message);
       } finally {
-        setLoading(false);
+        setLoading((l) => l - 1);
       }
     }
 
     void load();
-  }, [name]);
+  }, [name, refresh]);
 
   return (
     <div>
+      <button onClick={() => setRefresh((cr) => ++cr)}>Refresh</button>
+      <label>
+        Your Name:
+        <input
+          name="Your name"
+          value={name}
+          onChange={(evt) => setName(evt.target.value)}
+        />
+      </label>
       <div className={css.absolute}>
         {error ? <div className={css.error}>{error}</div> : null}
         {loading ? <div className={css.loading}>Loading...</div> : null}
