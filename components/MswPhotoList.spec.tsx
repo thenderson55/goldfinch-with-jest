@@ -9,6 +9,14 @@ import {
 import user from "@testing-library/user-event";
 
 const server = setupServer(
+  rest.post<Photo, PathParams, Photo>("/api/favourite", (req, res, ctx) => {
+    const photo = req.body;
+    return res(
+      ctx.delay(200),
+      ctx.json({ ...photo, favourite: !photo.favourite })
+    );
+  }),
+
   rest.get<DefaultRequestBody, PathParams, Photo[]>(
     "/api/photos",
     (req, res, ctx) => {
@@ -75,6 +83,24 @@ describe("after application loads data", () => {
       expect(
         screen.getByText("Sorry, there has been an issue...")
       ).toBeInTheDocument();
+    });
+  });
+
+  describe('when clicking "Add to Favourites" changes the button text', () => {
+    beforeEach(async () => {
+      user.click(screen.getByRole("button", { name: "Add To Favourites" }));
+      await waitForElementToBeRemoved(() =>
+        screen.getByRole("button", { name: "Add To Favourites" })
+      );
+    });
+
+    it('renders "Remove from Favourites"', () => {
+      expect(
+        screen.getByRole("button", { name: "Remove from Favourites" })
+      ).toBeInTheDocument();
+      expect(
+        screen.queryByRole("button", { name: "Add to Favourites" })
+      ).not.toBeInTheDocument();
     });
   });
 });

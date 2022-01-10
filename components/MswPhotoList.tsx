@@ -78,18 +78,24 @@ function PhotoDetail({ photo }: { photo: Photo }) {
         <h2>{photo.title}</h2>
         <h3>PhotoId: {photo.id}</h3>
 
-        {/* <button
-          onClick={() => {
-            // we already have an example with .catch for this video :)
-            void axios
-              .post<Photo>("/api/favourite", { ...photo, favourite })
-              .then((response) => {
-                setFavourite(response.data.favourite);
-              });
+        <button
+          onClick={async () => {
+            const data = await fetch("/api/favourite", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                ...photo,
+                favourite,
+              }),
+            });
+            const response = await data.json();
+            setFavourite(response.favourite);
           }}
         >
           {favourite ? "Remove from Favourites" : "Add To Favourites"}
-        </button> */}
+        </button>
       </div>
     </div>
   );
