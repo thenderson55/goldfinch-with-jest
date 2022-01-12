@@ -6,15 +6,12 @@ type ItemType = {
 
 const fetchItem = async ({ queryKey }) => {
   const itemId = queryKey[1];
-  const data = await fetch(
-    `${window.document.location.origin}/api/items/${itemId}`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  const data = await fetch(`/api/items/${itemId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
   const response = await data.json();
   return response;
 };

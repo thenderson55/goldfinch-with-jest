@@ -18,7 +18,7 @@ import { useAddItemData, useItemsData } from "../../hooks/useItemsData";
 // };
 
 function ItemsList() {
-  const router = useRouter();
+  // const router = useRouter();
 
   const [itemName, setItemName] = useState("");
   const [artistName, setArtistName] = useState("");
@@ -29,6 +29,7 @@ function ItemsList() {
     limit,
     pageNumber
   );
+  console.log("DATA2", data);
 
   const { mutate: addItem } = useAddItemData();
 
@@ -40,26 +41,26 @@ function ItemsList() {
     addItem(item);
   };
 
-  useEffect(() => {
-    if (router.query.limit) {
-      const queryLimit = parseInt(router.query.limit as string);
-      setLimit(queryLimit);
-    }
-    if (router.query.page) {
-      const queryPage = parseInt(router.query.page as string);
-      setPageNumber(queryPage);
-    }
-  }, [router]);
+  // useEffect(() => {
+  //   if (router.query.limit) {
+  //     const queryLimit = parseInt(router.query.limit as string);
+  //     setLimit(queryLimit);
+  //   }
+  //   if (router.query.page) {
+  //     const queryPage = parseInt(router.query.page as string);
+  //     setPageNumber(queryPage);
+  //   }
+  // }, [router]);
 
   const numberOfPages = Math.ceil(data?.total / limit);
 
-  const paginationHandler = (newPage) => {
-    router.push(router.pathname + `?limit=${limit}` + `&page=${newPage}`);
-  };
+  // const paginationHandler = (newPage) => {
+  //   router.push(router.pathname + `?limit=${limit}` + `&page=${newPage}`);
+  // };
 
-  const limitHandler = (newLimit) => {
-    router.push(router.pathname + `?limit=${newLimit}` + `&page=${pageNumber}`);
-  };
+  // const limitHandler = (newLimit) => {
+  //   router.push(router.pathname + `?limit=${newLimit}` + `&page=${pageNumber}`);
+  // };
 
   if (isLoading) {
     return <h2>Loading...</h2>;
@@ -97,7 +98,7 @@ function ItemsList() {
           className="btn btn-primary m-3"
           onClick={() => {
             setLimit((limit) => limit - 1);
-            limitHandler(limit - 1);
+            // limitHandler(limit - 1);
             refetch();
           }}
           disabled={limit === 1}
@@ -109,7 +110,7 @@ function ItemsList() {
           className="btn btn-primary m-3"
           onClick={() => {
             setLimit((limit) => limit + 1);
-            limitHandler(limit + 1);
+            // limitHandler(limit + 1);
             refetch();
           }}
           disabled={limit === 10}
@@ -118,19 +119,6 @@ function ItemsList() {
         </button>
       </div>
       <h3>Total pages: {numberOfPages ? numberOfPages : 0}</h3>
-      {/* {items?.map((item) => {
-        return (
-          <div key={item._id} style={{ marginTop: 20 }}>
-            {item.name}
-            <br />
-            {item.artist}
-            <br />
-            <Link href={`/items/${item._id}`}>
-              <a>More info</a>
-            </Link>
-          </div>
-        );
-      })} */}
       {data.data &&
         data.data.map((item) => {
           return (
@@ -156,7 +144,7 @@ function ItemsList() {
           className="btn btn-primary m-3"
           onClick={() => {
             setPageNumber((page) => page - 1);
-            paginationHandler(pageNumber - 1);
+            // paginationHandler(pageNumber - 1);
           }}
           disabled={pageNumber === 1}
         >
@@ -167,7 +155,7 @@ function ItemsList() {
           className="btn btn-primary m-3"
           onClick={() => {
             setPageNumber((page) => page + 1);
-            paginationHandler(pageNumber + 1);
+            // paginationHandler(pageNumber + 1);
             refetch();
           }}
           disabled={pageNumber === numberOfPages}

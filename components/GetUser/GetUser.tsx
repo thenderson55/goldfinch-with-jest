@@ -1,5 +1,5 @@
 import React from "react";
-import useUser from "../../query-hooks/useUser";
+import useUser from "../../hooks/useUser";
 
 export default function GetUser() {
   const user = useUser(5);

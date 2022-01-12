@@ -32,7 +32,7 @@ export default async function handler(
         .skip((page - 1) * limit)
         .toArray();
       const data = JSON.parse(JSON.stringify(items));
-
+      console.log("DATA", data);
       if (data) {
         res.status(200).json({ data, total });
       } else {
