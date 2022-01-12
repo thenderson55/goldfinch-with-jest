@@ -1,5 +1,5 @@
 import { screen } from "@testing-library/react";
-import { server } from "../../setupTests";
+import { server } from "../../testUtils/setupTests";
 import { renderWithClient } from "../../testUtils";
 import GetUser from "./GetUser";
 import { rest } from "msw";

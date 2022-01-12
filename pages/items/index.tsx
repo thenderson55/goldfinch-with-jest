@@ -18,8 +18,8 @@ import { useAddItemData, useItemsData } from "../../hooks/useItemsData";
 // };
 
 function ItemsList() {
-  // const router = useRouter();
-
+  const { query } = useRouter();
+  console.log("QUERY", query);
   const [itemName, setItemName] = useState("");
   const [artistName, setArtistName] = useState("");
 

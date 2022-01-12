@@ -4,7 +4,7 @@
 // learn more: https://github.com/testing-library/jest-dom
 import "@testing-library/jest-dom";
 import { setupServer } from "msw/node";
-import { handlers } from "./testUtils";
+import { handlers } from "./index";
 import { setLogger } from "react-query";
 
 export const server = setupServer(...handlers);
