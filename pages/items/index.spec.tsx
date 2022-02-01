@@ -9,14 +9,34 @@ import { rest } from "msw";
 const useRouter = jest.spyOn(require("next/router"), "useRouter");
 
 useRouter.mockImplementationOnce(() => ({
-  query: { page: 1, limit: 10 },
-  asPath: "/posts",
+  query: {},
+  basePath: "",
+  pathname: "/",
+  route: "/",
+  asPath: "/",
+  back: jest.fn(),
+  beforePopState: jest.fn(),
+  prefetch: jest.fn(),
+  push: jest.fn(),
+  reload: jest.fn(),
+  replace: jest.fn(),
+  events: {
+    on: jest.fn(),
+    off: jest.fn(),
+    emit: jest.fn(),
+  },
+  isFallback: false,
+  isLocaleDomain: false,
+  isReady: true,
+  defaultLocale: "en",
+  domainLocales: [],
+  isPreview: false,
 }));
 
 describe("after application loads data", () => {
   beforeEach(async () => {
     useRouter.mockImplementationOnce(() => ({
-      query: { page: 1, limit: 10 },
+      query: { page: 3, limit: 10 },
     }));
     // renderWithClient(
     //   <RouterContext.Provider
@@ -26,7 +46,7 @@ describe("after application loads data", () => {
     //   </RouterContext.Provider>
     // );
     renderWithClient(<ItemsList />);
-
+    // ?limit=2&page3
     server.use(
       rest.get(`/api/items`, (req, res, ctx) => {
         console.log("URL: ", req.url.toString());

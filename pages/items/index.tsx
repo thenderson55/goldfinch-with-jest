@@ -18,7 +18,8 @@ import { useAddItemData, useItemsData } from "../../hooks/useItemsData";
 // };
 
 function ItemsList() {
-  const { query } = useRouter();
+  const router = useRouter();
+  const { query } = router;
   console.log("QUERY", query);
   const [itemName, setItemName] = useState("");
   const [artistName, setArtistName] = useState("");
@@ -41,26 +42,26 @@ function ItemsList() {
     addItem(item);
   };
 
-  // useEffect(() => {
-  //   if (router.query.limit) {
-  //     const queryLimit = parseInt(router.query.limit as string);
-  //     setLimit(queryLimit);
-  //   }
-  //   if (router.query.page) {
-  //     const queryPage = parseInt(router.query.page as string);
-  //     setPageNumber(queryPage);
-  //   }
-  // }, [router]);
+  useEffect(() => {
+    if (router.query?.limit) {
+      const queryLimit = parseInt(router.query.limit as string) || 10;
+      setLimit(queryLimit);
+    }
+    // if (query?.page) {
+    //   const queryPage = parseInt(query.page as string) || 1;
+    //   setPageNumber(queryPage);
+    // }
+  }, [router]);
 
   const numberOfPages = Math.ceil(data?.total / limit);
 
-  // const paginationHandler = (newPage) => {
-  //   router.push(router.pathname + `?limit=${limit}` + `&page=${newPage}`);
-  // };
+  const paginationHandler = (newPage) => {
+    router.push(router.pathname + `?limit=${limit}` + `&page=${newPage}`);
+  };
 
-  // const limitHandler = (newLimit) => {
-  //   router.push(router.pathname + `?limit=${newLimit}` + `&page=${pageNumber}`);
-  // };
+  const limitHandler = (newLimit) => {
+    router.push(router.pathname + `?limit=${newLimit}` + `&page=${pageNumber}`);
+  };
 
   if (isLoading) {
     return <h2>Loading...</h2>;
@@ -98,7 +99,7 @@ function ItemsList() {
           className="btn btn-primary m-3"
           onClick={() => {
             setLimit((limit) => limit - 1);
-            // limitHandler(limit - 1);
+            limitHandler(limit - 1);
             refetch();
           }}
           disabled={limit === 1}
@@ -110,7 +111,7 @@ function ItemsList() {
           className="btn btn-primary m-3"
           onClick={() => {
             setLimit((limit) => limit + 1);
-            // limitHandler(limit + 1);
+            limitHandler(limit + 1);
             refetch();
           }}
           disabled={limit === 10}
@@ -144,7 +145,7 @@ function ItemsList() {
           className="btn btn-primary m-3"
           onClick={() => {
             setPageNumber((page) => page - 1);
-            // paginationHandler(pageNumber - 1);
+            paginationHandler(pageNumber - 1);
           }}
           disabled={pageNumber === 1}
         >
@@ -155,7 +156,7 @@ function ItemsList() {
           className="btn btn-primary m-3"
           onClick={() => {
             setPageNumber((page) => page + 1);
-            // paginationHandler(pageNumber + 1);
+            paginationHandler(pageNumber + 1);
             refetch();
           }}
           disabled={pageNumber === numberOfPages}

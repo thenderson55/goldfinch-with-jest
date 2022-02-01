@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "react-query";
 
-const fetchItems = async (limit, page) => {
+const fetchItems = async (limit = 10, page = 1) => {
   const limitString = `?limit=${limit}`;
   const pageString = `&page=${page}`;
   // console.log(

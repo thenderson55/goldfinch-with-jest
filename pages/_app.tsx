@@ -44,7 +44,7 @@ export default function MyApp({
             <title>Goldfinch</title>
             <meta name="description" content="inventory management" />
           </Head>
-          <Navbar />
+          {/* <Navbar /> */}
           {/* <Layout> */}
           <Component {...pageProps} />
           {/* </Layout> */}
