@@ -1,7 +1,7 @@
 import { screen, waitForElementToBeRemoved } from "@testing-library/react";
-import { server } from "../../testUtils/setupTests";
-import { renderWithClient } from "../../testUtils";
-import ItemsList from "./index";
+import { server } from "../testUtils/setupTests";
+import { renderWithClient } from "../testUtils";
+import ItemsList from "../pages/items/index";
 import { rest } from "msw";
 // import { RouterContext } from "next/dist/shared/lib/router-context";
 // import { createMockRouter } from "../../testUtils/createMockRouter";
