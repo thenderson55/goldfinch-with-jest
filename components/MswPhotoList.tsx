@@ -69,11 +69,11 @@ function PhotoDetail({ photo }: { photo: Photo }) {
 
   return (
     <div className={css.listItem}>
-      <img
+      {/* <img
         className={css.photo}
         src={photo.thumbnailUrl}
         aria-label={photo.title}
-      />
+      /> */}
       <div>
         <h2>{photo.title}</h2>
         <h3>PhotoId: {photo.id}</h3>
