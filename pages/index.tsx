@@ -20,6 +20,14 @@ const Home: NextPage = () => {
           className={styles.logo}
         />
       </div>
+      <div className={styles.textBox}>
+        <h1 className={styles.headerPrimary}>
+          <span className={styles.headerPrimaryMain}>KATHY COLLINS</span>
+          <span className={styles.headerPrimarySub}>
+            Fine art and photography
+          </span>
+        </h1>
+      </div>
 
       {/* <MswPhotoList /> */}
     </div>
