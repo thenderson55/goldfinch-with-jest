@@ -41,7 +41,7 @@ export default function MyApp({
       <Hydrate state={pageProps.dehydratedState}>
         <SessionProvider session={session}>
           <Head>
-            <title>Goldfinch</title>
+            <title>Kathy Collins</title>
             <meta name="description" content="inventory management" />
           </Head>
           {/* <Navbar /> */}
