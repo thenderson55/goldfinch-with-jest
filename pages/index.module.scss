@@ -4,6 +4,7 @@ $color-primary: blueviolet;
 // #338be3
 
 .header {
+  position: relative;
   height: 95vh;
   background-image: linear-gradient(#75b0eccc, #338be3cc),
     url("../public/seamus.jpg");
@@ -16,6 +17,15 @@ $color-primary: blueviolet;
   // align-items: center;
 }
 
+.logoBox {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  border-radius: 50px;
+}
 // .title a {
 //   color: $color-primary;
 //   text-decoration: none;

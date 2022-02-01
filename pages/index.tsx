@@ -5,12 +5,21 @@ import imageLoader from "../imageLoader";
 import styles from "./index.module.scss";
 import seamus from "../public/seamus.jpg";
 import { MswPhotoList } from "../components/MswPhotoList";
-
+import dalmation from "../public/dalmation.jpeg";
 const Home: NextPage = () => {
   // const { data: session, status } = useSession();
   return (
     <div className={styles.header}>
-      <h1>Kathy Collins!</h1>
+      <div className={styles.logoBox}>
+        {/* <h1>Kathy Collins!</h1> */}
+        <Image
+          src={dalmation}
+          alt="Dalmation"
+          width={100}
+          height={100}
+          className={styles.logo}
+        />
+      </div>
 
       {/* <MswPhotoList /> */}
     </div>
