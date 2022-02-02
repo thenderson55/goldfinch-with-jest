@@ -12,13 +12,7 @@ const Home: NextPage = () => {
     <div className={styles.header}>
       <div className={styles.logoBox}>
         {/* <h1>Kathy Collins!</h1> */}
-        <Image
-          src={dalmation}
-          alt="Dalmation"
-          width={100}
-          height={100}
-          className={styles.logo}
-        />
+        <Image src={dalmation} alt="Dalmation" className={styles.logo} />
       </div>
       <div className={styles.textBox}>
         <h1 className={styles.headerPrimary}>
@@ -28,7 +22,11 @@ const Home: NextPage = () => {
           </span>
         </h1>
         <Link href="#">
-          <a className={`${styles.btn} ${styles.btnWhite}`}>DISCOVER MORE</a>
+          <a
+            className={`${styles.btn} ${styles.btnWhite} ${styles.btnAnimation}`}
+          >
+            DISCOVER MORE
+          </a>
         </Link>
       </div>
 
