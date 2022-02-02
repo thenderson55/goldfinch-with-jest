@@ -31,11 +31,13 @@ $color-primary: blueviolet;
 .textBox {
   margin-top: -5%;
   margin-right: -25px;
+  text-align: center;
 }
 
 .headerPrimary {
   color: #fff;
   backface-visibility: hidden;
+  margin-bottom: 50px;
 }
 
 .headerPrimaryMain {
@@ -90,6 +92,32 @@ $color-primary: blueviolet;
   100% {
     transform: rotate(360deg);
   }
+}
+
+.btn:link {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: grey;
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btnWhite {
+  background-color: #fff;
+  color: grey;
 }
 
 // .title a {

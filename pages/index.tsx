@@ -27,6 +27,9 @@ const Home: NextPage = () => {
             Fine art and photography
           </span>
         </h1>
+        <Link href="#">
+          <a className={`${styles.btn} ${styles.btnWhite}`}>DISCOVER MORE</a>
+        </Link>
       </div>
 
       {/* <MswPhotoList /> */}
