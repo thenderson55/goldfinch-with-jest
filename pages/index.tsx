@@ -10,11 +10,11 @@ const Home: NextPage = () => {
   // const { data: session, status } = useSession();
   return (
     <div className={styles.header}>
-      <div className={styles.logoBox}>
+      <div className={styles.headerLogoBox}>
         {/* <h1>Kathy Collins!</h1> */}
-        <Image src={dalmation} alt="Dalmation" className={styles.logo} />
+        <Image src={dalmation} alt="Dalmation" className={styles.headerLogo} />
       </div>
-      <div className={styles.textBox}>
+      <div className={styles.headerTextBox}>
         <h1 className={styles.headerPrimary}>
           <span className={styles.headerPrimaryMain}>KATHY COLLINS</span>
           <span className={styles.headerPrimarySub}>

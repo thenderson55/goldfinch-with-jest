@@ -8,7 +8,7 @@ import Head from "next/head";
 import React, { ReactElement, ReactNode, useEffect } from "react";
 // import Layout from "../components/Layout/Layout";
 import Navbar from "../components/Layout/Navbar";
-import "../styles/global.css";
+import "../styles/global.scss";
 // import "../components/Layout/Navbar.css";
 
 const queryClient = new QueryClient();
