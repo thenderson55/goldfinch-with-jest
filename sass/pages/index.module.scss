@@ -1,13 +1,10 @@
-@import "../styles/mixins";
-// $color-primary: blueviolet;
-$color-primary: #338be3;
-$color-secondary: #34669c;
+@import "../abstracts/functions";
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
 
-$color-grey: grey;
-$color-white: white;
-$color-black: black;
-// #34669c
-// #338be3
+@import "../base/animations";
+@import "../base/typography";
+@import "../base/utilities";
 
 .header {
   position: relative;
@@ -16,7 +13,7 @@ $color-black: black;
       rgba($color-secondary, 0.8),
       rgba($color-primary, 0.8)
     ),
-    url("../public/seamus.jpg");
+    url("../../public/seamus.jpg");
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
@@ -42,79 +39,6 @@ $color-black: black;
     margin-top: -5%;
     margin-right: -2.5rem;
     text-align: center;
-  }
-}
-
-.headerPrimary {
-  color: #fff;
-  backface-visibility: hidden;
-  margin-bottom: 6rem;
-
-  &Main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 2.5rem;
-    animation: moveInLeft 1s;
-  }
-
-  &Sub {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 400;
-    letter-spacing: 2rem;
-    animation: moveInRight 1s;
-    margin-left: -0.6rem;
-    // animation: name duration timing-function delay iteration-count direction fill-mode;
-  }
-}
-
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-
-  // 80% {
-  //   transform: translateX(10px);
-  // }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes moveInButton {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes rotateLogo {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 

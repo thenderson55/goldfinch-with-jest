@@ -1,0 +1,23 @@
+.headerPrimary {
+  color: #fff;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &Main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 2.5rem;
+    animation: moveInLeft 1s;
+  }
+
+  &Sub {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 2rem;
+    animation: moveInRight 1s;
+    margin-left: -0.6rem;
+    // animation: name duration timing-function delay iteration-count direction fill-mode;
+  }
+}

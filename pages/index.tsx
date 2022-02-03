@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import imageLoader from "../imageLoader";
-import styles from "./index.module.scss";
+import styles from "../sass/pages/index.module.scss";
 import seamus from "../public/seamus.jpg";
 import { MswPhotoList } from "../components/MswPhotoList";
 import dalmation from "../public/dalmation.jpeg";
