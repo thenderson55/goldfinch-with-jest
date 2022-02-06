@@ -24,6 +24,7 @@
 }
 
 .header {
+  font-size: 1.4rem;
   height: 7rem;
   padding: 1rem;
   background-color: #fff;
@@ -32,8 +33,9 @@
   align-items: center;
 
   &Icon {
-    height: 5rem;
-    width: 5rem;
+    margin-left: 3rem;
+    height: 3.75rem;
+    width: 3.75rem;
     fill: var(--color-primary-light);
   }
 }
@@ -53,17 +55,44 @@
 }
 
 .search {
-  width: 40%;
+  flex: 0 0 40%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &Input {
+    border: none;
+    background-color: var(--color-grey-light-2);
+    padding: 0.7rem 2rem;
     border-radius: 100px;
+    width: 90%;
+    transition: all 0.2s;
+    margin-right: -3rem;
+
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: var(--color-grey-light-2);
+    }
+
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+      background-color: var(--color-grey-light-4);
+    }
   }
+
   &Button {
+    border: none;
+    background-color: var(--color-grey-light-2);
   }
+
   &Icon {
+    fill: var(--color-grey-dark-2);
     height: 2rem;
     width: 2rem;
   }
+
   &Notification {
     height: 2rem;
     width: 2rem;

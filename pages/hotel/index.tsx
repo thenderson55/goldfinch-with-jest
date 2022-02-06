@@ -15,7 +15,11 @@ function Hotel() {
 
           {/* <Image src={seamus} alt="seamus" className={styles.headerLogo} /> */}
           <form action="" className={styles.search}>
-            <input type="text" className={styles.searchInput} />
+            <input
+              type="text"
+              className={styles.searchInput}
+              placeholder="Search"
+            />
             <button className={styles.searchButton}>
               <SvgMagnifyingGlass className={styles.searchIcon} />
             </button>
