@@ -19,11 +19,23 @@
   background-color: var(--color-grey-light-1);
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   height: 7rem;
+  padding: 1rem;
   background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &Icon {
+    height: 5rem;
+    width: 5rem;
+    fill: var(--color-primary-light);
+  }
 }
 
 .content {
@@ -40,7 +52,35 @@
   flex: 1;
 }
 
-.searchIcon {
-  height: 2rem;
-  width: 2rem;
+.search {
+  width: 40%;
+
+  &Input {
+    border-radius: 100px;
+  }
+  &Button {
+  }
+  &Icon {
+    height: 2rem;
+    width: 2rem;
+  }
+  &Notification {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+.userNav {
+  display: flex;
+  &IconBox {
+  }
+  &Icon {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+  &AvatarBox {
+    height: 3.75rem;
+    width: 3.75rem;
+    border-radius: 50%;
+  }
 }
