@@ -35,6 +35,14 @@
     // animation-iteration-count: infinite;
   }
 
+  &NavBox {
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+  }
+
   &TextBox {
     margin-top: -5%;
     margin-right: -2.5rem;

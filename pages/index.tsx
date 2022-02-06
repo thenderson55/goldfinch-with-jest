@@ -11,8 +11,12 @@ const Home: NextPage = () => {
   return (
     <div className={styles.header}>
       <div className={styles.headerLogoBox}>
-        {/* <h1>Kathy Collins!</h1> */}
         <Image src={dalmation} alt="Dalmation" className={styles.headerLogo} />
+      </div>
+      <div className={styles.headerNavBox}>
+        <Link href="/hotel">
+          <a className={styles.subHeaderLink}>HOTEL</a>
+        </Link>
       </div>
       <div className={styles.headerTextBox}>
         <h1 className={styles.headerPrimary}>
