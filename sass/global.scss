@@ -6,6 +6,26 @@
 @import "./base/typography";
 @import "./base/utilities";
 
+:root {
+  --color-primary: #eb2f64;
+  --color-primary-light: #ff3366;
+  --color-primary-dark: #ba265d;
+
+  --color-white: white;
+  --color-black: black;
+
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-3: #ccc;
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+}
+
 *,
 * ::after,
 * ::before {
@@ -24,7 +44,12 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
+  // background-image: linear-gradient(
+  //   to right bottom,
+  //   var(--color-primary-light),
+  //   var(--color-primary-dark)
+  // );
   line-height: 1.7;
-  padding: 2rem;
+  // padding: 2rem;
   box-sizing: border-box;
 }
