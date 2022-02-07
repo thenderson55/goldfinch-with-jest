@@ -156,11 +156,41 @@
 
 .sideNav {
   padding-left: 0;
+  padding-top: 2rem;
   list-style: none;
+
   &Item {
     font-size: 1.5rem;
-    color: var(--color-grey-light-1);
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 3px;
+      background-color: var(--color-primary-dark);
+      transform: scaleY(0);
+      // https://cubic-bezier.com/#.17,.67,.83,.67
+      transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+        background-color 0.1s;
+    }
+
+    &:hover::before {
+      transform: scaleY(1);
+      width: 100%;
+    }
+
+    &:active::before {
+      background-color: var(--color-primary-light);
+    }
   }
+
   &Link {
     display: block;
     text-decoration: none;
@@ -168,14 +198,19 @@
     align-items: center;
     color: var(--color-grey-light-1);
     padding: 1.5rem 3rem;
+    position: relative;
+    z-index: 10;
+
     &:hover {
-      color: var(--color-grey-dark-2);
+      color: var(--color-grey-light-1);
     }
   }
+
   &Icon {
     font-size: 1.75rem;
     fill: currentColor;
   }
+
   &Text {
     margin-left: 2rem;
   }

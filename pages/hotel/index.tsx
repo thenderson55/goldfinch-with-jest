@@ -70,7 +70,7 @@ function Hotel() {
                 </Link>
               </li>
               <li className={styles.sideNavItem}>
-                <Link href="/">
+                <Link href="/hotel">
                   <a className={styles.sideNavLink}>
                     <SvgAircraftTakeOff className={styles.sideNavIcon} />
                     <span className={styles.sideNavText}>HOTEL</span>
