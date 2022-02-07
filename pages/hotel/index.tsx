@@ -38,7 +38,11 @@ function Hotel() {
                 <Image
                   src={seamus}
                   alt="user photo"
-                  className={styles.userNavAvatar}
+                  height={50}
+                  width={50}
+                  // layout="fill"
+                  objectFit="cover"
+                  className={styles.userNavAvatarBox}
                 />
               </div>
             </div>

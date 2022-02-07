@@ -26,7 +26,6 @@
 .header {
   font-size: 1.4rem;
   height: 7rem;
-  padding: 1rem;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
@@ -101,15 +100,35 @@
 
 .userNav {
   display: flex;
+  align-items: center;
+  align-self: stretch;
+
+  & > * {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+  }
+
+  & > *:hover {
+    background-color: var(--color-grey-light-2);
+  }
+
   &IconBox {
   }
+
   &Icon {
+    fill: var(--color-grey-dark-2);
     height: 2.25rem;
     width: 2.25rem;
   }
+
   &AvatarBox {
-    height: 3.75rem;
-    width: 3.75rem;
-    border-radius: 50%;
+    box-sizing: content-box;
+
+    & > span {
+      border-radius: 100px;
+    }
   }
 }
