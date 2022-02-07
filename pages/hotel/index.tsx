@@ -7,13 +7,21 @@ import SvgCake from "../../svgs/SvgCake";
 import seamus from "../../public/seamus.jpg";
 import SvgBookmark from "../../svgs/SvgBookmark";
 import SvgChat from "../../svgs/SvgChat";
+import SvgHome from "../../svgs/SvgHome";
+import SvgAircraftTakeOff from "../../svgs/SvgAircraftTakeOff";
+import SvgKey from "../../svgs/SvgKey";
+import SvgMap from "../../svgs/SvgMap";
 
 function Hotel() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <header className={styles.header}>
-          <SvgCake className={styles.headerIcon} />
+          <Link href="/">
+            <a>
+              <SvgCake className={styles.headerIcon} />
+            </a>
+          </Link>
 
           {/* <Image src={seamus} alt="seamus" className={styles.headerLogo} /> */}
           <form action="" className={styles.search}>
@@ -51,7 +59,45 @@ function Hotel() {
           </nav>
         </header>
         <div className={styles.content}>
-          <nav className={styles.sidebar}>NAV</nav>
+          <nav className={styles.sideBar}>
+            <ul className={styles.sideNav}>
+              <li className={styles.sideNavItem}>
+                <Link href="/">
+                  <a className={styles.sideNavLink}>
+                    <SvgHome className={styles.sideNavIcon} />
+                    <span className={styles.sideNavText}>HOTEL</span>
+                  </a>
+                </Link>
+              </li>
+              <li className={styles.sideNavItem}>
+                <Link href="/">
+                  <a className={styles.sideNavLink}>
+                    <SvgAircraftTakeOff className={styles.sideNavIcon} />
+                    <span className={styles.sideNavText}>HOTEL</span>
+                  </a>
+                </Link>
+              </li>
+              <li className={styles.sideNavItem}>
+                <Link href="/">
+                  <a className={styles.sideNavLink}>
+                    <SvgKey className={styles.sideNavIcon} />
+                    <span className={styles.sideNavText}>HOTEL</span>
+                  </a>
+                </Link>
+              </li>
+              <li className={styles.sideNavItem}>
+                <Link href="/">
+                  <a className={styles.sideNavLink}>
+                    <SvgMap className={styles.sideNavIcon} />
+                    <span className={styles.sideNavText}>HOTEL</span>
+                  </a>
+                </Link>
+              </li>
+            </ul>
+            <div className={styles.legal}>
+              &copy; 2022 by Kathy Collins. All rights reserved.
+            </div>
+          </nav>
           <main className={styles.hotelView}>MAIN</main>
           {/* CONTENT
           <h1 className={styles.main}>HOTEL</h1>
