@@ -5,6 +5,8 @@ import Image from "next/image";
 import SvgMagnifyingGlass from "../../svgs/SvgMagnifyingGlass";
 import SvgCake from "../../svgs/SvgCake";
 import seamus from "../../public/seamus.jpg";
+import SvgBookmark from "../../svgs/SvgBookmark";
+import SvgChat from "../../svgs/SvgChat";
 
 function Hotel() {
   return (
@@ -26,11 +28,11 @@ function Hotel() {
           </form>
           <nav className={styles.userNav}>
             <div className={styles.userNavIconBox}>
-              <SvgCake className={styles.userNavIcon} />
+              <SvgBookmark className={styles.userNavIcon} />
               <span className={styles.userNavNotification}>5</span>
             </div>
             <div className={styles.userNavIconBox}>
-              <SvgCake className={styles.userNavIcon} />
+              <SvgChat className={styles.userNavIcon} />
               <span className={styles.userNavNotification}>14</span>
             </div>
             <div className={styles.userNavUser}>
@@ -38,8 +40,8 @@ function Hotel() {
                 <Image
                   src={seamus}
                   alt="user photo"
-                  height={50}
-                  width={50}
+                  height={40}
+                  width={40}
                   // layout="fill"
                   objectFit="cover"
                   className={styles.userNavAvatarBox}

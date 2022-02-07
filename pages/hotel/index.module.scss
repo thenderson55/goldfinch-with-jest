@@ -91,11 +91,6 @@
     height: 2rem;
     width: 2rem;
   }
-
-  &Notification {
-    height: 2rem;
-    width: 2rem;
-  }
 }
 
 .userNav {
@@ -116,12 +111,28 @@
   }
 
   &IconBox {
+    position: relative;
   }
 
   &Icon {
     fill: var(--color-grey-dark-2);
     height: 2.25rem;
     width: 2.25rem;
+  }
+
+  &Notification {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 100px;
+    color: #fff;
+    background-color: var(--color-primary-light);
+    position: absolute;
+    top: 1.7rem;
+    right: 1.5rem;
   }
 
   &AvatarBox {
