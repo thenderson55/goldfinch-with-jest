@@ -11,6 +11,8 @@ import SvgHome from "../../svgs/SvgHome";
 import SvgAircraftTakeOff from "../../svgs/SvgAircraftTakeOff";
 import SvgKey from "../../svgs/SvgKey";
 import SvgMap from "../../svgs/SvgMap";
+import SvgLocationPin from "../../svgs/SvgLocationPin";
+import SvgStar from "../../svgs/SvgStar";
 
 function Hotel() {
   return (
@@ -121,6 +123,32 @@ function Hotel() {
                 objectFit="cover"
                 className={styles.hotelViewImage}
               />
+            </div>
+            <div className={styles.hotelViewOverview}>
+              <div className={styles.hotelViewOverviewText}>
+                <span>COMRIE ROYAL HOTEL</span>
+                <span className={styles.hotelViewOverviewRating}>
+                  <SvgStar className={styles.hotelViewOverviewIcon} />
+                  <SvgStar className={styles.hotelViewOverviewIcon} />
+                  <SvgStar className={styles.hotelViewOverviewIcon} />
+                  <SvgStar className={styles.hotelViewOverviewIcon} />
+                  <SvgStar className={styles.hotelViewOverviewIcon} />
+                </span>
+              </div>
+              <div className={styles.hotelViewOverviewInfo}>
+                <div className={styles.hotelViewOverviewInfoLocation}>
+                  <SvgLocationPin className={styles.hotelViewOverviewIcon} />
+                  <button className={styles.inlineButton}>
+                    Lagos, Portugal
+                  </button>
+                </div>
+                <div className={styles.hotelViewOverviewInfoVotes}>
+                  <span className={styles.hotelViewOverviewInfoVotesText}>
+                    8.6
+                  </span>
+                  <span>2345 votes</span>
+                </div>
+              </div>
             </div>
           </main>
           {/* CONTENT
