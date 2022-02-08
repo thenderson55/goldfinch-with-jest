@@ -1,0 +1,27 @@
+@import "../abstracts/functions";
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+@import "../base/animations";
+@import "../base/typography";
+@import "../base/utilities";
+
+.detail {
+  display: flex;
+  background-color: var(--color-grey-light-1);
+  padding: 4.5rem;
+}
+
+.description {
+  font-size: 1.4rem;
+  background-color: pink;
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+  padding: 3rem;
+  box-shadow: var(--shadow-light);
+}
+
+.user-reviews {
+  background-color: blue;
+  flex: 1;
+}

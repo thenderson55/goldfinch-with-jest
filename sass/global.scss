@@ -6,6 +6,9 @@
 @import "./base/typography";
 @import "./base/utilities";
 
+@import "./layout/layout";
+@import "./components/buttons";
+
 :root {
   --color-primary: #eb2f64;
   --color-primary-light: #ff3366;
@@ -24,6 +27,7 @@
   --color-grey-light-3: #ccc;
 
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
 }
 
 *,

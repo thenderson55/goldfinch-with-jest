@@ -5,6 +5,8 @@ import Image from "next/image";
 import SvgMagnifyingGlass from "../../svgs/SvgMagnifyingGlass";
 import SvgCake from "../../svgs/SvgCake";
 import seamus from "../../public/seamus.jpg";
+import bees from "../../public/bees.png";
+
 import SvgBookmark from "../../svgs/SvgBookmark";
 import SvgChat from "../../svgs/SvgChat";
 import SvgHome from "../../svgs/SvgHome";
@@ -54,7 +56,6 @@ function Hotel() {
                   width={40}
                   // layout="fill"
                   objectFit="cover"
-                  className={styles.userNavAvatarBox}
                 />
               </div>
             </div>
@@ -103,22 +104,11 @@ function Hotel() {
           <main className={styles.hotelView}>
             <div className={styles.hotelViewGallery}>
               <Image
-                src={seamus}
-                alt="cat"
-                placeholder="blur"
-                objectFit="cover"
-                className={styles.hotelViewImage}
-              />
-              <Image
-                src={seamus}
-                alt="cat"
-                placeholder="blur"
-                objectFit="cover"
-                className={styles.hotelViewImage}
-              />
-              <Image
-                src={seamus}
-                alt="cat"
+                src={bees}
+                alt="bees"
+                // height={150}
+                // width={150}
+                // sizes="50vw"
                 placeholder="blur"
                 objectFit="cover"
                 className={styles.hotelViewImage}
@@ -138,9 +128,7 @@ function Hotel() {
               <div className={styles.hotelViewOverviewInfo}>
                 <div className={styles.hotelViewOverviewInfoLocation}>
                   <SvgLocationPin className={styles.hotelViewOverviewIcon} />
-                  <button className={styles.inlineButton}>
-                    Lagos, Portugal
-                  </button>
+                  <button className="pulsatingButton">Lagos, Portugal</button>
                 </div>
                 <div className={styles.hotelViewOverviewInfoVotes}>
                   <span className={styles.hotelViewOverviewInfoVotesText}>
@@ -149,6 +137,70 @@ function Hotel() {
                   <span>2345 votes</span>
                 </div>
               </div>
+            </div>
+            <div className="detail">
+              <div className="description">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet
+                  minima, dolore quidem ipsum quo voluptatibus placeat itaque
+                  unde architecto doloremque sint, id dolores provident sunt
+                  officia dolorem delectus dicta. Assumenda.
+                </p>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet
+                  minima, dolore quidem ipsum quo voluptatibus placeat itaque
+                  unde architecto doloremque sint, id dolores provident sunt
+                  officia dolorem delectus dicta. Assumenda.
+                </p>
+                <ul className="list">
+                  <li className="list-item">Sea view</li>
+                  <li className="list-item">Pool and Gym</li>
+                  <li className="list-item">Close to the beach</li>
+                  <li className="list-item">Fine dining</li>
+                  <li className="list-item">Kids area</li>
+                  <li className="list-item">
+                    Shopping and entertainment nearby
+                  </li>
+                </ul>
+                <div className={styles.hotelViewOverviewRecommend}>
+                  <p>Tui and 3 others recommend this hotel.</p>
+                  <div className={styles.userNavAvatarBox}>
+                    <Image
+                      src={seamus}
+                      alt="cat"
+                      placeholder="blur"
+                      objectFit="cover"
+                      height={40}
+                      width={40}
+                    />
+                    <Image
+                      src={seamus}
+                      alt="cat"
+                      placeholder="blur"
+                      objectFit="cover"
+                      height={40}
+                      width={40}
+                    />
+                    <Image
+                      src={seamus}
+                      alt="cat"
+                      placeholder="blur"
+                      objectFit="cover"
+                      height={40}
+                      width={40}
+                    />
+                    <Image
+                      src={seamus}
+                      alt="cat"
+                      height={40}
+                      width={40}
+                      placeholder="blur"
+                      objectFit="cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="user-reviews">BIJBIKB</div>
             </div>
           </main>
           {/* CONTENT

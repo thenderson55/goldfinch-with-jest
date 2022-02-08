@@ -1,0 +1,45 @@
+@import "../abstracts/functions";
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+@import "../base/animations";
+@import "../base/typography";
+@import "../base/utilities";
+
+.pulsatingButton {
+  display: inline;
+  cursor: pointer;
+  color: var(--color-primary-light);
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  transition: all 0.2s;
+
+  &:hover {
+    color: var(--color-grey-dark-1);
+    animation: pulsate 1s infinite;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
