@@ -98,7 +98,31 @@ function Hotel() {
               &copy; 2022 by Kathy Collins. All rights reserved.
             </div>
           </nav>
-          <main className={styles.hotelView}>MAIN</main>
+          <main className={styles.hotelView}>
+            <div className={styles.hotelViewGallery}>
+              <Image
+                src={seamus}
+                alt="cat"
+                placeholder="blur"
+                objectFit="cover"
+                className={styles.hotelViewImage}
+              />
+              <Image
+                src={seamus}
+                alt="cat"
+                placeholder="blur"
+                objectFit="cover"
+                className={styles.hotelViewImage}
+              />
+              <Image
+                src={seamus}
+                alt="cat"
+                placeholder="blur"
+                objectFit="cover"
+                className={styles.hotelViewImage}
+              />
+            </div>
+          </main>
           {/* CONTENT
           <h1 className={styles.main}>HOTEL</h1>
           <Link href="/">

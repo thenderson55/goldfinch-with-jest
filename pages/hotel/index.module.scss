@@ -27,12 +27,6 @@
   display: flex;
 }
 
-.hotelView {
-  height: 80rem;
-  background-color: var(--color-white);
-  flex: 1;
-}
-
 //////////////////////
 // HEADER
 
@@ -221,4 +215,20 @@
   text-align: center;
   padding: 2.5rem;
   color: var(--color-grey-light-1);
+}
+
+//////////////////////
+// HOTEL VIEW
+
+.hotelView {
+  height: 80rem;
+  background-color: var(--color-white);
+  flex: 1;
+
+  &Gallery {
+    display: flex;
+    width: 100%;
+    height: 25%;
+    position: relative;
+  }
 }
