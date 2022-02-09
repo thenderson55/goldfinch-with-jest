@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
 import styles from "./index.module.scss";
@@ -15,6 +16,7 @@ import SvgKey from "../../svgs/SvgKey";
 import SvgMap from "../../svgs/SvgMap";
 import SvgLocationPin from "../../svgs/SvgLocationPin";
 import SvgStar from "../../svgs/SvgStar";
+import SvgChevronRight from "../../svgs/SvgChevronRight";
 
 function Hotel() {
   return (
@@ -103,16 +105,48 @@ function Hotel() {
           </nav>
           <main className={styles.hotelView}>
             <div className={styles.hotelViewGallery}>
-              <Image
-                src={bees}
+              <img
+                alt="space"
+                style={{ width: "33.333333%", height: "100%" }}
+                src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489733445/ubakmxgfj8czhvsuflxt.png"
+              />
+              <img
+                alt="space"
+                style={{ width: "33.333333%", height: "100%" }}
+                src="https://res.cloudinary.com/fay/image/upload/v1617047570/galaxy_ne5p8f.jpg"
+              />
+              <img
+                alt="space"
+                style={{ width: "33.333333%", height: "100%" }}
+                src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+              />
+
+              {/* <Image
+                // src={bees}
+                src="https://res.cloudinary.com/fay/image/upload/v1617047570/galaxy_ne5p8f.jpg"
                 alt="bees"
-                // height={150}
-                // width={150}
+                // loader={cloudinary}
+                height={150}
+                width={150}
                 // sizes="50vw"
-                placeholder="blur"
+                // placeholder="blur"
+                layout="fill"
                 objectFit="cover"
                 className={styles.hotelViewImage}
               />
+              <Image
+                // src={bees}
+                src="https://res.cloudinary.com/fay/image/upload/v1617047570/galaxy_ne5p8f.jpg"
+                alt="bees"
+                // loader={cloudinary}
+                height={150}
+                width={150}
+                // sizes="50vw"
+                // placeholder="blur"
+                layout="fill"
+                objectFit="cover"
+                className={styles.hotelViewImage}
+              /> */}
             </div>
             <div className={styles.hotelViewOverview}>
               <div className={styles.hotelViewOverviewText}>
@@ -140,31 +174,47 @@ function Hotel() {
             </div>
             <div className="detail">
               <div className="description">
-                <p>
+                <p className="paragraph">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet
                   minima, dolore quidem ipsum quo voluptatibus placeat itaque
                   unde architecto doloremque sint, id dolores provident sunt
                   officia dolorem delectus dicta. Assumenda.
                 </p>
-                <p>
+                <p className="paragraph">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet
                   minima, dolore quidem ipsum quo voluptatibus placeat itaque
                   unde architecto doloremque sint, id dolores provident sunt
                   officia dolorem delectus dicta. Assumenda.
                 </p>
                 <ul className="list">
-                  <li className="list-item">Sea view</li>
-                  <li className="list-item">Pool and Gym</li>
-                  <li className="list-item">Close to the beach</li>
-                  <li className="list-item">Fine dining</li>
-                  <li className="list-item">Kids area</li>
                   <li className="list-item">
-                    Shopping and entertainment nearby
+                    <SvgChevronRight className="list-item-icon" />
+                    Sea view
+                  </li>
+                  <li className="list-item">
+                    <SvgChevronRight className="list-item-icon" />
+                    Pool and Gym
+                  </li>
+                  <li className="list-item">
+                    <SvgChevronRight className="list-item-icon" />
+                    Close to the beach
+                  </li>
+                  <li className="list-item">
+                    <SvgChevronRight className="list-item-icon" />
+                    Fine dining
+                  </li>
+                  <li className="list-item">
+                    <SvgChevronRight className="list-item-icon" />
+                    Shopping nearby
+                  </li>
+                  <li className="list-item">
+                    <SvgChevronRight className="list-item-icon" />
+                    Kids area
                   </li>
                 </ul>
-                <div className={styles.hotelViewOverviewRecommend}>
+                <div className="recommend">
                   <p>Tui and 3 others recommend this hotel.</p>
-                  <div className={styles.userNavAvatarBox}>
+                  <div className="recommend-avatar">
                     <Image
                       src={seamus}
                       alt="cat"

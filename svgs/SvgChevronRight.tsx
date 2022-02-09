@@ -13,3 +13,5 @@ function SvgChevronRight(props) {
     </svg>
   );
 }
+
+export default SvgChevronRight;
