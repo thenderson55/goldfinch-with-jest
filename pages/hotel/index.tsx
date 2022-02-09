@@ -213,40 +213,39 @@ function Hotel() {
                   </li>
                 </ul>
                 <div className="recommend">
-                  <p>Tui and 3 others recommend this hotel.</p>
+                  <span>Tui and 3 others recommend this hotel.</span>
                   <div className="recommend-avatar">
-                    <Image
-                      src={seamus}
-                      alt="cat"
-                      placeholder="blur"
-                      objectFit="cover"
-                      height={40}
-                      width={40}
+                    <img
+                      alt="seamus"
+                      src="/seamus.jpg"
+                      className="recommend-avatar-img"
                     />
-                    <Image
-                      src={seamus}
-                      alt="cat"
-                      placeholder="blur"
-                      objectFit="cover"
-                      height={40}
-                      width={40}
+                    <img
+                      alt="seamus"
+                      src="/seamus.jpg"
+                      className="recommend-avatar-img"
                     />
-                    <Image
-                      src={seamus}
-                      alt="cat"
-                      placeholder="blur"
-                      objectFit="cover"
-                      height={40}
-                      width={40}
+                    <img
+                      alt="seamus"
+                      src="/seamus.jpg"
+                      className="recommend-avatar-img"
                     />
-                    <Image
-                      src={seamus}
-                      alt="cat"
-                      height={40}
-                      width={40}
-                      placeholder="blur"
-                      objectFit="cover"
+                    <img
+                      alt="seamus"
+                      src="/seamus.jpg"
+                      className="recommend-avatar-img"
                     />
+                    {/* <div className="recommend-avatar-wrapper">
+                      <Image
+                        src={seamus}
+                        alt="cat"
+                        placeholder="blur"
+                        objectFit="cover"
+                        height={40}
+                        width={40}
+                        className="recommend-avatar-img"
+                      />
+                    </div> */}
                   </div>
                 </div>
               </div>

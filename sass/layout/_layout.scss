@@ -54,14 +54,36 @@
 
 .recommend {
   display: flex;
-  position: relative;
-  &-avatar {
-    box-sizing: content-box;
+  justify-content: space-between;
+  align-items: center;
 
-    & > span {
-      position: absolute;
-      margin-right: -1rem;
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+
+  &-avatar {
+    // box-sizing: content-box;
+    // &-wrapper {
+    //   z-index: 1;
+    //   border-radius: 100px;
+    //   position: relative;
+    // }
+    &-img {
+      box-sizing: content-box;
+      height: 4rem;
+      width: 4rem;
       border-radius: 100px;
+      border: 2px solid white;
+      &:not(:last-child) {
+        margin-right: -1.5rem;
+      }
     }
+
+    // & > span {
+    //   border-radius: 100px;
+    // }
+
+    // & > span > img {
+    //   border-radius: 100px;
+    // }
   }
 }
