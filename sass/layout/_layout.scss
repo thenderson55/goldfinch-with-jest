@@ -10,20 +10,14 @@
   display: flex;
   background-color: var(--color-grey-light-1);
   padding: 4.5rem;
+  font-size: 1.4rem;
 }
 
 .description {
-  font-size: 1.4rem;
-  // background-color: pink;
   flex: 0 0 60%;
   margin-right: 4.5rem;
   padding: 3rem;
   box-shadow: var(--shadow-light);
-}
-
-.user-reviews {
-  background-color: blue;
-  flex: 1;
 }
 
 .paragraph:not(:last-of-type) {

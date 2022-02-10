@@ -181,10 +181,9 @@ function Hotel() {
                   officia dolorem delectus dicta. Assumenda.
                 </p>
                 <p className="paragraph">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet
-                  minima, dolore quidem ipsum quo voluptatibus placeat itaque
-                  unde architecto doloremque sint, id dolores provident sunt
-                  officia dolorem delectus dicta. Assumenda.
+                  Amet minima, dolore quidem ipsum quo voluptatibus placeat
+                  itaque unde architecto doloremque sint, id dolores provident
+                  sunt officia dolorem delectus dicta. Assumenda.
                 </p>
                 <ul className="list">
                   <li className="list-item">
@@ -249,7 +248,52 @@ function Hotel() {
                   </div>
                 </div>
               </div>
-              <div className="user-reviews">BIJBIKB</div>
+              <div className={styles.userReviews}>
+                <div className={styles.review}>
+                  <div className={styles.reviewText}>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </div>
+                  <div className={styles.reviewUser}>
+                    <div className={styles.reviewPhoto}>
+                      <Image
+                        src={seamus}
+                        alt="user photo"
+                        height={40}
+                        width={40}
+                        objectFit="cover"
+                      />
+                    </div>
+                    <div className={styles.reviewName}>
+                      <span style={{ fontWeight: 600 }}>BOBBY</span>
+                      <span>1st Jan 2021</span>
+                    </div>
+                    <span className={styles.reviewRating}>7.6</span>
+                  </div>
+                </div>
+
+                <div className={styles.review}>
+                  <div className={styles.reviewText}>
+                    Eum ipsum molestias provident necessitatibus reiciendis quo
+                    esse doloribus officia dolor possimus!
+                  </div>
+                  <div className={styles.reviewUser}>
+                    <div className={styles.reviewPhoto}>
+                      <Image
+                        src={seamus}
+                        alt="user photo"
+                        height={40}
+                        width={40}
+                        objectFit="cover"
+                      />
+                    </div>
+                    <div className={styles.reviewName}>
+                      <span style={{ fontWeight: 600 }}>AKIKO</span>
+                      <span>2nd Dec 2020</span>
+                    </div>
+                    <span className={styles.reviewRating}>9.9</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </main>
           {/* CONTENT

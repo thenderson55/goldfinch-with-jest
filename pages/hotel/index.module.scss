@@ -14,7 +14,7 @@
 }
 
 .container {
-  max-width: 120rem;
+  // max-width: 120rem;
   // margin: 8rem auto;
   background-color: var(--color-grey-light-1);
   box-shadow: var(--shadow-dark);
@@ -323,5 +323,52 @@
   &UserReviews {
     background-color: blue;
     flex: 1;
+  }
+}
+
+//////////////////////
+// REVIEWS
+
+.userReviews {
+  flex: 1;
+  box-shadow: var(--shadow-light);
+  padding: var(--padding-div);
+}
+
+.review {
+  padding: 1.5rem;
+  background-color: white;
+
+  &:not(:last-child) {
+    margin-bottom: 3.5rem;
+  }
+
+  &User {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+
+  &Photo {
+    display: flex;
+    align-items: center;
+    & > span {
+      border-radius: 50%;
+    }
+  }
+
+  &Rating {
+    color: var(--color-primary-light);
+    font-size: 2.25em;
+    letter-spacing: 1px;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  &Name {
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
   }
 }
