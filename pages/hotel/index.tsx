@@ -293,6 +293,9 @@ function Hotel() {
                     <span className={styles.reviewRating}>9.9</span>
                   </div>
                 </div>
+                <div className={styles.hotelViewOverviewInfoLocation}>
+                  <button className="pulsatingButton">See more &rarr;</button>
+                </div>
               </div>
             </div>
           </main>

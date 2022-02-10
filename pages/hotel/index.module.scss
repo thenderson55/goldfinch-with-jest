@@ -333,11 +333,17 @@
   flex: 1;
   box-shadow: var(--shadow-light);
   padding: var(--padding-div);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .review {
   padding: 1.5rem;
   background-color: white;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
 
   &:not(:last-child) {
     margin-bottom: 3.5rem;
@@ -370,5 +376,18 @@
     font-size: 1.1rem;
     display: flex;
     flex-direction: column;
+  }
+
+  // https://css-tricks.com/snippets/html/glyphs/
+  &::after {
+    content: "\201C";
+    position: absolute;
+    top: -2.75rem;
+    left: -1rem;
+    font-size: 20rem;
+    color: var(--color-grey-light-2);
+    font-family: sans-serif;
+    line-height: 1;
+    z-index: -1;
   }
 }
