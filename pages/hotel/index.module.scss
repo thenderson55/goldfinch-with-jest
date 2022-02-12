@@ -33,6 +33,10 @@
 
 .content {
   display: flex;
+
+  @media only screen and(max-width: $bp-medium) {
+    flex-direction: column;
+  }
 }
 
 //////////////////////
@@ -162,12 +166,28 @@
   padding-top: 2rem;
   list-style: none;
 
+  @media only screen and(max-width: $bp-medium) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+
   &Item {
     font-size: 1.5rem;
     position: relative;
 
+    @media only screen and(max-width: $bp-medium) {
+      flex: 1;
+    }
+
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      @media only screen and(max-width: $bp-medium) {
+        margin-bottom: 0;
+      }
     }
 
     &::before {
@@ -204,6 +224,11 @@
     position: relative;
     z-index: 10;
 
+    @media only screen and(max-width: $bp-medium) {
+      justify-content: center;
+      padding: 2rem;
+    }
+
     &:hover {
       color: var(--color-grey-light-1);
     }
@@ -224,6 +249,10 @@
   text-align: center;
   padding: 2.5rem;
   color: var(--color-grey-light-1);
+
+  @media only screen and(max-width: $bp-medium) {
+    display: none;
+  }
 }
 
 //////////////////////

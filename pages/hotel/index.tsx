@@ -74,7 +74,7 @@ function Hotel() {
                 <Link href="/">
                   <a className={styles.sideNavLink}>
                     <SvgHome className={styles.sideNavIcon} />
-                    <span className={styles.sideNavText}>HOTEL</span>
+                    <span className={styles.sideNavText}>HOTELS</span>
                   </a>
                 </Link>
               </li>
@@ -82,7 +82,7 @@ function Hotel() {
                 <Link href="/hotel">
                   <a className={styles.sideNavLink}>
                     <SvgAircraftTakeOff className={styles.sideNavIcon} />
-                    <span className={styles.sideNavText}>HOTEL</span>
+                    <span className={styles.sideNavText}>FLIGHTS</span>
                   </a>
                 </Link>
               </li>
@@ -90,7 +90,7 @@ function Hotel() {
                 <Link href="/">
                   <a className={styles.sideNavLink}>
                     <SvgKey className={styles.sideNavIcon} />
-                    <span className={styles.sideNavText}>HOTEL</span>
+                    <span className={styles.sideNavText}>CAR RENTALS</span>
                   </a>
                 </Link>
               </li>
@@ -98,7 +98,7 @@ function Hotel() {
                 <Link href="/">
                   <a className={styles.sideNavLink}>
                     <SvgMap className={styles.sideNavIcon} />
-                    <span className={styles.sideNavText}>HOTEL</span>
+                    <span className={styles.sideNavText}>MAP</span>
                   </a>
                 </Link>
               </li>
