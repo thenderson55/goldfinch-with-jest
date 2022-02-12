@@ -182,6 +182,10 @@
       flex: 1;
     }
 
+    // @media only screen and(max-width: $bp-small) {
+    //   font-size: 1.2rem;
+    // }
+
     &:not(:last-child) {
       margin-bottom: 0.5rem;
 
@@ -229,6 +233,11 @@
       padding: 2rem;
     }
 
+    @media only screen and(max-width: $bp-small) {
+      flex-direction: column;
+      padding: 1rem;
+    }
+
     &:hover {
       color: var(--color-grey-light-1);
     }
@@ -241,6 +250,10 @@
 
   &Text {
     margin-left: 2rem;
+    @media only screen and(max-width: $bp-small) {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
   }
 }
 
@@ -296,6 +309,10 @@
       letter-spacing: 1px;
       font-weight: 300;
       padding: 1rem 1.5rem;
+
+      @media only screen and(max-width: $bp-small) {
+        font-size: 1.5rem;
+      }
     }
 
     &Rating {
@@ -309,6 +326,10 @@
       font-size: 2rem;
       fill: var(--color-primary-light);
       margin-right: 0.5rem;
+
+      @media only screen and(max-width: $bp-small) {
+        font-size: 1.5rem;
+      }
     }
 
     &Info {
@@ -321,6 +342,10 @@
         color: var(--color-primary-light);
         text-decoration: underline;
         text-underline-offset: 0.2rem;
+
+        @media only screen and(max-width: $bp-small) {
+          text-align: center;
+        }
       }
 
       &Votes {
@@ -339,6 +364,19 @@
           letter-spacing: 1px;
           font-weight: 300;
           line-height: 1;
+
+          @media only screen and(max-width: $bp-small) {
+            font-size: 1.5rem;
+          }
+
+          &Small {
+            @media only screen and(max-width: $bp-small) {
+              font-size: 0.75rem;
+              text-align: center;
+              margin-top: 0.5rem;
+              line-height: 1.2;
+            }
+          }
         }
       }
     }
@@ -357,10 +395,6 @@
     padding: 3rem;
     box-shadow: var(--shadow-light);
   }
-  &UserReviews {
-    background-color: blue;
-    flex: 1;
-  }
 }
 
 //////////////////////
@@ -368,11 +402,15 @@
 
 .userReviews {
   flex: 1;
-  box-shadow: var(--shadow-light);
-  padding: var(--padding-div);
+  // box-shadow: var(--shadow-light);
+  // padding: var(--padding-div);
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and(max-width: $bp-small) {
+    display: block;
+  }
 }
 
 .review {
@@ -381,9 +419,21 @@
   position: relative;
   z-index: 10;
   overflow: hidden;
+  box-shadow: var(--shadow-light);
+  // padding: var(--padding-div);
 
   &:not(:last-child) {
     margin-bottom: 3.5rem;
+
+    @media only screen and(max-width: $bp-medium) {
+      padding: 3rem;
+    }
+  }
+
+  & * {
+    @media only screen and(max-width: $bp-small) {
+      margin-right: 1rem;
+    }
   }
 
   &User {
@@ -391,6 +441,10 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 1.5rem;
+
+    @media only screen and(max-width: $bp-small) {
+      justify-content: flex-start;
+    }
   }
 
   &Photo {
@@ -435,6 +489,10 @@
 .cta {
   padding: 3.5rem 0;
   text-align: center;
+
+  @media only screen and(max-width: $bp-medium) {
+    padding: 2.5rem 0;
+  }
 
   &BookNow {
     font-size: 1.5rem;

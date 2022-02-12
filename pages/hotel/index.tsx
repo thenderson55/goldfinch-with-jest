@@ -90,7 +90,7 @@ function Hotel() {
                 <Link href="/">
                   <a className={styles.sideNavLink}>
                     <SvgKey className={styles.sideNavIcon} />
-                    <span className={styles.sideNavText}>CAR RENTALS</span>
+                    <span className={styles.sideNavText}>CARS</span>
                   </a>
                 </Link>
               </li>
@@ -172,7 +172,9 @@ function Hotel() {
                   <span className={styles.hotelViewOverviewInfoVotesText}>
                     8.6
                   </span>
-                  <span>2345 votes</span>
+                  <span className={styles.hotelViewOverviewInfoVotesTextSmall}>
+                    2345 votes
+                  </span>
                 </div>
               </div>
             </div>

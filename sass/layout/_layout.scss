@@ -11,6 +11,14 @@
   background-color: var(--color-grey-light-1);
   padding: 4.5rem;
   font-size: 1.4rem;
+
+  @media only screen and(max-width: $bp-medium) {
+    padding: 3rem;
+  }
+
+  @media only screen and(max-width: $bp-small) {
+    flex-direction: column;
+  }
 }
 
 .description {
@@ -18,6 +26,16 @@
   margin-right: 4.5rem;
   padding: 3rem;
   box-shadow: var(--shadow-light);
+
+  @media only screen and(max-width: $bp-medium) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+
+  @media only screen and(max-width: $bp-small) {
+    margin-bottom: 3rem;
+    margin-right: 0;
+  }
 }
 
 .paragraph:not(:last-of-type) {
@@ -55,6 +73,8 @@
   color: var(--color-grey-dark-3);
 
   &-avatar {
+    display: flex;
+
     // box-sizing: content-box;
     // &-wrapper {
     //   z-index: 1;
