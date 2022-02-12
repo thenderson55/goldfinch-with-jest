@@ -51,13 +51,17 @@ function Hotel() {
             </div>
             <div className={styles.userNavUser}>
               <div className={styles.userNavAvatarBox}>
-                <Image
+                {/* <Image
                   src={seamus}
                   alt="user photo"
                   height={40}
                   width={40}
-                  // layout="fill"
                   objectFit="cover"
+                /> */}
+                <img
+                  alt="seamus"
+                  src="/seamus.jpg"
+                  className="recommend-avatar-img"
                 />
               </div>
             </div>
@@ -255,12 +259,17 @@ function Hotel() {
                   </div>
                   <div className={styles.reviewUser}>
                     <div className={styles.reviewPhoto}>
-                      <Image
+                      {/* <Image
                         src={seamus}
                         alt="user photo"
                         height={40}
                         width={40}
                         objectFit="cover"
+                      /> */}
+                      <img
+                        alt="seamus"
+                        src="/seamus.jpg"
+                        className="recommend-avatar-img"
                       />
                     </div>
                     <div className={styles.reviewName}>
@@ -278,12 +287,17 @@ function Hotel() {
                   </div>
                   <div className={styles.reviewUser}>
                     <div className={styles.reviewPhoto}>
-                      <Image
+                      {/* <Image
                         src={seamus}
                         alt="user photo"
                         height={40}
                         width={40}
                         objectFit="cover"
+                      /> */}
+                      <img
+                        alt="seamus"
+                        src="/seamus.jpg"
+                        className="recommend-avatar-img"
                       />
                     </div>
                     <div className={styles.reviewName}>
