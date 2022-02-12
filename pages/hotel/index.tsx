@@ -298,12 +298,15 @@ function Hotel() {
                 </div>
               </div>
             </div>
+            <div className={styles.cta}>
+              <h2 className={styles.ctaBookNow}>
+                Good news! We have 4 rooms available for your dates!
+              </h2>
+              <button className="cta-btn">
+                <span>BOOK NOW!</span>
+              </button>
+            </div>
           </main>
-          {/* CONTENT
-          <h1 className={styles.main}>HOTEL</h1>
-          <Link href="/">
-            <a className={styles.hotelSubHeaderLink}>HOME</a>
-          </Link> */}
         </div>
       </div>
     </div>
