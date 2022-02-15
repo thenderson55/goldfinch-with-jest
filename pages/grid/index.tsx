@@ -8,7 +8,7 @@ function Grid() {
       <div className={styles.box1}>Box 1</div>
       <div className={styles.box2}>Box 2</div>
       <div className={styles.box3}>Box 3</div>
-      <div className={styles.main}>Main</div>
+      <div className={styles.main}></div>
       <div className={styles.sidebar}>Sidebar</div>
       <footer className={styles.footer}>Footer</footer>
     </div>
