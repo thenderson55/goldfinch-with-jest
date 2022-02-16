@@ -4,12 +4,14 @@ import styles from "./index.module.scss";
 function Grid() {
   return (
     <div className={styles.container}>
-      <header className={styles.header}>Header</header>
-      <div className={styles.box1}>Box 1</div>
-      <div className={styles.box2}>Box 2</div>
-      <div className={styles.box3}>Box 3</div>
-      <div className={styles.main}></div>
       <div className={styles.sidebar}>Sidebar</div>
+      <header className={styles.header}>Header</header>
+      <div className={styles.realtors}>Realtors</div>
+      <section className={styles.features}>Features</section>
+      <div className={styles.storyPictures}>Story-pictures</div>
+      <div className={styles.storyContent}>Story-content</div>
+      <section className={styles.homes}>Homes</section>
+      <section className={styles.gallery}>Gallery</section>
       <footer className={styles.footer}>Footer</footer>
     </div>
   );

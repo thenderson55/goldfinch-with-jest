@@ -55,7 +55,7 @@
     margin-left: 3rem;
     height: 3.75rem;
     width: 3.75rem;
-    fill: var(--color-primary-light);
+    fill: var(--color-primary);
   }
 }
 
@@ -135,7 +135,7 @@
     width: 1.5rem;
     border-radius: 100px;
     color: #fff;
-    background-color: var(--color-primary-light);
+    background-color: var(--color-primary);
     position: absolute;
     top: 1.7rem;
     right: 1.5rem;
@@ -214,7 +214,7 @@
     }
 
     &:active::before {
-      background-color: var(--color-primary-light);
+      background-color: var(--color-primary);
     }
   }
 
@@ -324,7 +324,7 @@
 
     &Icon {
       font-size: 2rem;
-      fill: var(--color-primary-light);
+      fill: var(--color-primary);
       margin-right: 0.5rem;
 
       @media only screen and(max-width: $bp-small) {
@@ -339,7 +339,7 @@
       align-self: stretch;
 
       &Location {
-        color: var(--color-primary-light);
+        color: var(--color-primary);
         text-decoration: underline;
         text-underline-offset: 0.2rem;
 
@@ -350,7 +350,7 @@
 
       &Votes {
         margin-left: 3rem;
-        background-color: var(--color-primary-light);
+        background-color: var(--color-primary);
         color: #fff;
         display: flex;
         flex-direction: column;
@@ -456,7 +456,7 @@
   }
 
   &Rating {
-    color: var(--color-primary-light);
+    color: var(--color-primary);
     font-size: 2.25em;
     letter-spacing: 1px;
     font-weight: 300;

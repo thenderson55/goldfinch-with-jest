@@ -10,6 +10,8 @@
 @import "./components/buttons";
 
 :root {
+  // HOTEL PROJECT
+
   --color-primary: #eb2f64;
   --color-primary-light: #ff3366;
   --color-primary-dark: #ba265d;
@@ -32,6 +34,18 @@
   --border-line: 1px solid var(--color-grey-light-2);
 
   --padding-div: 3rem;
+
+  // GRID PROJECT
+
+  --color-grid: #c69963;
+  --color-grid-dark: #b28451;
+  --color-grid-secondary: #101d2c;
+
+  --color-grid-grey-light-1: #f9f7f6;
+  --color-grid-grey-light-2: #aaa;
+
+  --color-grid-grey-dark-1: #54483a;
+  --color-grid-grey-dark-2: #6d5d4b;
 }
 
 *,
@@ -61,7 +75,7 @@ body {
   //   var(--color-primary-light),
   //   var(--color-primary-dark)
   // );
-  line-height: 1.7;
+  line-height: 1.6;
   // padding: 2rem;
   box-sizing: border-box;
 }
