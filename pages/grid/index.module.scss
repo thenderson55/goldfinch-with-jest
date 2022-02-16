@@ -12,13 +12,13 @@
     [center-start] repeat(8, minmax(min-content, 14rem))
     [center-end] minmax(5rem, 1fr) [full-end];
 
-  & > * {
-    padding: 40px;
-  }
+  // & > * {
+  //   padding: 40px;
+  // }
 }
 
 .sidebar {
-  background-color: var(--color-grid-grey-light-2);
+  background-color: var(--color-grid);
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1 / -1;
   padding: 0;
@@ -35,13 +35,21 @@
 }
 
 .features {
-  background-color: magenta;
   grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  margin: 10rem 0;
+  gap: 2rem;
+  align-items: start;
+
+  @media screen and (min-width: 990px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .storyPictures {
   background-color: var(--color-grid-grey-light-1);
-  grid-column: full-start / span 4;
+  grid-column: full-start / span 5;
 }
 
 .storyContent {
