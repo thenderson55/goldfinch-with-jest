@@ -53,8 +53,47 @@
 }
 
 .storyContent {
-  background-color: pink;
+  background-color: var(--color-grid-grey-light-1);
   grid-column: 7 / full-end;
+  padding: 6rem 6vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &Title {
+    font-size: 1.6rem;
+    color: var(--color-grid);
+    margin-bottom: 2rem;
+  }
+
+  &Quote {
+    font-size: 3rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+
+  &Text {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 3rem;
+  }
+
+  &Button {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    background-color: var(--color-grid);
+    border: none;
+    border-radius: 0;
+    padding: 1.5rem 4rem;
+    font-weight: 300;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: var(--color-grid-dark);
+    }
+  }
 }
 
 .homes {
