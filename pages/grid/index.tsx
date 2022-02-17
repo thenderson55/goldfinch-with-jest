@@ -1,6 +1,9 @@
 import React from "react";
+import Image from "next/image";
+
 import Feature from "./Feature";
 import styles from "./index.module.scss";
+import seamus from "../../public/seamus.jpg";
 
 function Grid() {
   return (
@@ -16,7 +19,24 @@ function Grid() {
         <Feature />
         <Feature />
       </section>
-      <div className={styles.storyPictures}>Story-pictures</div>
+      <div className={styles.storyPictures}>
+        <div className={styles.imageOneContainer}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489733445/ubakmxgfj8czhvsuflxt.png"
+            alt="Fuji"
+            className={styles.imageOne}
+            layout="fill"
+          />
+        </div>
+        <div className={styles.imageTwoContainer}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+            alt="Flowers"
+            className={styles.imageTwo}
+            layout="fill"
+          />
+        </div>
+      </div>
       <div className={styles.storyContent}>
         <h3 className={styles.storyContentTitle}>HAPPY CLAPPY PEOPLE</h3>
         <h2 className={styles.storyContentQuote}>
