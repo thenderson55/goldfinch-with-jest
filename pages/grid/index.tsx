@@ -1,9 +1,9 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
-import Feature from "./Feature";
-import styles from "./index.module.scss";
-import Card from "./Card";
+import Feature from './Feature';
+import styles from './index.module.scss';
+import Card from './Card';
 
 function Grid() {
   return (
@@ -59,7 +59,120 @@ function Grid() {
         <Card />
         <Card />
       </section>
-      <section className={styles.gallery}>Gallery</section>
+      <section className={styles.gallery}>
+        <div className={styles.galleryImageContainerOne}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+            alt="Flowers"
+            className={styles.galleryImage}
+            layout="fill"
+          />
+        </div>
+        <div className={styles.galleryImageContainerTwo}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+            alt="Flowers"
+            className={styles.galleryImage}
+            layout="fill"
+          />
+        </div>
+        <div className={styles.galleryImageContainerThree}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+            alt="Flowers"
+            className={styles.galleryImage}
+            layout="fill"
+          />
+        </div>
+        <div className={styles.galleryImageContainerFour}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+            alt="Flowers"
+            className={styles.galleryImage}
+            layout="fill"
+          />
+        </div>
+        <div className={styles.galleryImageContainerFive}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+            alt="Flowers"
+            className={styles.galleryImage}
+            layout="fill"
+          />
+        </div>
+        <div className={styles.galleryImageContainerSix}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+            alt="Flowers"
+            className={styles.galleryImage}
+            layout="fill"
+          />
+        </div>
+        <div className={styles.galleryImageContainerSeven}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+            alt="Flowers"
+            className={styles.galleryImage}
+            layout="fill"
+          />
+        </div>
+        <div className={styles.galleryImageContainerEight}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+            alt="Flowers"
+            className={styles.galleryImage}
+            layout="fill"
+          />
+        </div>
+        <div className={styles.galleryImageContainerNine}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+            alt="Flowers"
+            className={styles.galleryImage}
+            layout="fill"
+          />
+        </div>
+        <div className={styles.galleryImageContainerTen}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+            alt="Flowers"
+            className={styles.galleryImage}
+            layout="fill"
+          />
+        </div>
+        <div className={styles.galleryImageContainerEleven}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+            alt="Flowers"
+            className={styles.galleryImage}
+            layout="fill"
+          />
+        </div>
+        <div className={styles.galleryImageContainerTwelve}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+            alt="Flowers"
+            className={styles.galleryImage}
+            layout="fill"
+          />
+        </div>
+        <div className={styles.galleryImageContainerThirteen}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+            alt="Flowers"
+            className={styles.galleryImage}
+            layout="fill"
+          />
+        </div>
+        <div className={styles.galleryImageContainerFourteen}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+            alt="Flowers"
+            className={styles.galleryImage}
+            layout="fill"
+          />
+        </div>
+      </section>
       <footer className={styles.footer}>Footer</footer>
     </div>
   );
