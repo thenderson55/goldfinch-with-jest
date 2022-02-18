@@ -1,5 +1,3 @@
-@import "../../sass/base/animations";
-@import "../../sass/base/typography";
 @import "../../sass/abstracts/variables";
 
 .container {
@@ -132,16 +130,24 @@
 }
 
 .homes {
-  background-color: var(--color-grid-grey-dark-2);
   grid-column: center-start / center-end;
+  margin: 10rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 5rem;
+  // align-items: start;
+
+  @media screen and (min-width: 990px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .gallery {
-  background-color: var(--color-grid);
+  background-color: pink;
   grid-column: full-start / full-end;
 }
 
 .footer {
-  background-color: var(--color-grid-dark);
+  background-color: green;
   grid-column: full-start / full-end;
 }

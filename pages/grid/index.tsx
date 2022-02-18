@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import Feature from "./Feature";
 import styles from "./index.module.scss";
-import seamus from "../../public/seamus.jpg";
+import Card from "./Card";
 
 function Grid() {
   return (
@@ -51,7 +51,14 @@ function Grid() {
           FIND YOUR OWN HOME
         </button>
       </div>
-      <section className={styles.homes}>Homes</section>
+      <section className={styles.homes}>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </section>
       <section className={styles.gallery}>Gallery</section>
       <footer className={styles.footer}>Footer</footer>
     </div>
