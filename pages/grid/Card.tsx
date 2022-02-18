@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Card.module.scss';
 import Image from 'next/image';
 import SvgBookmark from '../../svgs/SvgBookmark';
+import SvgHome from '../../svgs/SvgHome';
 
 function Card() {
   return (
@@ -16,12 +17,21 @@ function Card() {
         <SvgBookmark className={styles.icon} />
       </div>
       <div className={styles.title}>Beautiful family house</div>
-      <div className={styles.location}>GEORGIA</div>
-      <div className={styles.rooms}>5 ROOMS</div>
-      <div className={styles.area}>
-        40 m<sub>2</sub>
+      <div className={styles.location}>
+        <SvgHome className={styles.textIcon} />
+        Georgia
       </div>
-      <div className={styles.price}> £45 per night</div>
+      <div className={styles.rooms}>
+        <SvgHome className={styles.textIcon} />2 rooms
+      </div>
+      <div className={styles.area}>
+        <SvgHome className={styles.textIcon} />
+        40 m<sup>2</sup>
+      </div>
+      <div className={styles.price}>
+        <SvgHome className={styles.textIcon} />
+        £45 p/n
+      </div>
       <button className={styles.button}>CONTACT REALTOR</button>
     </div>
   );
