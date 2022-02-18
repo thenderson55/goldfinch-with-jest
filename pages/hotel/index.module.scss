@@ -1,6 +1,6 @@
-@import "../../sass/base/animations";
-@import "../../sass/base/typography";
-@import "../../sass/abstracts/variables";
+@import '../../sass/base/animations';
+@import '../../sass/base/typography';
+@import '../../sass/abstracts/variables';
 
 .wrapper {
   min-height: 100vh;
@@ -142,11 +142,17 @@
   }
 
   &AvatarBox {
-    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    position: relative;
 
     & > span {
       border-radius: 100px;
     }
+  }
+
+  &AvatarImage {
+    object-fit: cover;
   }
 }
 
@@ -195,7 +201,7 @@
     }
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -271,31 +277,24 @@
 //////////////////////
 // HOTEL VIEW
 
-// .gallery {
-//   display: flex;
-// }
-// .gallery__photo {
-//   width: 100%;
-//   display: block;
-// }
+.gallery {
+  display: flex;
+  height: 20rem;
+
+  &ImageContainer {
+    height: 100%;
+    width: 33.33%;
+    position: relative;
+  }
+
+  &Image {
+    object-fit: cover;
+  }
+}
 
 .hotelView {
   background-color: var(--color-white);
   flex: 1;
-
-  &Gallery {
-    // display: block;
-    height: 20rem;
-    // position: relative;
-    // & > span {
-    //   width: 33.33%;
-    //   height: 100%;
-    // }
-  }
-
-  &Image {
-    // height: 200px;
-  }
 
   &Overview {
     display: flex;
@@ -471,7 +470,7 @@
 
   // https://css-tricks.com/snippets/html/glyphs/
   &::after {
-    content: "\201C";
+    content: '\201C';
     position: absolute;
     top: -2.75rem;
     left: -1rem;

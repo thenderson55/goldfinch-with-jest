@@ -1,22 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-import Link from "next/link";
-import styles from "./index.module.scss";
-import Image from "next/image";
-import SvgMagnifyingGlass from "../../svgs/SvgMagnifyingGlass";
-import SvgCake from "../../svgs/SvgCake";
-import seamus from "../../public/seamus.jpg";
-import bees from "../../public/bees.png";
+import React from 'react';
+import Link from 'next/link';
+import styles from './index.module.scss';
+import Image from 'next/image';
+import SvgMagnifyingGlass from '../../svgs/SvgMagnifyingGlass';
+import SvgCake from '../../svgs/SvgCake';
+import seamus from '../../public/seamus.jpg';
+import bees from '../../public/bees.png';
 
-import SvgBookmark from "../../svgs/SvgBookmark";
-import SvgChat from "../../svgs/SvgChat";
-import SvgHome from "../../svgs/SvgHome";
-import SvgAircraftTakeOff from "../../svgs/SvgAircraftTakeOff";
-import SvgKey from "../../svgs/SvgKey";
-import SvgMap from "../../svgs/SvgMap";
-import SvgLocationPin from "../../svgs/SvgLocationPin";
-import SvgStar from "../../svgs/SvgStar";
-import SvgChevronRight from "../../svgs/SvgChevronRight";
+import SvgBookmark from '../../svgs/SvgBookmark';
+import SvgChat from '../../svgs/SvgChat';
+import SvgHome from '../../svgs/SvgHome';
+import SvgAircraftTakeOff from '../../svgs/SvgAircraftTakeOff';
+import SvgKey from '../../svgs/SvgKey';
+import SvgMap from '../../svgs/SvgMap';
+import SvgLocationPin from '../../svgs/SvgLocationPin';
+import SvgStar from '../../svgs/SvgStar';
+import SvgChevronRight from '../../svgs/SvgChevronRight';
 
 function Hotel() {
   return (
@@ -51,18 +51,20 @@ function Hotel() {
             </div>
             <div className={styles.userNavUser}>
               <div className={styles.userNavAvatarBox}>
-                {/* <Image
+                <Image
                   src={seamus}
                   alt="user photo"
-                  height={40}
-                  width={40}
-                  objectFit="cover"
-                /> */}
-                <img
+                  // height={40}
+                  // width={40}
+                  // objectFit="cover"
+                  className={styles.userNavAvatarImage}
+                  layout="fill"
+                />
+                {/* <img
                   alt="seamus"
                   src="/seamus.jpg"
                   className="recommend-avatar-img"
-                />
+                /> */}
               </div>
             </div>
           </nav>
@@ -108,49 +110,31 @@ function Hotel() {
             </div>
           </nav>
           <main className={styles.hotelView}>
-            <div className={styles.hotelViewGallery}>
-              <img
-                alt="space"
-                style={{ width: "33.333333%", height: "100%" }}
-                src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489733445/ubakmxgfj8czhvsuflxt.png"
-              />
-              <img
-                alt="space"
-                style={{ width: "33.333333%", height: "100%" }}
-                src="https://res.cloudinary.com/fay/image/upload/v1617047570/galaxy_ne5p8f.jpg"
-              />
-              <img
-                alt="space"
-                style={{ width: "33.333333%", height: "100%" }}
-                src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
-              />
-
-              {/* <Image
-                // src={bees}
-                src="https://res.cloudinary.com/fay/image/upload/v1617047570/galaxy_ne5p8f.jpg"
-                alt="bees"
-                // loader={cloudinary}
-                height={150}
-                width={150}
-                // sizes="50vw"
-                // placeholder="blur"
-                layout="fill"
-                objectFit="cover"
-                className={styles.hotelViewImage}
-              />
-              <Image
-                // src={bees}
-                src="https://res.cloudinary.com/fay/image/upload/v1617047570/galaxy_ne5p8f.jpg"
-                alt="bees"
-                // loader={cloudinary}
-                height={150}
-                width={150}
-                // sizes="50vw"
-                // placeholder="blur"
-                layout="fill"
-                objectFit="cover"
-                className={styles.hotelViewImage}
-              /> */}
+            <div className={styles.gallery}>
+              <div className={styles.galleryImageContainer}>
+                <Image
+                  src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+                  alt="Flowers"
+                  className={styles.galleryImage}
+                  layout="fill"
+                />
+              </div>
+              <div className={styles.galleryImageContainer}>
+                <Image
+                  src="https://res.cloudinary.com/fay/image/upload/v1617047570/galaxy_ne5p8f.jpg"
+                  alt="Space"
+                  className={styles.galleryImage}
+                  layout="fill"
+                />
+              </div>
+              <div className={styles.galleryImageContainer}>
+                <Image
+                  src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489733445/ubakmxgfj8czhvsuflxt.png"
+                  alt="Fuji"
+                  className={styles.galleryImage}
+                  layout="fill"
+                />
+              </div>
             </div>
             <div className={styles.hotelViewOverview}>
               <div className={styles.hotelViewOverviewText}>
