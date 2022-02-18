@@ -18,7 +18,7 @@ import SvgLocationPin from '../../svgs/SvgLocationPin';
 import SvgStar from '../../svgs/SvgStar';
 import SvgChevronRight from '../../svgs/SvgChevronRight';
 
-function Hotel() {
+function Flex() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -313,4 +313,4 @@ function Hotel() {
   );
 }
 
-export default Hotel;
+export default Flex;

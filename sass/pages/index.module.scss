@@ -1,10 +1,10 @@
-@import "../abstracts/functions";
-@import "../abstracts/mixins";
-@import "../abstracts/variables";
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
 
-@import "../base/animations";
-@import "../base/typography";
-@import "../base/utilities";
+@import '../base/animations';
+@import '../base/typography';
+@import '../base/utilities';
 
 .header {
   position: relative;
@@ -14,7 +14,7 @@
       rgba($color-secondary, 0.8),
       rgba($color-primary, 0.8)
     ),
-    url("../../public/seamus.jpg");
+    url('../../public/seamus.jpg');
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
@@ -37,6 +37,8 @@
   }
 
   &NavBox {
+    display: flex;
+    flex-direction: column;
     width: 10rem;
     height: 10rem;
     position: absolute;

@@ -1,11 +1,11 @@
-import { NextPage } from "next";
-import Link from "next/link";
-import Image from "next/image";
-import imageLoader from "../imageLoader";
-import styles from "../sass/pages/index.module.scss";
-import seamus from "../public/seamus.jpg";
-import { MswPhotoList } from "../components/MswPhotoList";
-import dalmation from "../public/dalmation.jpeg";
+import { NextPage } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
+import imageLoader from '../imageLoader';
+import styles from '../sass/pages/index.module.scss';
+import seamus from '../public/seamus.jpg';
+import { MswPhotoList } from '../components/MswPhotoList';
+import dalmation from '../public/dalmation.jpeg';
 const Home: NextPage = () => {
   // const { data: session, status } = useSession();
   return (
@@ -14,8 +14,11 @@ const Home: NextPage = () => {
         <Image src={dalmation} alt="Dalmation" className={styles.headerLogo} />
       </div>
       <div className={styles.headerNavBox}>
-        <Link href="/hotel">
-          <a className={styles.subHeaderLink}>HOTEL</a>
+        <Link href="/flex">
+          <a className={styles.subHeaderLink}>FLEX</a>
+        </Link>
+        <Link href="/grid">
+          <a className={styles.subHeaderLink}>GRID</a>
         </Link>
       </div>
       <div className={styles.headerTextBox}>
