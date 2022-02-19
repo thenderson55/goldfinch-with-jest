@@ -10,16 +10,11 @@
 }
 
 .avatar-box-border {
-  height: 4rem;
-  width: 4rem;
-  position: relative;
+  @extend .avatar-box;
+
   box-sizing: content-box;
   border-radius: 100px;
   border: 2px solid white;
-
-  & > span {
-    border-radius: 100px;
-  }
 }
 
 .avatar-image {
