@@ -1,0 +1,27 @@
+@import '../abstracts/variables';
+
+.avatar-box {
+  height: 4rem;
+  width: 4rem;
+  position: relative;
+  & > span {
+    border-radius: 100px;
+  }
+}
+
+.avatar-box-border {
+  height: 4rem;
+  width: 4rem;
+  position: relative;
+  box-sizing: content-box;
+  border-radius: 100px;
+  border: 2px solid white;
+
+  & > span {
+    border-radius: 100px;
+  }
+}
+
+.avatar-image {
+  object-fit: cover;
+}

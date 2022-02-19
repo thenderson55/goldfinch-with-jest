@@ -1,10 +1,10 @@
-@import "../abstracts/functions";
-@import "../abstracts/mixins";
-@import "../abstracts/variables";
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
 
-@import "../base/animations";
-@import "../base/typography";
-@import "../base/utilities";
+@import '../base/animations';
+@import '../base/typography';
+@import '../base/utilities';
 
 .detail {
   display: flex;
@@ -74,30 +74,6 @@
 
   &-avatar {
     display: flex;
-
-    // box-sizing: content-box;
-    // &-wrapper {
-    //   z-index: 1;
-    //   border-radius: 100px;
-    //   position: relative;
-    // }
-    &-img {
-      box-sizing: content-box;
-      height: 4rem;
-      width: 4rem;
-      border-radius: 100px;
-      border: 2px solid white;
-      &:not(:last-child) {
-        margin-right: -1.5rem;
-      }
-    }
-
-    // & > span {
-    //   border-radius: 100px;
-    // }
-
-    // & > span > img {
-    //   border-radius: 100px;
-    // }
+    align-items: center;
   }
 }

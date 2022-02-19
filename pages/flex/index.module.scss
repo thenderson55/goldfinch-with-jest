@@ -2,6 +2,12 @@
 @import '../../sass/base/typography';
 @import '../../sass/abstracts/variables';
 
+.avatarOverlap {
+  &:not(:last-child) {
+    margin-right: -1.5rem;
+  }
+}
+
 .wrapper {
   min-height: 100vh;
   padding: 5rem;

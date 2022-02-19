@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Link from 'next/link';
 import styles from './index.module.scss';
@@ -28,8 +27,6 @@ function Flex() {
               <SvgCake className={styles.headerIcon} />
             </a>
           </Link>
-
-          {/* <Image src={seamus} alt="seamus" className={styles.headerLogo} /> */}
           <form action="" className={styles.search}>
             <input
               type="text"
@@ -50,21 +47,13 @@ function Flex() {
               <span className={styles.userNavNotification}>14</span>
             </div>
             <div className={styles.userNavUser}>
-              <div className={styles.userNavAvatarBox}>
+              <div className="avatar-box">
                 <Image
                   src={seamus}
                   alt="user photo"
-                  // height={40}
-                  // width={40}
-                  // objectFit="cover"
-                  className={styles.userNavAvatarImage}
+                  className="avatar-image"
                   layout="fill"
                 />
-                {/* <img
-                  alt="seamus"
-                  src="/seamus.jpg"
-                  className="recommend-avatar-img"
-                /> */}
               </div>
             </div>
           </nav>
@@ -204,37 +193,46 @@ function Flex() {
                 <div className="recommend">
                   <span>Tui and 3 others recommend this hotel.</span>
                   <div className="recommend-avatar">
-                    <img
-                      alt="seamus"
-                      src="/seamus.jpg"
-                      className="recommend-avatar-img"
-                    />
-                    <img
-                      alt="seamus"
-                      src="/seamus.jpg"
-                      className="recommend-avatar-img"
-                    />
-                    <img
-                      alt="seamus"
-                      src="/seamus.jpg"
-                      className="recommend-avatar-img"
-                    />
-                    <img
-                      alt="seamus"
-                      src="/seamus.jpg"
-                      className="recommend-avatar-img"
-                    />
-                    {/* <div className="recommend-avatar-wrapper">
+                    <div
+                      className={`${styles.avatarOverlap} avatar-box-border`}
+                    >
                       <Image
                         src={seamus}
-                        alt="cat"
-                        placeholder="blur"
-                        objectFit="cover"
-                        height={40}
-                        width={40}
-                        className="recommend-avatar-img"
+                        alt="user photo"
+                        layout="fill"
+                        className={`${styles.avatarBorder} avatar-image`}
                       />
-                    </div> */}
+                    </div>
+                    <div
+                      className={`${styles.avatarOverlap} avatar-box-border`}
+                    >
+                      <Image
+                        src={seamus}
+                        alt="user photo"
+                        layout="fill"
+                        className={`${styles.avatarBorder} avatar-image`}
+                      />
+                    </div>
+                    <div
+                      className={`${styles.avatarOverlap} avatar-box-border`}
+                    >
+                      <Image
+                        src={seamus}
+                        alt="user photo"
+                        layout="fill"
+                        className={`${styles.avatarBorder} avatar-image`}
+                      />
+                    </div>
+                    <div
+                      className={`${styles.avatarOverlap} avatar-box-border`}
+                    >
+                      <Image
+                        src={seamus}
+                        alt="user photo"
+                        layout="fill"
+                        className={`${styles.avatarBorder} avatar-image`}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -244,18 +242,12 @@ function Flex() {
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   </div>
                   <div className={styles.reviewUser}>
-                    <div className={styles.reviewPhoto}>
-                      {/* <Image
+                    <div className="avatar-box">
+                      <Image
                         src={seamus}
                         alt="user photo"
-                        height={40}
-                        width={40}
-                        objectFit="cover"
-                      /> */}
-                      <img
-                        alt="seamus"
-                        src="/seamus.jpg"
-                        className="recommend-avatar-img"
+                        layout="fill"
+                        className="avatar-photo"
                       />
                     </div>
                     <div className={styles.reviewName}>
@@ -272,18 +264,12 @@ function Flex() {
                     esse doloribus officia dolor possimus!
                   </div>
                   <div className={styles.reviewUser}>
-                    <div className={styles.reviewPhoto}>
-                      {/* <Image
+                    <div className="avatar-box">
+                      <Image
                         src={seamus}
                         alt="user photo"
-                        height={40}
-                        width={40}
-                        objectFit="cover"
-                      /> */}
-                      <img
-                        alt="seamus"
-                        src="/seamus.jpg"
-                        className="recommend-avatar-img"
+                        layout="fill"
+                        className="avatar-photo"
                       />
                     </div>
                     <div className={styles.reviewName}>
