@@ -173,7 +173,19 @@ function Grid() {
           />
         </div>
       </section>
-      <footer className={styles.footer}>Footer</footer>
+      <footer className={styles.footer}>
+        <div className={styles.footerButtons}>
+          <button className="footer-button">FIND YOUR DREAM HOME</button>
+          <button className="footer-button">REQUEST</button>
+          <button className="footer-button">DOWNLOAD HOME PLANNER</button>
+          <button className="footer-button">CONTACT US</button>
+          <button className="footer-button">SUBMIT YOUR PROPERTY</button>
+          <button className="footer-button">WORK WITH US</button>
+        </div>
+        <div className={styles.copyright}>
+          &copy; Copyright 2022 by Thomas Henderson
+        </div>
+      </footer>
     </div>
   );
 }

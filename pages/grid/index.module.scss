@@ -238,6 +238,27 @@
 }
 
 .footer {
-  background-color: green;
+  background-color: var(--color-grid-secondary);
   grid-column: full-start / full-end;
+  color: white;
+  padding: 5rem;
+}
+
+.footerButtons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+
+  @media screen and (max-width: 530px) {
+    grid-template-columns: 1fr;
+  }
+  @media screen and (min-width: 531px) and (max-width: 1180px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.copyright {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 5rem;
 }

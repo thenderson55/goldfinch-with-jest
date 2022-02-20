@@ -1,10 +1,10 @@
-@import "../abstracts/functions";
-@import "../abstracts/mixins";
-@import "../abstracts/variables";
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
 
-@import "../base/animations";
-@import "../base/typography";
-@import "../base/utilities";
+@import '../base/animations';
+@import '../base/typography';
+@import '../base/utilities';
 
 .pulsatingButton {
   font-size: 1rem;
@@ -70,5 +70,26 @@
       var(--color-primary-light),
       var(--color-primary-dark)
     );
+  }
+}
+
+.footer-button {
+  font-size: 1.4rem;
+  display: inline;
+  color: white;
+  background: none;
+  background-color: rgba(#fff, 0.05);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  align-items: center;
+  padding: 1.5rem;
+  font-weight: 300;
+  // text-align: center;
+
+  &:hover {
+    color: white;
+    animation: pulsate 1s infinite;
   }
 }
