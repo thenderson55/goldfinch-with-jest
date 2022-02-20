@@ -20,6 +20,13 @@
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1 / -1;
   padding: 0;
+  text-align: center;
+}
+
+.icon {
+  margin-top: 2rem;
+  font-size: 5rem;
+  fill: var(--color-grid-grey-light-1);
 }
 
 .header {

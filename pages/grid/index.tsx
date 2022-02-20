@@ -4,11 +4,19 @@ import Image from 'next/image';
 import Feature from './Feature';
 import styles from './index.module.scss';
 import Card from './Card';
+import SvgStar from '../../svgs/SvgStar';
+import Link from 'next/link';
 
 function Grid() {
   return (
     <div className={styles.container}>
-      <div className={styles.sidebar}>Sidebar</div>
+      <div className={styles.sidebar}>
+        <Link href="/">
+          <a>
+            <SvgStar className={styles.icon} />
+          </a>
+        </Link>
+      </div>
       <header className={styles.header}>Header</header>
       <div className={styles.realtors}>Realtors</div>
       <section className={styles.features}>
