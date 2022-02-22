@@ -90,7 +90,7 @@
   &::after {
     content: ' ';
     height: 1px;
-    display: block;
+    // display: block;
     background-color: currentColor;
   }
 }

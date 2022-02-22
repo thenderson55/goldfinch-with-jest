@@ -13,6 +13,8 @@ function Card() {
           alt="Fuji"
           className={styles.image}
           layout="fill"
+          objectFit="cover"
+          objectPosition=" bottom"
         />
         <SvgBookmark className={styles.icon} />
       </div>

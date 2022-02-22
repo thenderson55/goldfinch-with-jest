@@ -10,17 +10,35 @@
   position: relative;
   height: 95vh;
   margin: 2rem;
-  background-image: linear-gradient(
-      rgba($color-secondary, 0.8),
-      rgba($color-primary, 0.8)
-    ),
-    url('../../public/seamus.jpg');
-  background-size: cover;
-  background-position: center;
+  // background-image: linear-gradient(
+  //     rgba($color-secondary, 0.8),
+  //     rgba($color-primary, 0.8)
+  //   ),
+  //   url('../../public/seamus.jpg');
+  // background-size: cover;
+  // background-position: center;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      rgba($color-secondary, 0.8),
+      rgba($color-primary, 0.8)
+    );
+    z-index: -1;
+  }
+
+  &Image {
+    z-index: -2;
+  }
 
   &LogoBox {
     width: 10rem;
@@ -50,6 +68,7 @@
     margin-top: -5%;
     margin-right: -2.5rem;
     text-align: center;
+    z-index: 1;
   }
 }
 

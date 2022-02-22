@@ -10,6 +10,15 @@ const Home: NextPage = () => {
   // const { data: session, status } = useSession();
   return (
     <div className={styles.header}>
+      <Image
+        src={seamus}
+        alt="Seamus"
+        className={styles.headerImage}
+        layout="fill"
+        objectFit="cover"
+        // objectPosition="center bottom"
+        quality={20}
+      />
       <div className={styles.headerLogoBox}>
         <Image src={dalmation} alt="Dalmation" className={styles.headerLogo} />
       </div>
@@ -36,7 +45,6 @@ const Home: NextPage = () => {
           </a>
         </Link>
       </div>
-
       {/* <MswPhotoList /> */}
     </div>
   );
