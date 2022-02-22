@@ -6,6 +6,7 @@ import styles from './index.module.scss';
 import Card from './Card';
 import SvgStar from '../../svgs/SvgStar';
 import Link from 'next/link';
+import SvgAircraftTakeOff from '../../svgs/SvgAircraftTakeOff';
 
 function Grid() {
   return (
@@ -28,7 +29,7 @@ function Grid() {
             objectPosition="center"
           />
           <div className={styles.headerContainer}>
-            <SvgStar className={styles.headerIcon} />
+            <SvgAircraftTakeOff className={styles.headerIcon} />
             <h3 className={styles.headingOne}>YOLOOO</h3>
             <h1 className={styles.headingTwo}>Live forever and ever!</h1>
             <button className="button-grid">VIEW OUR PROPERTIES</button>
@@ -39,7 +40,7 @@ function Grid() {
               <div>BBC</div>
               <div>FOX</div>
               <div>CNN</div>
-              <div>Daily Mail</div>
+              <div>FBI</div>
             </div>
           </div>
         </div>

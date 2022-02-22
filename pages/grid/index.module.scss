@@ -47,7 +47,7 @@
 }
 
 .headerIcon {
-  font-size: 5rem;
+  font-size: 8rem;
   fill: var(--color-grid);
   justify-self: center;
 }
@@ -66,25 +66,33 @@
   color: white;
 }
 
-.logosText {
-  color: var(--color-grid-dark);
-  // width: 100%;
-  // text-align: center;
-  // border-bottom: 1px solid var(--color-grid-dark);
-  // line-height: 0.1em;
-  // margin: 10px 0 20px;
+.logos {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 3rem;
+  justify-items: center;
 
-  // & > span {
-  //   color: var(--color-grid-dark);
-  //   // filter: opacity(0.1);
-  //   // background: #fff;
-  //   // padding: 0 10px;
-  //   // text-decoration:line-through;
-  // }
+  & > div {
+    font-size: 2.5rem;
+    filter: brightness(70%);
+  }
 }
 
-.logos {
-  color: var(--color-grid-dark);
+.logosText {
+  color: var(--color-grid-grey-light-2);
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  align-items: center;
+  column-gap: 1.5rem;
+
+  &::before,
+  &::after {
+    content: ' ';
+    height: 1px;
+    display: block;
+    background-color: currentColor;
+  }
 }
 
 .realtors {
