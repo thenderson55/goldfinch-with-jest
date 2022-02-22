@@ -93,3 +93,22 @@
     animation: pulsate 1s infinite;
   }
 }
+
+.button-grid {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  background-color: var(--color-grid);
+  border: none;
+  border-radius: 0;
+  padding: 1.5rem 4rem;
+  font-weight: 300;
+  transition: all 0.2s;
+  z-index: 1;
+  align-self: center;
+  justify-self: start;
+
+  &:hover {
+    background-color: var(--color-grid-dark);
+  }
+}

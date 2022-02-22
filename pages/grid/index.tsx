@@ -17,7 +17,33 @@ function Grid() {
           </a>
         </Link>
       </div>
-      <header className={styles.header}>Header</header>
+      <header className={styles.header}>
+        <div className={styles.imageHeaderContainer}>
+          <Image
+            src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489733445/ubakmxgfj8czhvsuflxt.png"
+            alt="Fuji"
+            className={styles.imageHeader}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+          />
+          <div className={styles.headerContainer}>
+            <SvgStar className={styles.headerIcon} />
+            <h3 className={styles.headingOne}>YOLOOO</h3>
+            <h1 className={styles.headingTwo}>Live forever and ever!</h1>
+            <button className="button-grid">VIEW OUR PROPERTIES</button>
+            <div className={styles.logosText}>
+              <span>Seen on</span>
+            </div>
+            <div className={styles.logos}>
+              <div>BBC</div>
+              <div>FOX</div>
+              <div>CNN</div>
+              <div>Daily Mail</div>
+            </div>
+          </div>
+        </div>
+      </header>
       <div className={styles.realtors}>Realtors</div>
       <section className={styles.features}>
         <Feature />
