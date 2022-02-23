@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import seamus from '../../public/seamus.jpg';
 
 import Feature from './Feature';
 import styles from './index.module.scss';
@@ -103,6 +104,14 @@ function Grid() {
         <Feature />
       </section>
       <div className={styles.storyPictures}>
+        {/* <Image
+          src={seamus}
+          alt="Seamus"
+          className={styles.storyPicturesImage}
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+        /> */}
         <div className={styles.imageOneContainer}>
           <Image
             src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489733445/ubakmxgfj8czhvsuflxt.png"

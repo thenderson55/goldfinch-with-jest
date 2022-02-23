@@ -17,6 +17,13 @@
       [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
       [center-end] minmax(5rem, 1fr) [full-end];
   }
+
+  @media screen and (max-width: 850px) {
+    grid-template-rows: 8rem calc(100vh - 8rem) min-content min-content 40vw repeat(
+        3,
+        min-content
+      );
+  }
 }
 
 .sidebar {
@@ -50,6 +57,10 @@
 .header {
   background-color: var(--color-grid-secondary);
   grid-column: full-start / span 7;
+
+  @media screen and (max-width: 850px) {
+    grid-column: full-start / full-end;
+  }
 }
 
 .imageHeaderContainer {
@@ -127,9 +138,14 @@
   padding: 3rem;
   row-gap: 3rem;
 
-  // @media screen and (max-width: 1000px) {
-  //   grid-column: 8 / full-end;
-  // }
+  @media screen and (max-width: 850px) {
+    grid-column: full-start / full-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+  }
 
   &Title {
     color: var(--color-grid);
@@ -143,6 +159,16 @@
   column-gap: 2rem;
   row-gap: 5vh;
   align-items: center;
+
+  @media screen and (max-width: 850px) {
+    grid-column: full-start / full-end;
+    grid-template-columns: repeat(3, min-content max-content);
+  }
+
+  @media screen and (max-width: 650px) {
+    grid-column: full-start / full-end;
+    grid-template-columns: min-content max-content;
+  }
 }
 
 .profileImageWrapper {
@@ -182,6 +208,7 @@
 .storyPictures {
   background-color: var(--color-grid-grey-light-1);
   grid-column: full-start / span 5;
+  position: relative;
   background-image: linear-gradient(
       rgba($color-grid, 0.5),
       rgba($color-grid, 0.5)
@@ -191,6 +218,14 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
+
+  // &Image {
+  // }
+
+  @media screen and (max-width: 850px) {
+    // grid-column: full-start / full-end;
+    display: none;
+  }
 }
 
 .imageOneContainer {
@@ -215,12 +250,16 @@
 
 .storyContent {
   background-color: var(--color-grid-grey-light-1);
-  grid-column: 7 / full-end;
+  grid-column: col-start 5 / full-end;
   padding: 6rem 6vw;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
+
+  @media screen and (max-width: 850px) {
+    grid-column: full-start / full-end;
+  }
 
   &Title {
     font-size: 1.6rem;
