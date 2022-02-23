@@ -37,7 +37,10 @@
     font-size: 6rem;
     font-weight: 400;
     letter-spacing: 2.5rem;
-    animation: moveInLeft 1s;
+
+    @media screen and (min-width: 700px) {
+      animation: moveInLeft 1s;
+    }
   }
 
   &Sub {
@@ -45,8 +48,10 @@
     font-size: 2.5rem;
     font-weight: 400;
     letter-spacing: 2rem;
-    animation: moveInRight 1s;
     margin-left: -0.6rem;
     // animation: name duration timing-function delay iteration-count direction fill-mode;
+    @media screen and (min-width: 700px) {
+      animation: moveInRight 1s;
+    }
   }
 }

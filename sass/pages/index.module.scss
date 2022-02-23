@@ -46,6 +46,9 @@
     position: absolute;
     top: 4rem;
     left: 4rem;
+    & > span {
+      border-radius: 50%;
+    }
   }
 
   &Logo {
