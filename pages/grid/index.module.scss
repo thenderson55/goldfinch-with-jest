@@ -96,8 +96,48 @@
 }
 
 .realtors {
-  background-color: yellow;
+  background-color: var(--color-grid-secondary);
   grid-column: 9 / full-end;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  padding: 3rem;
+  row-gap: 3rem;
+
+  &Title {
+    color: var(--color-grid);
+    font-size: 1.8rem;
+  }
+}
+
+.profiles {
+  display: grid;
+  grid-template-columns: min-content max-content;
+  column-gap: 2rem;
+  row-gap: 5vh;
+  align-items: center;
+}
+
+.profileImageWrapper {
+  height: 7rem;
+  width: 7rem;
+  position: relative;
+}
+
+.profileImage {
+  border-radius: 50%;
+}
+
+.profileDetails {
+  color: var(--color-grid-grey-light-2);
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.profileName {
+  color: white;
+  font-size: 1.8rem;
 }
 
 .features {

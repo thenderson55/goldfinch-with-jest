@@ -45,7 +45,55 @@ function Grid() {
           </div>
         </div>
       </header>
-      <div className={styles.realtors}>Realtors</div>
+      <div className={styles.realtors}>
+        <h3 className={styles.realtorsTitle}>TOP 3 ESTATE AGENTS</h3>
+        <div className={styles.profiles}>
+          <div className={styles.profileImageWrapper}>
+            <Image
+              src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+              alt="Flowers"
+              className={styles.profileImage}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+            />
+          </div>
+          <div className={styles.profileDetails}>
+            <div className={styles.profileName}>Saul Goodman</div>
+            <div>1 client helped</div>
+          </div>
+          <div className={styles.profileImageWrapper}>
+            <Image
+              src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+              alt="Flowers"
+              className={styles.profileImage}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+            />
+          </div>
+
+          <div className={styles.profileDetails}>
+            <div className={styles.profileName}>Mike Ehrmantraut</div>
+            <div>555 clients helped</div>
+          </div>
+          <div className={styles.profileImageWrapper}>
+            <Image
+              src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+              alt="Flowers"
+              className={styles.profileImage}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+            />
+          </div>
+
+          <div className={styles.profileDetails}>
+            <div className={styles.profileName}>Hector Salamanca</div>
+            <div>2,000,000 clients helped</div>
+          </div>
+        </div>
+      </div>
       <section className={styles.features}>
         <Feature />
         <Feature />
