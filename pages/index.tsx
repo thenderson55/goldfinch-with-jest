@@ -9,43 +9,98 @@ import dalmation from '../public/dalmation.jpeg';
 const Home: NextPage = () => {
   // const { data: session, status } = useSession();
   return (
-    <div className={styles.header}>
-      <Image
-        src={seamus}
-        alt="Seamus"
-        className={styles.headerImage}
-        layout="fill"
-        objectFit="cover"
-        // objectPosition="center bottom"
-        quality={20}
-      />
-      <div className={styles.headerLogoBox}>
-        <Image src={dalmation} alt="Dalmation" className={styles.headerLogo} />
-      </div>
-      <div className={styles.headerNavBox}>
-        <Link href="/flex">
-          <a className={styles.subHeaderLink}>FLEX</a>
-        </Link>
-        <Link href="/grid">
-          <a className={styles.subHeaderLink}>GRID</a>
-        </Link>
-      </div>
-      <div className={styles.headerTextBox}>
-        <h1 className={styles.headerPrimary}>
-          <span className={styles.headerPrimaryMain}>KATHY COLLINS</span>
-          <span className={styles.headerPrimarySub}>
-            Fine art and photography
-          </span>
-        </h1>
-        <Link href="#">
-          <a
-            className={`${styles.btn} ${styles.btnWhite} ${styles.btnAnimation}`}
-          >
-            DISCOVER MORE
+    <div className={styles.body}>
+      <header className={styles.header}>
+        <Image
+          src={seamus}
+          alt="Seamus"
+          className={styles.headerImage}
+          layout="fill"
+          objectFit="cover"
+          // objectPosition="center bottom"
+          quality={20}
+        />
+        <div className={styles.headerLogoBox}>
+          <Image
+            src={dalmation}
+            alt="Dalmation"
+            className={styles.headerLogo}
+          />
+        </div>
+        <div className={styles.headerNavBox}>
+          <Link href="/flex">
+            <a className={styles.subHeaderLink}>FLEX</a>
+          </Link>
+          <Link href="/grid">
+            <a className={styles.subHeaderLink}>GRID</a>
+          </Link>
+        </div>
+        <div className={styles.headerTextBox}>
+          <h1 className={styles.headerPrimary}>
+            <span className={styles.headerPrimaryMain}>KATHY COLLINS</span>
+            <span className={styles.headerPrimarySub}>
+              Fine art and photography
+            </span>
+          </h1>
+          <Link href="#">
+            <a
+              className={`${styles.btn} ${styles.btnWhite} ${styles.btnAnimation}`}
+            >
+              DISCOVER MORE
+            </a>
+          </Link>
+        </div>
+        {/* <MswPhotoList /> */}
+      </header>
+      <main className={styles.main}>
+        <div className={styles.mainHeader}>
+          Facilis tempore labore deleniti dolorum blanditiis earum
+        </div>
+        <div className={styles.mainInfo}>
+          <div className={styles.subHeader}>YOLO</div>
+          <div className={styles.text}>YOLO</div>
+          <div className={styles.subHeader}>YOLO</div>
+          <div className={styles.text}>YOLO</div>
+          <a href="#" className={styles.infoLink}>
+            KOKO
           </a>
-        </Link>
-      </div>
-      {/* <MswPhotoList /> */}
+        </div>
+        <div className={styles.mainPictures}>
+          <div className={styles.mainImageWrapperOne}>
+            <Image
+              src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489733445/ubakmxgfj8czhvsuflxt.png"
+              alt="Fuji"
+              className={styles.mainImageOne}
+              layout="fill"
+              objectFit="cover"
+              // objectPosition="center bottom"
+              quality={20}
+            />
+          </div>
+          <div className={styles.mainImageWrapperTwo}>
+            <Image
+              src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
+              alt="Flowers"
+              className={styles.mainImageTwo}
+              layout="fill"
+              objectFit="cover"
+              // objectPosition="center bottom"
+              quality={20}
+            />
+          </div>
+          <div className={styles.mainImageWrapperThree}>
+            <Image
+              src={seamus}
+              alt="Seamus"
+              className={styles.mainImageThree}
+              layout="fill"
+              objectFit="cover"
+              // objectPosition="center bottom"
+              quality={20}
+            />
+          </div>
+        </div>
+      </main>
     </div>
   );
 };
