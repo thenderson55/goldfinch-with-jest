@@ -57,10 +57,26 @@ const Home: NextPage = () => {
           Facilis tempore labore deleniti dolorum blanditiis earum
         </div>
         <div className={styles.mainInfo}>
-          <div className={styles.subHeader}>YOLO</div>
-          <div className={styles.text}>YOLO</div>
-          <div className={styles.subHeader}>YOLO</div>
-          <div className={styles.text}>YOLO</div>
+          <div>
+            <div className={styles.subHeader}>
+              THE MOST AMAZING ART ON EARTH
+            </div>
+            <div className={styles.text}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+              quasi aliquid dolor repellat fuga sint. Explicabo optio facilis,
+              animi eos ipsum, nihil a, veritatis et doloremque aliquam quos ex
+              neque!
+            </div>
+          </div>
+          <div>
+            <div className={styles.subHeader}>
+              UNFORGETABLE THINGS MADE FROM STUFF
+            </div>
+            <div className={styles.text}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.Omnis
+              quasi aliquid dolor repellat fuga sint. Explicabo optio facilis.
+            </div>
+          </div>
           <a href="#" className={styles.infoLink}>
             KOKO
           </a>
