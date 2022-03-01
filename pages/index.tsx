@@ -39,12 +39,12 @@ const Home: NextPage = () => {
           </Link>
         </div>
         <div className={styles.headerTextBox}>
-          <h1 className={styles.headerPrimary}>
-            <span className={styles.headerPrimaryMain}>KATHY COLLINS</span>
+          <div className={styles.headerPrimary}>
+            <h1 className={styles.headerPrimaryMain}>KATHY COLLINS</h1>
             <span className={styles.headerPrimarySub}>
               Fine art and photography
             </span>
-          </h1>
+          </div>
           <Link href="#">
             <a
               className={`${styles.btn} ${styles.btnWhite} ${styles.btnAnimation}`}
@@ -56,14 +56,12 @@ const Home: NextPage = () => {
         {/* <MswPhotoList /> */}
       </header>
       <main className={styles.main}>
-        <div className={styles.mainHeader}>
+        <h2 className={styles.mainHeader}>
           Facilis tempore labore deleniti dolorum blanditiis earum
-        </div>
+        </h2>
         <div className={styles.mainInfo}>
           <div>
-            <div className={styles.subHeader}>
-              THE MOST AMAZING ART ON EARTH
-            </div>
+            <h3>THE MOST AMAZING ART ON EARTH</h3>
             <div className={styles.text}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
               quasi aliquid dolor repellat fuga sint. Explicabo optio facilis,
@@ -72,9 +70,7 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div>
-            <div className={styles.subHeader}>
-              UNFORGETABLE THINGS MADE FROM STUFF
-            </div>
+            <h3>UNFORGETABLE THINGS MADE FROM STUFF</h3>
             <div className={styles.text}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.Omnis
               quasi aliquid dolor repellat fuga sint. Explicabo optio facilis.

@@ -20,7 +20,7 @@ function FeaturesCard({ svg }) {
       ) : (
         ''
       )}
-      <div className={styles.title}>TITLE</div>
+      <h3 className={styles.title}>TITLE</h3>
       <div className={styles.text}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
         perspiciatis ullam nihil delectus dolorem at non asperiores atque
