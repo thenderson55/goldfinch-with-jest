@@ -6,8 +6,11 @@ import styles from '../sass/pages/index.module.scss';
 import seamus from '../public/seamus.jpg';
 import { MswPhotoList } from '../components/MswPhotoList';
 import dalmation from '../public/dalmation.jpeg';
+import FeaturesCard from '../components/Cards/FeaturesCard';
 const Home: NextPage = () => {
   // const { data: session, status } = useSession();
+  const svgs = ['world', 'anchor', 'floppydisk', 'cloud'];
+
   return (
     <div className={styles.body}>
       <header className={styles.header}>
@@ -117,6 +120,11 @@ const Home: NextPage = () => {
           </div>
         </div>
       </main>
+      <section className={styles.features}>
+        {svgs.map((svg, i) => (
+          <FeaturesCard key={i} svg={svg} />
+        ))}
+      </section>
     </div>
   );
 };

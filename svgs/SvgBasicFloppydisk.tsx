@@ -11,21 +11,18 @@ function SvgBasicFloppydisk(props) {
     >
       <path
         fill="none"
-        stroke="#000"
         strokeWidth={2}
         strokeMiterlimit={10}
         d="M63 63H1V1h50l12 12z"
       />
       <path
         fill="none"
-        stroke="#000"
         strokeWidth={2}
         strokeMiterlimit={10}
         d="M7 31h50v32H7zM14 39h36M14 47h36M14 55h36M15 1h34v19H15z"
       />
       <path
         fill="none"
-        stroke="#000"
         strokeWidth={2}
         strokeMiterlimit={10}
         d="M38 5h5v11h-5z"

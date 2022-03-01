@@ -9,16 +9,9 @@ function SvgBasicAnchor(props) {
       viewBox="0 0 64 64"
       {...props}
     >
+      <path fill="none" strokeWidth={2} strokeMiterlimit={10} d="M32 13v50" />
       <path
         fill="none"
-        stroke="#000"
-        strokeWidth={2}
-        strokeMiterlimit={10}
-        d="M32 13v50"
-      />
-      <path
-        fill="none"
-        stroke="#000"
         strokeWidth={2}
         strokeLinejoin="bevel"
         strokeMiterlimit={10}
@@ -26,7 +19,6 @@ function SvgBasicAnchor(props) {
       />
       <path
         fill="none"
-        stroke="#000"
         strokeWidth={2}
         strokeLinejoin="bevel"
         strokeMiterlimit={10}
@@ -34,7 +26,6 @@ function SvgBasicAnchor(props) {
       />
       <circle
         fill="none"
-        stroke="#000"
         strokeWidth={2}
         strokeMiterlimit={10}
         cx={32}

@@ -1,0 +1,17 @@
+@import '../../sass/abstracts/variables';
+
+.container {
+  padding: 3rem;
+  background-color: palegreen;
+  height: min-content;
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
+  row-gap: 2rem;
+  justify-content: center;
+  justify-items: center;
+}
+
+.icon {
+  stroke: $color-primary;
+  font-size: 5rem;
+}
