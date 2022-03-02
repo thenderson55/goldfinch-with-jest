@@ -121,6 +121,7 @@ const Home: NextPage = () => {
           <FeaturesCard key={i} svg={svg} />
         ))}
       </section>
+      <section className={styles.tours}></section>
     </div>
   );
 };
