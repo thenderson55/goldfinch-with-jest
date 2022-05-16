@@ -7,6 +7,7 @@ import seamus from '../public/seamus.jpg';
 import { MswPhotoList } from '../components/MswPhotoList';
 import dalmation from '../public/dalmation.jpeg';
 import FeaturesCard from '../components/Cards/FeaturesCard';
+import TourCard from '../components/Cards/TourCard';
 const Home: NextPage = () => {
   // const { data: session, status } = useSession();
   const svgs = ['world', 'anchor', 'floppydisk', 'cloud'];
@@ -121,7 +122,11 @@ const Home: NextPage = () => {
           <FeaturesCard key={i} svg={svg} />
         ))}
       </section>
-      <section className={styles.tours}></section>
+      <section className={styles.tours}>
+        <TourCard />
+        <TourCard />
+        <TourCard />
+      </section>
     </div>
   );
 };

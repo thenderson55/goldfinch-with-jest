@@ -6,7 +6,6 @@ import SvgBasicWorld from '../../svgs/SvgBasicWorld';
 import SvgBasicAnchor from '../../svgs/SvgBasicAnchor';
 
 function FeaturesCard({ svg }) {
-  console.log('SVG', svg);
   return (
     <div className={styles.container}>
       {svg === 'anchor' ? (
