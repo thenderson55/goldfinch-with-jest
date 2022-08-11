@@ -28,7 +28,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
-  <h2 href="https://kathycollins.co.uk" align="center">KATHY COLLINS</h2>
+  <h2 align="center">KATHY COLLINS</h2>[kathy-collins]
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -205,6 +205,7 @@ Use this space to list resources you find helpful and would like to give credit 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
+[kathy-collins]: https://kathycollins.co.uk
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
