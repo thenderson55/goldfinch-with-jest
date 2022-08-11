@@ -41,9 +41,9 @@ const Home: NextPage = () => {
         </div>
         <div className={styles.headerTextBox}>
           <div className={styles.headerPrimary}>
-            <h1 className={styles.headerPrimaryMain}>KATHY COLLINS</h1>
+            <h1 className={styles.headerPrimaryMain}>THOMAS HENDERSON</h1>
             <span className={styles.headerPrimarySub}>
-              Fine art and photography
+              Web and mobile developement
             </span>
           </div>
           <Link href="#">
