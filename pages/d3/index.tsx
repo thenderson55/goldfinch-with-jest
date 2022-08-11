@@ -13,11 +13,11 @@ function D3() {
   const mouthWidth = 10;
   const mouthRadius = 150;
 
-  const mouthArc = arc()
-    .innerRadius(mouthRadius)
-    .outerRadius(mouthRadius + mouthWidth)
-    .startAngle(Math.PI / 2)
-    .endAngle(Math.PI * 1.5);
+  // const mouthArc = arc()
+  //   .innerRadius(mouthRadius)
+  //   .outerRadius(mouthRadius + mouthWidth)
+  //   .startAngle(Math.PI / 2)
+  //   .endAngle(Math.PI * 1.5);
 
   return (
     <div>
@@ -31,7 +31,7 @@ function D3() {
           />
           <circle cx={-eyeOffsetX} cy={-eyeOffsetY} r={eyeRadius} />
           <circle cx={+eyeOffsetX} cy={-eyeOffsetY} r={eyeRadius} />
-          <path d={mouthArc()} />
+          {/* <path d={mouthArc()} /> */}
         </g>
       </svg>
     </div>
