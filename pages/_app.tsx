@@ -1,14 +1,14 @@
-import { NextPage } from "next";
-import { SessionProvider } from "next-auth/react";
-import { AppProps } from "next/dist/shared/lib/router/router";
-import { QueryClientProvider, QueryClient, Hydrate } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
-import "bootstrap/dist/css/bootstrap.css";
-import Head from "next/head";
-import React, { ReactElement, ReactNode, useEffect } from "react";
-// import Layout from "../components/Layout/Layout";
-import Navbar from "../components/Layout/Navbar";
-import "../sass/global.scss";
+import { NextPage } from 'next';
+import { SessionProvider } from 'next-auth/react';
+import { AppProps } from 'next/dist/shared/lib/router/router';
+import { QueryClientProvider, QueryClient, Hydrate } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import 'bootstrap/dist/css/bootstrap.css';
+import Head from 'next/head';
+import React, { ReactElement, ReactNode, useEffect } from 'react';
+// import Layout from '../components/Layout/Layout';
+import Navbar from '../components/Layout/Navbar';
+import '../sass/global.scss';
 // import "../components/Layout/Navbar.css";
 
 const queryClient = new QueryClient();
@@ -29,7 +29,7 @@ export default function MyApp({
 }: AppPropsWithLayout) {
   // const getLayout = Component.getLayout ?? ((page) => page);
   useEffect(() => {
-    import("bootstrap/dist/js/bootstrap");
+    import('bootstrap/dist/js/bootstrap');
   }, []);
 
   if (Component.getLayout) {
@@ -44,7 +44,7 @@ export default function MyApp({
             <title>Kathy Collins</title>
             <meta name="description" content="inventory management" />
           </Head>
-          {/* <Navbar /> */}
+          <Navbar />
           {/* <Layout> */}
           <Component {...pageProps} />
           {/* </Layout> */}
