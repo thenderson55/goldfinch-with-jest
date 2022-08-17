@@ -8,7 +8,7 @@ import 'whatwg-fetch'
 
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: () => {
-    return 'Next image stub'; // whatever
+  default: (props) => {
+    return <img {...props} />
   },
 }));
