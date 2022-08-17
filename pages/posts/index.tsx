@@ -1,6 +1,14 @@
-import { GetStaticProps } from "next";
-import Link from "next/link";
-import React from "react";
+import { GetStaticProps } from 'next';
+import Link from 'next/link';
+import React from 'react';
+
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const data = await res.json();
+  return {
+    props: { posts: data },
+  };
+};
 
 export type PostType = {
   id: string;
@@ -26,11 +34,3 @@ function PostList({ posts }: { posts: PostType[] }) {
 }
 
 export default PostList;
-
-export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const data = await res.json();
-  return {
-    props: { posts: data },
-  };
-};
