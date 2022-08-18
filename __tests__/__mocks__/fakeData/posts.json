@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "tile": "The Wandering Bunnies",
+    "body": "blistering world music, supported by a moody water glass orchestra",
+    "image": {
+      "fileName": "band15.jpg",
+      "authorName": "Adina Voicu",
+      "authorLink": "https://pixabay.com/users/adinavoicu-485024/"
+    }
+  },
+  {
+    "id": 1,
+    "title": "Shamrock Pete",
+    "body": "fusion americana, featuring a hilarious musical saw",
+    "image": {
+      "fileName": "band2.jpg",
+      "authorName": "Kyle Wong",
+      "authorLink": "https://unsplash.com/@kylewongs"
+    }
+  },
+  {
+    "id": 2,
+    "title": "The Joyous Nun Riot",
+    "body": "edgy funk with an improvisational vibe",
+    "image": {
+      "fileName": "band8.jpg",
+      "authorName": "Anton Mislawsky",
+      "authorLink": "https://unsplash.com/@antonmislawsky"
+    }
+  }
+]

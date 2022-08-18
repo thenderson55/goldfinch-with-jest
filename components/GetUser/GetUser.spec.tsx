@@ -1,18 +1,18 @@
-import { screen } from "@testing-library/react";
-import { server } from "../../testUtils/setupTests";
-import { renderWithClient } from "../../testUtils";
-import GetUser from "./GetUser";
-import { rest } from "msw";
+import { screen } from '@testing-library/react';
+import { server } from '../../testUtils/setupTests';
+import { renderWithClient } from '../../testUtils';
+import GetUser from './GetUser';
+import { rest } from 'msw';
 
-it("fetches the user and displayes their name", async () => {
+it.skip('fetches the user and displayes their name', async () => {
   server.use(
     rest.get(
-      "https://jsonplaceholder.typicode.com/users/*",
+      'https://jsonplaceholder.typicode.com/users/*',
       (req, res, ctx) => {
         return res(
           ctx.status(200),
           ctx.json({
-            name: "Chelsey Dietrich",
+            name: 'Chelsey Dietrich',
           })
         );
       }
@@ -20,12 +20,12 @@ it("fetches the user and displayes their name", async () => {
   );
 
   renderWithClient(<GetUser />);
-  expect(await screen.findByText("Chelsey Dietrich")).toBeInTheDocument();
+  expect(await screen.findByText('Chelsey Dietrich')).toBeInTheDocument();
 });
 
-it("if the user fetch fails, show the error message", async () => {
+it.skip('if the user fetch fails, show the error message', async () => {
   server.use(
-    rest.get("*", (req, res, ctx) => {
+    rest.get('*', (req, res, ctx) => {
       return res(ctx.status(500));
     })
   );
