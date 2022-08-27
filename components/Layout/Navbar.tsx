@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { signIn, signOut, useSession } from "next-auth/react";
+import Link from 'next/link';
+import { signIn, signOut, useSession } from 'next-auth/react';
 // import "./Navbar.css";
-import styles from "./Navbar.module.scss";
+import styles from './Navbar.module.scss';
 // import { useRouter } from "next/router";
 
 function Navbar() {
@@ -16,32 +16,24 @@ function Navbar() {
   return (
     <nav className={styles.header}>
       <h1 className={styles.logo}>
-        <a href="#">NextAuth</a>
+        <Link href='/'>
+          <a>Home</a>
+        </Link>
       </h1>
       {/* <ul className={styles.mainNav && styles.loaded}> */}
       <ul
         className={
           styles.mainNav &&
-          (!session && status == "loading" ? styles.loading : styles.loaded)
+          (!session && status == 'loading' ? styles.loading : styles.loaded)
         }
       >
         <li>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/dashboard">
-            <a>Dashboard</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/properties">
+          <Link href='/properties'>
             <a>Properties</a>
           </Link>
         </li>
         <li>
-          <Link href="/shipwrecks">
+          <Link href='/shipwrecks'>
             <a>Shipwrecks</a>
           </Link>
         </li>
@@ -51,18 +43,18 @@ function Navbar() {
           </Link>
         </li> */}
         <li>
-          <Link href="/restaurants">
+          <Link href='/restaurants'>
             <a>Restaurants</a>
           </Link>
         </li>
         <li>
-          <Link href="/items">
+          <Link href='/items'>
             <a>Items</a>
           </Link>
         </li>
-        {status !== "loading" && !session && (
+        {status !== 'loading' && !session && (
           <li>
-            <Link href="/api/auth/signin">
+            <Link href='/api/auth/signin'>
               <a
                 onClick={(e) => {
                   e.preventDefault();
@@ -77,7 +69,7 @@ function Navbar() {
         )}
         {session && (
           <li>
-            <Link href="/api/auth/signout">
+            <Link href='/api/auth/signout'>
               <a
                 onClick={(e) => {
                   e.preventDefault();

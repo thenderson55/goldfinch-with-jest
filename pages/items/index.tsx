@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import { useAddItemData, useItemsData } from "../../hooks/useItemsData";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
+import { useAddItemData, useItemsData } from '../../hooks/useItemsData';
 
 // export const getServerSideProps: GetServerSideProps = async () => {
 //   const { db } = await connectToDatabase();
@@ -20,9 +20,9 @@ import { useAddItemData, useItemsData } from "../../hooks/useItemsData";
 function ItemsList() {
   const router = useRouter();
   const { query } = router;
-  console.log("QUERY", query);
-  const [itemName, setItemName] = useState("");
-  const [artistName, setArtistName] = useState("");
+  console.log('QUERY', query);
+  const [itemName, setItemName] = useState('');
+  const [artistName, setArtistName] = useState('');
 
   const [limit, setLimit] = useState(10);
   const [pageNumber, setPageNumber] = useState(1);
@@ -30,7 +30,7 @@ function ItemsList() {
     limit,
     pageNumber
   );
-  console.log("DATA2", data);
+  console.log('DATA2', data);
 
   const { mutate: addItem } = useAddItemData();
 
@@ -71,32 +71,37 @@ function ItemsList() {
   }
 
   return (
-    <div className="container p-3">
+    <div className='container p-3'>
+      <header>
+        <Link href='/'>
+          <a className='home-link'>HOME</a>
+        </Link>
+      </header>
       {/* <button className="btn btn-primary m-3" onClick={() => refetch()}>
         Fetch Data
       </button> */}
       <input
-        type="text"
+        type='text'
         value={itemName}
         onChange={(e) => setItemName(e.target.value)}
       />
       <input
-        type="text"
+        type='text'
         value={artistName}
         onChange={(e) => setArtistName(e.target.value)}
       />
-      <button className="btn btn-warning m-3" onClick={handleAddItemClick}>
+      <button className='btn btn-warning m-3' onClick={handleAddItemClick}>
         Add Item
       </button>
       <div
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <button
-          className="btn btn-primary m-3"
+          className='btn btn-primary m-3'
           onClick={() => {
             setLimit((limit) => limit - 1);
             limitHandler(limit - 1);
@@ -108,7 +113,7 @@ function ItemsList() {
         </button>
         <span>Hits per page: {limit}</span>
         <button
-          className="btn btn-primary m-3"
+          className='btn btn-primary m-3'
           onClick={() => {
             setLimit((limit) => limit + 1);
             limitHandler(limit + 1);
@@ -136,13 +141,13 @@ function ItemsList() {
         })}
       <div
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <button
-          className="btn btn-primary m-3"
+          className='btn btn-primary m-3'
           onClick={() => {
             setPageNumber((page) => page - 1);
             paginationHandler(pageNumber - 1);
@@ -153,7 +158,7 @@ function ItemsList() {
         </button>
         <span>Page number: {pageNumber}</span>
         <button
-          className="btn btn-primary m-3"
+          className='btn btn-primary m-3'
           onClick={() => {
             setPageNumber((page) => page + 1);
             paginationHandler(pageNumber + 1);

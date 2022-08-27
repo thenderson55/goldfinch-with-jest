@@ -64,12 +64,18 @@
 
   &NavBox {
     display: flex;
-    flex-direction: column;
-    width: 10rem;
-    height: 10rem;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 20rem;
+    height: 20rem;
     position: absolute;
     top: 4rem;
     right: 4rem;
+  }
+
+  &LinksWrapper {
+    display: flex;
+    flex-direction: column;
   }
 
   &TextBox {

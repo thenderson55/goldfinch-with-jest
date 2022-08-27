@@ -42,9 +42,9 @@ export default function MyApp({
         <SessionProvider session={session}>
           <Head>
             <title>Kathy Collins</title>
-            <meta name="description" content="inventory management" />
+            <meta name='description' content='inventory management' />
           </Head>
-          <Navbar />
+          {/* <Navbar /> */}
           {/* <Layout> */}
           <Component {...pageProps} />
           {/* </Layout> */}

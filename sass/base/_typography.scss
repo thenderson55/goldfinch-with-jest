@@ -12,6 +12,15 @@
     color: var(--color-grey-light-4);
   }
 }
+
+.subHeader {
+  color: var(--color-white);
+  text-decoration-line: underline;
+  text-underline-offset: 0.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
 .subHeaderLink {
   &:link,
   &:visited {

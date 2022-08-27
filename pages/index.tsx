@@ -8,6 +8,7 @@ import { MswPhotoList } from '../components/MswPhotoList';
 import dalmation from '../public/dalmation.jpeg';
 import FeaturesCard from '../components/Cards/FeaturesCard';
 import TourCard from '../components/Cards/TourCard';
+
 const Home: NextPage = () => {
   // const { data: session, status } = useSession();
   const svgs = ['world', 'anchor', 'floppydisk', 'cloud'];
@@ -17,27 +18,43 @@ const Home: NextPage = () => {
       <header className={styles.header}>
         <Image
           src={seamus}
-          alt="Seamus"
+          alt='Seamus'
           className={styles.headerImage}
-          layout="fill"
-          objectFit="cover"
+          layout='fill'
+          objectFit='cover'
           // objectPosition="center bottom"
           quality={20}
         />
         <div className={styles.headerLogoBox}>
-          <Image
-            src={dalmation}
-            alt="Dalmation"
-            className={styles.headerLogo}
-          />
+          <Link href='/'>
+            <a>
+              <Image
+                src={dalmation}
+                alt='Dalmation'
+                className={styles.headerLogo}
+              />
+            </a>
+          </Link>
         </div>
         <div className={styles.headerNavBox}>
-          <Link href="/flex">
-            <a className={styles.subHeaderLink}>FLEX</a>
-          </Link>
-          <Link href="/grid">
-            <a className={styles.subHeaderLink}>GRID</a>
-          </Link>
+          <ul className={styles.headerLinksWrapper}>
+            <h3 className={styles.subHeader}>CSS</h3>
+            <Link href='/flex'>
+              <a className={styles.subHeaderLink}>FLEX</a>
+            </Link>
+            <Link href='/grid'>
+              <a className={styles.subHeaderLink}>GRID</a>
+            </Link>
+          </ul>
+          <ul className={styles.headerLinksWrapper}>
+            <h3 className={styles.subHeader}>NEXT.JS</h3>
+            <Link href='/items'>
+              <a className={styles.subHeaderLink}>ITEMS</a>
+            </Link>
+            <Link href='/shipwrecks'>
+              <a className={styles.subHeaderLink}>SHIPWRECKS</a>
+            </Link>
+          </ul>
         </div>
         <div className={styles.headerTextBox}>
           <div className={styles.headerPrimary}>
@@ -46,7 +63,7 @@ const Home: NextPage = () => {
               Web and mobile developement
             </span>
           </div>
-          <Link href="#">
+          <Link href='#'>
             <a
               className={`${styles.btn} ${styles.btnWhite} ${styles.btnAnimation}`}
             >
@@ -77,29 +94,29 @@ const Home: NextPage = () => {
               quasi aliquid dolor repellat fuga sint. Explicabo optio facilis.
             </div>
           </div>
-          <a href="#" className={styles.infoLink}>
+          <a href='#' className={styles.infoLink}>
             KOKO
           </a>
         </div>
         <div className={styles.mainPictures}>
           <div className={styles.mainImageWrapperOne}>
             <Image
-              src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489733445/ubakmxgfj8czhvsuflxt.png"
-              alt="Fuji"
+              src='https://res.cloudinary.com/dvjflyd1j/image/upload/v1489733445/ubakmxgfj8czhvsuflxt.png'
+              alt='Fuji'
               className={styles.mainImageOne}
-              layout="fill"
-              objectFit="cover"
+              layout='fill'
+              objectFit='cover'
               // objectPosition="center bottom"
               quality={20}
             />
           </div>
           <div className={styles.mainImageWrapperTwo}>
             <Image
-              src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
-              alt="Flowers"
+              src='https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg'
+              alt='Flowers'
               className={styles.mainImageTwo}
-              layout="fill"
-              objectFit="cover"
+              layout='fill'
+              objectFit='cover'
               // objectPosition="center bottom"
               quality={20}
             />
@@ -107,10 +124,10 @@ const Home: NextPage = () => {
           <div className={styles.mainImageWrapperThree}>
             <Image
               src={seamus}
-              alt="Seamus"
+              alt='Seamus'
               className={styles.mainImageThree}
-              layout="fill"
-              objectFit="cover"
+              layout='fill'
+              objectFit='cover'
               // objectPosition="center bottom"
               quality={20}
             />

@@ -1,6 +1,7 @@
-import { GetServerSideProps } from "next/types";
-import React from "react";
-import { dehydrate, QueryClient, useQuery } from "react-query";
+import Link from 'next/link';
+import { GetServerSideProps } from 'next/types';
+import React from 'react';
+import { dehydrate, QueryClient, useQuery } from 'react-query';
 
 const STALE_TIME = 1000;
 
@@ -8,9 +9,9 @@ const fetchShipwrecks = async () => {
   const data = await fetch(
     `${window.document.location.origin}/api/shipwrecks`,
     {
-      method: "GET",
+      method: 'GET',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     }
   );
@@ -21,7 +22,7 @@ const fetchShipwrecks = async () => {
 export const getServerSideProps: GetServerSideProps = async () => {
   const queryClient = new QueryClient();
   // prefetchInfiniteQuery
-  await queryClient.prefetchQuery("shipwrecks", fetchShipwrecks, {
+  await queryClient.prefetchQuery('shipwrecks', fetchShipwrecks, {
     staleTime: STALE_TIME,
   });
 
@@ -33,44 +34,49 @@ export const getServerSideProps: GetServerSideProps = async () => {
 };
 
 function PropertiesList() {
-  const { data } = useQuery("shipwrecks", fetchShipwrecks, {
+  const { data } = useQuery('shipwrecks', fetchShipwrecks, {
     staleTime: STALE_TIME,
   });
 
   return (
-    <div className="container p-3">
-      {data.map((shipwreck) => {
+    <div className='container p-3'>
+      <header>
+        <Link href='/'>
+          <a className='home-link'>HOME</a>
+        </Link>
+      </header>
+      {data?.map((shipwreck) => {
         return (
           <div key={shipwreck._id}>
             <p>{shipwreck.chart}</p>
           </div>
         );
       })}
-      <button className="btn btn-primary m-3">KindaCode.com</button>
+      <button className='btn btn-primary m-3'>KindaCode.com</button>
 
-      <div className="dropdown m-3">
+      <div className='dropdown m-3'>
         <button
-          className="btn btn-secondary dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-          id="dropdownMenuButton1"
-          aria-expanded="false"
+          className='btn btn-secondary dropdown-toggle'
+          type='button'
+          data-bs-toggle='dropdown'
+          id='dropdownMenuButton1'
+          aria-expanded='false'
         >
           Dropdown button
         </button>
-        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <ul className='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
           <li>
-            <a className="dropdown-item" href="#">
+            <a className='dropdown-item' href='#'>
               Option 1
             </a>
           </li>
           <li>
-            <a className="dropdown-item" href="#">
+            <a className='dropdown-item' href='#'>
               Option 2
             </a>
           </li>
           <li>
-            <a className="dropdown-item" href="#">
+            <a className='dropdown-item' href='#'>
               Option 3
             </a>
           </li>
