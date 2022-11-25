@@ -69,6 +69,22 @@ Eventually it will become either a portfolio/e-commerce site for my mother or an
 
 Currently it displays some basic CSS work. Please click the "FLEX" and "GRID" buttons to see more.
 
+To run localhost development version:
+
+`yarn run dev`
+
+To run unit and integration tests:
+
+`yarn test`
+
+To run Cypress end to end testing:
+
+`yarn build`
+`yarn start`
+`npx cypress open`
+
+Select e2e testing and the Chrome browser then click on the `.cy.ts` files.
+
 <!-- Here's why:
 * Your time should be focused on creating something amazing. A project that solves a problem and helps others
 * You shouldn't be doing the same tasks over and over like creating a README from scratch
