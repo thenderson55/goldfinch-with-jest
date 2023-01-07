@@ -7,10 +7,14 @@ import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
 import { clientPromise } from '../../../lib/mongodb';
 import { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+// import {session} from "next-auth/client";
+let userAccount;
 
 const authOptions: NextAuthOptions = {
   session: {
     strategy: 'jwt',
+    // jwt: true,
+    maxAge: 30 * 24 * 60 * 60,
   },
   providers: [
     CredentialsProvider({
@@ -27,20 +31,51 @@ const authOptions: NextAuthOptions = {
           placeholder: 'abcd1234',
         },
       },
-      authorize(credentials, req) {
+      async authorize(credentials, req) {
+        const client = await clientPromise;
+
         const { email, password } = credentials as {
           email: string;
           password: string;
         };
+        const user = await client
+          .db('goldFinchDb')
+          .collection('users')
+          .findOne({ email });
+        console.log('DB', user);
         console.log({ email, password });
         if (email !== 'johndoe@gmail.com' || password !== 'abcd1234') {
           console.log('YO');
           return null;
         }
-        return { id: 1, name: 'John', email: 'johndoe@gmail.com' };
+        return (userAccount = {
+          id: 1,
+          name: 'John',
+          email: 'johndoe@gmail.com',
+        });
       },
     }),
   ],
+  callbacks: {
+    async jwt({ token, user, account, profile, isNewUser }) {
+      if (typeof user !== typeof undefined) {
+        token.user = user;
+      }
+      return Promise.resolve(token);
+    },
+    async session({ session, token }) {
+      session.user = token.user;
+      const newDate = String(
+        new Date(
+          Date.now() + 1000 /*sec*/ * 60 /*min*/ * 60 /*hour*/ * 24 /*day*/ * 10
+        )
+      );
+      session.expires = newDate;
+      token.exp = 2663263538;
+      // you might return this in new version
+      return Promise.resolve(session);
+    },
+  },
 };
 
 export default NextAuth(authOptions);

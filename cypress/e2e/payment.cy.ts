@@ -8,7 +8,8 @@ describe('payment', () => {
     cy.findByRole('link', { name: /grid/i }).should('be.visible');
 
     // Find a link with an href attribute containing "about" and click it
-    cy.get('a[href*="flex"]').click();
+    // cy.get('a[href*="flex"]').click();
+    cy.findByRole('link', { name: /flex/i }).should('be.visible').click();
 
     // The new url should include "/about"
     cy.url().should('include', '/flex');

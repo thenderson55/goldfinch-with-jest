@@ -22,16 +22,16 @@ function Flex() {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <header className={styles.header}>
-          <Link href="/">
+          <Link href='/'>
             <a>
               <SvgCake className={styles.headerIcon} />
             </a>
           </Link>
-          <form action="" className={styles.search}>
+          <form action='' className={styles.search}>
             <input
-              type="text"
+              type='text'
               className={styles.searchInput}
-              placeholder="Search"
+              placeholder='Search'
             />
             <button className={styles.searchButton}>
               <SvgMagnifyingGlass className={styles.searchIcon} />
@@ -47,12 +47,12 @@ function Flex() {
               <span className={styles.userNavNotification}>14</span>
             </div>
             <div className={styles.userNavUser}>
-              <div className="avatar-box">
+              <div className='avatar-box'>
                 <Image
                   src={seamus}
-                  alt="user photo"
-                  className="avatar-image"
-                  layout="fill"
+                  alt='user photo'
+                  className='avatar-image'
+                  layout='fill'
                 />
               </div>
             </div>
@@ -62,7 +62,7 @@ function Flex() {
           <nav className={styles.sideBar}>
             <ul className={styles.sideNav}>
               <li className={styles.sideNavItem}>
-                <Link href="/">
+                <Link href='/'>
                   <a className={styles.sideNavLink}>
                     <SvgHome className={styles.sideNavIcon} />
                     <span className={styles.sideNavText}>HOTELS</span>
@@ -70,7 +70,7 @@ function Flex() {
                 </Link>
               </li>
               <li className={styles.sideNavItem}>
-                <Link href="/hotel">
+                <Link href='/hotel'>
                   <a className={styles.sideNavLink}>
                     <SvgAircraftTakeOff className={styles.sideNavIcon} />
                     <span className={styles.sideNavText}>FLIGHTS</span>
@@ -78,7 +78,7 @@ function Flex() {
                 </Link>
               </li>
               <li className={styles.sideNavItem}>
-                <Link href="/">
+                <Link href='/'>
                   <a className={styles.sideNavLink}>
                     <SvgKey className={styles.sideNavIcon} />
                     <span className={styles.sideNavText}>CARS</span>
@@ -86,7 +86,7 @@ function Flex() {
                 </Link>
               </li>
               <li className={styles.sideNavItem}>
-                <Link href="/">
+                <Link href='/'>
                   <a className={styles.sideNavLink}>
                     <SvgMap className={styles.sideNavIcon} />
                     <span className={styles.sideNavText}>MAP</span>
@@ -102,26 +102,26 @@ function Flex() {
             <div className={styles.gallery}>
               <div className={styles.galleryImageContainer}>
                 <Image
-                  src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg"
-                  alt="Flowers"
+                  src='https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg'
+                  alt='Flowers'
                   className={styles.galleryImage}
-                  layout="fill"
+                  layout='fill'
                 />
               </div>
               <div className={styles.galleryImageContainer}>
                 <Image
-                  src="https://res.cloudinary.com/fay/image/upload/v1617047570/galaxy_ne5p8f.jpg"
-                  alt="Space"
+                  src='https://res.cloudinary.com/fay/image/upload/v1617047570/galaxy_ne5p8f.jpg'
+                  alt='Space'
                   className={styles.galleryImage}
-                  layout="fill"
+                  layout='fill'
                 />
               </div>
               <div className={styles.galleryImageContainer}>
                 <Image
-                  src="https://res.cloudinary.com/dvjflyd1j/image/upload/v1489733445/ubakmxgfj8czhvsuflxt.png"
-                  alt="Fuji"
+                  src='https://res.cloudinary.com/dvjflyd1j/image/upload/v1489733445/ubakmxgfj8czhvsuflxt.png'
+                  alt='Fuji'
                   className={styles.galleryImage}
-                  layout="fill"
+                  layout='fill'
                 />
               </div>
             </div>
@@ -139,7 +139,7 @@ function Flex() {
               <div className={styles.hotelViewOverviewInfo}>
                 <div className={styles.hotelViewOverviewInfoLocation}>
                   <SvgLocationPin className={styles.hotelViewOverviewIcon} />
-                  <button className="pulsatingButton">Lagos, Portugal</button>
+                  <button className='pulsatingButton'>Lagos, Portugal</button>
                 </div>
                 <div className={styles.hotelViewOverviewInfoVotes}>
                   <span className={styles.hotelViewOverviewInfoVotesText}>
@@ -151,55 +151,55 @@ function Flex() {
                 </div>
               </div>
             </div>
-            <div className="detail">
-              <div className="description">
-                <p className="paragraph">
+            <div className='detail'>
+              <div className='description'>
+                <p className='paragraph'>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet
                   minima, dolore quidem ipsum quo voluptatibus placeat itaque
                   unde architecto doloremque sint, id dolores provident sunt
                   officia dolorem delectus dicta. Assumenda.
                 </p>
-                <p className="paragraph">
+                <p className='paragraph'>
                   Amet minima, dolore quidem ipsum quo voluptatibus placeat
                   itaque unde architecto doloremque sint, id dolores provident
                   sunt officia dolorem delectus dicta. Assumenda.
                 </p>
-                <ul className="list">
-                  <li className="list-item">
-                    <SvgChevronRight className="list-item-icon" />
+                <ul className='list'>
+                  <li className='list-item'>
+                    <SvgChevronRight className='list-item-icon' />
                     Sea view
                   </li>
-                  <li className="list-item">
-                    <SvgChevronRight className="list-item-icon" />
+                  <li className='list-item'>
+                    <SvgChevronRight className='list-item-icon' />
                     Pool and Gym
                   </li>
-                  <li className="list-item">
-                    <SvgChevronRight className="list-item-icon" />
+                  <li className='list-item'>
+                    <SvgChevronRight className='list-item-icon' />
                     Close to the beach
                   </li>
-                  <li className="list-item">
-                    <SvgChevronRight className="list-item-icon" />
+                  <li className='list-item'>
+                    <SvgChevronRight className='list-item-icon' />
                     Fine dining
                   </li>
-                  <li className="list-item">
-                    <SvgChevronRight className="list-item-icon" />
+                  <li className='list-item'>
+                    <SvgChevronRight className='list-item-icon' />
                     Shopping nearby
                   </li>
-                  <li className="list-item">
-                    <SvgChevronRight className="list-item-icon" />
+                  <li className='list-item'>
+                    <SvgChevronRight className='list-item-icon' />
                     Kids area
                   </li>
                 </ul>
-                <div className="recommend">
+                <div className='recommend'>
                   <span>Tui and 3 others recommend this hotel.</span>
-                  <div className="recommend-avatar">
+                  <div className='recommend-avatar'>
                     <div
                       className={`${styles.avatarOverlap} avatar-box-border`}
                     >
                       <Image
                         src={seamus}
-                        alt="user photo"
-                        layout="fill"
+                        alt='user photo'
+                        layout='fill'
                         className={`${styles.avatarBorder} avatar-image`}
                       />
                     </div>
@@ -208,8 +208,8 @@ function Flex() {
                     >
                       <Image
                         src={seamus}
-                        alt="user photo"
-                        layout="fill"
+                        alt='user photo'
+                        layout='fill'
                         className={`${styles.avatarBorder} avatar-image`}
                       />
                     </div>
@@ -218,8 +218,8 @@ function Flex() {
                     >
                       <Image
                         src={seamus}
-                        alt="user photo"
-                        layout="fill"
+                        alt='user photo'
+                        layout='fill'
                         className={`${styles.avatarBorder} avatar-image`}
                       />
                     </div>
@@ -228,8 +228,8 @@ function Flex() {
                     >
                       <Image
                         src={seamus}
-                        alt="user photo"
-                        layout="fill"
+                        alt='user photo'
+                        layout='fill'
                         className={`${styles.avatarBorder} avatar-image`}
                       />
                     </div>
@@ -242,12 +242,12 @@ function Flex() {
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   </div>
                   <div className={styles.reviewUser}>
-                    <div className="avatar-box">
+                    <div className='avatar-box'>
                       <Image
                         src={seamus}
-                        alt="user photo"
-                        layout="fill"
-                        className="avatar-photo"
+                        alt='user photo'
+                        layout='fill'
+                        className='avatar-photo'
                       />
                     </div>
                     <div className={styles.reviewName}>
@@ -264,12 +264,12 @@ function Flex() {
                     esse doloribus officia dolor possimus!
                   </div>
                   <div className={styles.reviewUser}>
-                    <div className="avatar-box">
+                    <div className='avatar-box'>
                       <Image
                         src={seamus}
-                        alt="user photo"
-                        layout="fill"
-                        className="avatar-photo"
+                        alt='user photo'
+                        layout='fill'
+                        className='avatar-photo'
                       />
                     </div>
                     <div className={styles.reviewName}>
@@ -280,7 +280,7 @@ function Flex() {
                   </div>
                 </div>
                 <div className={styles.hotelViewOverviewInfoLocation}>
-                  <button className="pulsatingButton">See more &rarr;</button>
+                  <button className='pulsatingButton'>See more &rarr;</button>
                 </div>
               </div>
             </div>
@@ -288,7 +288,7 @@ function Flex() {
               <h2 className={styles.ctaBookNow}>
                 Good news! We have 4 rooms available for your dates!
               </h2>
-              <button className="cta-btn">
+              <button className='cta-btn'>
                 <span>BOOK NOW!</span>
               </button>
             </div>
