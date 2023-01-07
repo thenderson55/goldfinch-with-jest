@@ -3,7 +3,7 @@ import React from 'react';
 function index() {
   return (
     <div style={{ margin: 50 }}>
-      <h1>Privacy Policy</h1>
+      <h2>Privacy Policy</h2>
       <p>Last updated: January 07, 2023</p>
       <p>
         This Privacy Policy describes Our policies and procedures on the
@@ -26,7 +26,7 @@ function index() {
         </a> */}
         .
       </p>
-      <h1>Interpretation and Definitions</h1>
+      <h2>Interpretation and Definitions</h2>
       <h2>Interpretation</h2>
       <p>
         The words of which the initial letter is capitalized have meanings
@@ -112,7 +112,7 @@ function index() {
           </p>
         </li>
       </ul>
-      <h1>Collecting and Using Your Personal Data</h1>
+      <h2>Collecting and Using Your Personal Data</h2>
       <h2>Types of Data Collected</h2>
       <h3>Personal Data</h3>
       <p>
@@ -373,7 +373,7 @@ function index() {
         means to protect Your Personal Data, We cannot guarantee its absolute
         security.
       </p>
-      <h1>Children&apos;s Privacy</h1>
+      <h2>Children&apos;s Privacy</h2>
       <p>
         Our Service does not address anyone under the age of 13. We do not
         knowingly collect personally identifiable information from anyone under
@@ -389,7 +389,7 @@ function index() {
         require Your parent&apos;s consent before We collect and use that
         information.
       </p>
-      <h1>Links to Other Websites</h1>
+      <h2>Links to Other Websites</h2>
       <p>
         Our Service may contain links to other websites that are not operated by
         Us. If You click on a third party link, You will be directed to that
@@ -400,7 +400,7 @@ function index() {
         We have no control over and assume no responsibility for the content,
         privacy policies or practices of any third party sites or services.
       </p>
-      <h1>Changes to this Privacy Policy</h1>
+      <h2>Changes to this Privacy Policy</h2>
       <p>
         We may update Our Privacy Policy from time to time. We will notify You
         of any changes by posting the new Privacy Policy on this page.
@@ -415,7 +415,7 @@ function index() {
         changes. Changes to this Privacy Policy are effective when they are
         posted on this page.
       </p>
-      <h1>Contact Us</h1>
+      <h2>Contact Us</h2>
       <p>
         If you have any questions about this Privacy Policy, You can contact us:
       </p>
