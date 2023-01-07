@@ -20,39 +20,37 @@ const Home: NextPage = () => {
           src={seamus}
           alt='Seamus'
           className={styles.headerImage}
-          layout='fill'
-          objectFit='cover'
+          fill
+          style={{ objectFit: 'cover' }}
           // objectPosition="center bottom"
           quality={20}
         />
         <div className={styles.headerLogoBox}>
           <Link href='/'>
-            <a>
-              <Image
-                src={dalmation}
-                alt='Dalmation'
-                className={styles.headerLogo}
-              />
-            </a>
+            <Image
+              src={dalmation}
+              alt='Dalmation'
+              className={styles.headerLogo}
+            />
           </Link>
         </div>
         <div className={styles.headerNavBox}>
           <ul className={styles.headerLinksWrapper}>
             <h3 className={styles.subHeader}>CSS</h3>
-            <Link href='/flex'>
-              <a className={styles.subHeaderLink}>FLEX</a>
+            <Link href='/flex' className={styles.subHeaderLink}>
+              FLEX
             </Link>
-            <Link href='/grid'>
-              <a className={styles.subHeaderLink}>GRID</a>
+            <Link href='/grid' className={styles.subHeaderLink}>
+              GRID
             </Link>
           </ul>
           <ul className={styles.headerLinksWrapper}>
             <h3 className={styles.subHeader}>NEXT.JS</h3>
-            <Link href='/items'>
-              <a className={styles.subHeaderLink}>ITEMS</a>
+            <Link href='/items' className={styles.subHeaderLink}>
+              ITEMS
             </Link>
-            <Link href='/shipwrecks'>
-              <a className={styles.subHeaderLink}>SHIPWRECKS</a>
+            <Link href='/shipwrecks' className={styles.subHeaderLink}>
+              SHIPWRECKS
             </Link>
           </ul>
         </div>
@@ -63,12 +61,11 @@ const Home: NextPage = () => {
               Web and mobile developement
             </span>
           </div>
-          <Link href='#'>
-            <a
-              className={`${styles.btn} ${styles.btnWhite} ${styles.btnAnimation}`}
-            >
-              DISCOVER MORE
-            </a>
+          <Link
+            href='#'
+            className={`${styles.btn} ${styles.btnWhite} ${styles.btnAnimation}`}
+          >
+            DISCOVER MORE
           </Link>
         </div>
         {/* <MswPhotoList /> */}
@@ -104,8 +101,8 @@ const Home: NextPage = () => {
               src='https://res.cloudinary.com/dvjflyd1j/image/upload/v1489733445/ubakmxgfj8czhvsuflxt.png'
               alt='Fuji'
               className={styles.mainImageOne}
-              layout='fill'
-              objectFit='cover'
+              fill
+              style={{ objectFit: 'cover' }}
               // objectPosition="center bottom"
               quality={20}
             />
@@ -115,8 +112,8 @@ const Home: NextPage = () => {
               src='https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg'
               alt='Flowers'
               className={styles.mainImageTwo}
-              layout='fill'
-              objectFit='cover'
+              fill
+              style={{ objectFit: 'cover' }}
               // objectPosition="center bottom"
               quality={20}
             />
@@ -126,8 +123,8 @@ const Home: NextPage = () => {
               src={seamus}
               alt='Seamus'
               className={styles.mainImageThree}
-              layout='fill'
-              objectFit='cover'
+              fill
+              style={{ objectFit: 'cover' }}
               // objectPosition="center bottom"
               quality={20}
             />

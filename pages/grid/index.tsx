@@ -14,9 +14,9 @@ function Grid() {
     <div className={styles.container}>
       <div className={styles.sidebar}>
         <Link href="/">
-          <a>
-            <SvgStar className={styles.icon} />
-          </a>
+
+          <SvgStar className={styles.icon} />
+
         </Link>
       </div>
       <header className={styles.header}>

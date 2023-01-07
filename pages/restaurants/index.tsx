@@ -86,7 +86,7 @@ function RestaurantsList() {
               {restaurant.name}
               <br />
               <Link href={`/restaurants/${restaurant._id}`}>
-                <a>More info</a>
+                More info
               </Link>
             </div>
           );

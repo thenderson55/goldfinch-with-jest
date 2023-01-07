@@ -23,9 +23,9 @@ function PostList({ posts }: { posts: PostType[] }) {
       {posts.map((post) => (
         <div key={post.id}>
           <Link href={`posts/${post.id}`}>
-            <a>
-              <p>{post.title}</p>
-            </a>
+
+            <p>{post.title}</p>
+
           </Link>
         </div>
       ))}

@@ -73,8 +73,8 @@ function ItemsList() {
   return (
     <div className='container p-3'>
       <header>
-        <Link href='/'>
-          <a className='home-link'>HOME</a>
+        <Link href='/' className='home-link'>
+          HOME
         </Link>
       </header>
       {/* <button className="btn btn-primary m-3" onClick={() => refetch()}>
@@ -134,7 +134,7 @@ function ItemsList() {
               {item.artist}
               <br />
               <Link href={`/items/${item._id}`}>
-                <a>More info</a>
+                More info
               </Link>
             </div>
           );

@@ -23,9 +23,7 @@ function Flex() {
       <div className={styles.container}>
         <header className={styles.header}>
           <Link href='/'>
-            <a>
-              <SvgCake className={styles.headerIcon} />
-            </a>
+            <SvgCake className={styles.headerIcon} />
           </Link>
           <form action='' className={styles.search}>
             <input
@@ -52,7 +50,7 @@ function Flex() {
                   src={seamus}
                   alt='user photo'
                   className='avatar-image'
-                  layout='fill'
+                  fill
                 />
               </div>
             </div>
@@ -62,35 +60,27 @@ function Flex() {
           <nav className={styles.sideBar}>
             <ul className={styles.sideNav}>
               <li className={styles.sideNavItem}>
-                <Link href='/'>
-                  <a className={styles.sideNavLink}>
-                    <SvgHome className={styles.sideNavIcon} />
-                    <span className={styles.sideNavText}>HOTELS</span>
-                  </a>
+                <Link href='/' className={styles.sideNavLink}>
+                  <SvgHome className={styles.sideNavIcon} />
+                  <span className={styles.sideNavText}>HOTELS</span>
                 </Link>
               </li>
               <li className={styles.sideNavItem}>
-                <Link href='/hotel'>
-                  <a className={styles.sideNavLink}>
-                    <SvgAircraftTakeOff className={styles.sideNavIcon} />
-                    <span className={styles.sideNavText}>FLIGHTS</span>
-                  </a>
+                <Link href='/hotel' className={styles.sideNavLink}>
+                  <SvgAircraftTakeOff className={styles.sideNavIcon} />
+                  <span className={styles.sideNavText}>FLIGHTS</span>
                 </Link>
               </li>
               <li className={styles.sideNavItem}>
-                <Link href='/'>
-                  <a className={styles.sideNavLink}>
-                    <SvgKey className={styles.sideNavIcon} />
-                    <span className={styles.sideNavText}>CARS</span>
-                  </a>
+                <Link href='/' className={styles.sideNavLink}>
+                  <SvgKey className={styles.sideNavIcon} />
+                  <span className={styles.sideNavText}>CARS</span>
                 </Link>
               </li>
               <li className={styles.sideNavItem}>
-                <Link href='/'>
-                  <a className={styles.sideNavLink}>
-                    <SvgMap className={styles.sideNavIcon} />
-                    <span className={styles.sideNavText}>MAP</span>
-                  </a>
+                <Link href='/' className={styles.sideNavLink}>
+                  <SvgMap className={styles.sideNavIcon} />
+                  <span className={styles.sideNavText}>MAP</span>
                 </Link>
               </li>
             </ul>
@@ -105,7 +95,7 @@ function Flex() {
                   src='https://res.cloudinary.com/dvjflyd1j/image/upload/v1489725041/sample.jpg'
                   alt='Flowers'
                   className={styles.galleryImage}
-                  layout='fill'
+                  fill
                 />
               </div>
               <div className={styles.galleryImageContainer}>
@@ -113,7 +103,7 @@ function Flex() {
                   src='https://res.cloudinary.com/fay/image/upload/v1617047570/galaxy_ne5p8f.jpg'
                   alt='Space'
                   className={styles.galleryImage}
-                  layout='fill'
+                  fill
                 />
               </div>
               <div className={styles.galleryImageContainer}>
@@ -121,7 +111,7 @@ function Flex() {
                   src='https://res.cloudinary.com/dvjflyd1j/image/upload/v1489733445/ubakmxgfj8czhvsuflxt.png'
                   alt='Fuji'
                   className={styles.galleryImage}
-                  layout='fill'
+                  fill
                 />
               </div>
             </div>
@@ -199,7 +189,7 @@ function Flex() {
                       <Image
                         src={seamus}
                         alt='user photo'
-                        layout='fill'
+                        fill
                         className={`${styles.avatarBorder} avatar-image`}
                       />
                     </div>
@@ -209,7 +199,7 @@ function Flex() {
                       <Image
                         src={seamus}
                         alt='user photo'
-                        layout='fill'
+                        fill
                         className={`${styles.avatarBorder} avatar-image`}
                       />
                     </div>
@@ -219,7 +209,7 @@ function Flex() {
                       <Image
                         src={seamus}
                         alt='user photo'
-                        layout='fill'
+                        fill
                         className={`${styles.avatarBorder} avatar-image`}
                       />
                     </div>
@@ -229,7 +219,7 @@ function Flex() {
                       <Image
                         src={seamus}
                         alt='user photo'
-                        layout='fill'
+                        fill
                         className={`${styles.avatarBorder} avatar-image`}
                       />
                     </div>
@@ -246,8 +236,8 @@ function Flex() {
                       <Image
                         src={seamus}
                         alt='user photo'
-                        layout='fill'
-                        className='avatar-photo'
+                        fill
+                        className='avatar-image'
                       />
                     </div>
                     <div className={styles.reviewName}>
@@ -268,8 +258,8 @@ function Flex() {
                       <Image
                         src={seamus}
                         alt='user photo'
-                        layout='fill'
-                        className='avatar-photo'
+                        fill
+                        className='avatar-image'
                       />
                     </div>
                     <div className={styles.reviewName}>

@@ -17,7 +17,7 @@ function Navbar() {
     <nav className={styles.header}>
       <h1 className={styles.logo}>
         <Link href='/'>
-          <a>Home</a>
+          Home
         </Link>
       </h1>
       {/* <ul className={styles.mainNav && styles.loaded}> */}
@@ -29,12 +29,12 @@ function Navbar() {
       >
         <li>
           <Link href='/properties'>
-            <a>Properties</a>
+            Properties
           </Link>
         </li>
         <li>
           <Link href='/shipwrecks'>
-            <a>Shipwrecks</a>
+            Shipwrecks
           </Link>
         </li>
         {/* <li>
@@ -44,40 +44,40 @@ function Navbar() {
         </li> */}
         <li>
           <Link href='/restaurants'>
-            <a>Restaurants</a>
+            Restaurants
           </Link>
         </li>
         <li>
           <Link href='/items'>
-            <a>Items</a>
+            Items
           </Link>
         </li>
         {status !== 'loading' && !session && (
           <li>
-            <Link href='/api/auth/signin'>
-              <a
-                onClick={(e) => {
-                  e.preventDefault();
-                  signIn();
-                  // signIn("github");
-                }}
-              >
+            <Link
+              href='/api/auth/signin'
+              onClick={(e) => {
+                e.preventDefault();
+                signIn();
+                // signIn("github");
+              }}>
+              
                 Sign In
-              </a>
+              
             </Link>
           </li>
         )}
         {session && (
           <li>
-            <Link href='/api/auth/signout'>
-              <a
-                onClick={(e) => {
-                  e.preventDefault();
-                  signOut();
-                }}
-              >
+            <Link
+              href='/api/auth/signout'
+              onClick={(e) => {
+                e.preventDefault();
+                signOut();
+              }}>
+              
                 Sign Out
-              </a>
+              
             </Link>
           </li>
         )}

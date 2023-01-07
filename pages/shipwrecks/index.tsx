@@ -41,8 +41,8 @@ function PropertiesList() {
   return (
     <div className='container p-3'>
       <header>
-        <Link href='/'>
-          <a className='home-link'>HOME</a>
+        <Link href='/' className='home-link'>
+          HOME
         </Link>
       </header>
       {data?.map((shipwreck) => {
