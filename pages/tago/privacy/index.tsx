@@ -373,7 +373,7 @@ function index() {
         means to protect Your Personal Data, We cannot guarantee its absolute
         security.
       </p>
-      <h2>Children&apos;s Privacy</h2>
+      {/* <h2>Children&apos;s Privacy</h2>
       <p>
         Our Service does not address anyone under the age of 13. We do not
         knowingly collect personally identifiable information from anyone under
@@ -388,7 +388,7 @@ function index() {
         information and Your country requires consent from a parent, We may
         require Your parent&apos;s consent before We collect and use that
         information.
-      </p>
+      </p> */}
       <h2>Links to Other Websites</h2>
       <p>
         Our Service may contain links to other websites that are not operated by
