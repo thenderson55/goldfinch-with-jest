@@ -1,7 +1,10 @@
+import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import styles from './index.module.scss';
+import Controls from './Controls';
+import { CameraControls } from '@react-three/drei';
 
-export default function Home() {
+export default function Three() {
   return (
     <div className={styles.scene}>
       <Canvas
@@ -21,7 +24,9 @@ export default function Home() {
           <boxBufferGeometry />
           <meshPhysicalMaterial color={'white'} />
         </mesh>
-        <mesh position={[0, -1, 0]} recieveShadow={true}>
+        {/* <Controls /> */}
+        <CameraControls />
+        <mesh position={[0, -1, 0]} receiveShadow={true}>
           <boxBufferGeometry args={[20, 1, 10]} />
           <meshPhysicalMaterial color='white' />
         </mesh>
