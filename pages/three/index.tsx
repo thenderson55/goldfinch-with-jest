@@ -2,8 +2,9 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import styles from './index.module.scss';
 // import Controls from './Controls';
-import { CameraControls } from '@react-three/drei';
-import Cube from './Cube';
+import { CameraControls, Html, PerspectiveCamera } from '@react-three/drei';
+import MyCube from './MyCube';
+import MySphere from './MySphere';
 
 export default function Three() {
   return (
@@ -11,21 +12,40 @@ export default function Three() {
       <Canvas
         shadows={true}
         className={styles.canvas}
-        camera={{
-          position: [-6, 7, 10],
-        }}
+        // camera={{
+        //   position: [-6, 7, 10],
+        // }}
       >
-        <Suspense fallback={null}>
-          <ambientLight color={'pink'} intensity={0.3} />
-          <mesh position={[0, 3, 0]}>
-            <pointLight castShadow />
-            <sphereBufferGeometry args={[0.2, 30, 10]} />
-            <meshPhongMaterial emissive={'red'} />
-          </mesh>
+        <Suspense
+          fallback={
+            <Html center>
+              <div style={{ color: 'pink', fontWeight: 'bold', fontSize: 24 }}>
+                PLEASE WAIT
+              </div>
+            </Html>
+          }
+        >
+          <Html center>
+            <div
+              style={{
+                color: 'pink',
+                fontWeight: 'bold',
+                fontSize: 24,
+                letterSpacing: 30,
+              }}
+            >
+              YOOOOOO
+            </div>
+          </Html>
+          <PerspectiveCamera makeDefault={true} position={[-20, 5, 20]} />
           {/* <Controls /> */}
-          <Cube />
           <CameraControls />
-          <mesh position={[0, -1, 0]} receiveShadow={true}>
+          <ambientLight color={'pink'} />
+          <pointLight position={[10, 10, 10]} castShadow />
+          <MySphere position={[-10, 5, -10]} />
+          <MyCube />
+
+          <mesh position={[0, -3, 0]} receiveShadow={true}>
             <boxBufferGeometry args={[20, 1, 10]} />
             <meshPhysicalMaterial color='green' />
           </mesh>
