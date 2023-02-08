@@ -36,6 +36,12 @@ const Home: NextPage = () => {
         </div>
         <div className={styles.headerNavBox}>
           <ul className={styles.headerLinksWrapper}>
+            <h3 className={styles.subHeader}>THREE</h3>
+            <Link href='/three' className={styles.subHeaderLink}>
+              BASIC
+            </Link>
+          </ul>
+          <ul className={styles.headerLinksWrapper}>
             <h3 className={styles.subHeader}>CSS</h3>
             <Link href='/flex' className={styles.subHeaderLink}>
               FLEX
@@ -44,6 +50,7 @@ const Home: NextPage = () => {
               GRID
             </Link>
           </ul>
+
           <ul className={styles.headerLinksWrapper}>
             <h3 className={styles.subHeader}>NEXT.JS</h3>
             <Link href='/items' className={styles.subHeaderLink}>

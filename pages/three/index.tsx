@@ -2,9 +2,15 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import styles from './index.module.scss';
 // import Controls from './Controls';
-import { CameraControls, Html, PerspectiveCamera } from '@react-three/drei';
+import {
+  CameraControls,
+  Html,
+  OrbitControls,
+  PerspectiveCamera,
+} from '@react-three/drei';
 import MyCube from './MyCube';
 import MySphere from './MySphere';
+import Link from 'next/link';
 
 export default function Three() {
   return (
@@ -26,20 +32,23 @@ export default function Three() {
           }
         >
           <Html center>
-            <div
+            <Link
+              href='/'
               style={{
                 color: 'pink',
                 fontWeight: 'bold',
                 fontSize: 24,
                 letterSpacing: 30,
+                textDecoration: 'none',
               }}
             >
-              YOOOOOO
-            </div>
+              HOOOOOME
+            </Link>
           </Html>
           <PerspectiveCamera makeDefault={true} position={[-20, 5, 20]} />
           {/* <Controls /> */}
           <CameraControls />
+          {/* <OrbitControls /> */}
           <ambientLight color={'pink'} />
           <pointLight position={[10, 10, 10]} castShadow />
           <MySphere position={[-10, 5, -10]} />
