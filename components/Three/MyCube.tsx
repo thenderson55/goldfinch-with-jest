@@ -7,7 +7,7 @@ interface Props {
   args?: number[];
 }
 
-function Cube(props: Props) {
+function MyCube(props: Props) {
   const { position, args } = props;
   const meshRef = React.useRef<Mesh>();
   useFrame(() => {
@@ -31,4 +31,4 @@ function Cube(props: Props) {
   );
 }
 
-export default Cube;
+export default MyCube;

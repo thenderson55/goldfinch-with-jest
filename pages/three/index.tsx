@@ -8,8 +8,8 @@ import {
   OrbitControls,
   PerspectiveCamera,
 } from '@react-three/drei';
-import MyCube from './MyCube';
-import MySphere from './MySphere';
+import MyCube from '../../components/Three/MyCube';
+import MySphere from '../../components/Three/MySphere';
 import Link from 'next/link';
 
 export default function Three() {
