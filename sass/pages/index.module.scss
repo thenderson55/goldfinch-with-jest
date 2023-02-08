@@ -54,6 +54,9 @@
     & > span {
       border-radius: 50%;
     }
+    @media screen and (max-width: 430px) {
+      display: none;
+    }
   }
 
   &Logo {
@@ -73,6 +76,15 @@
     position: absolute;
     top: 4rem;
     right: 4rem;
+    @media screen and (max-width: 430px) {
+      justify-content: space-between;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      width: 85%;
+      // text-align: center;
+    }
   }
 
   &LinksWrapper {

@@ -19,6 +19,9 @@
   text-underline-offset: 0.5rem;
   margin-bottom: 1rem;
   display: inline-block;
+  @media screen and (max-width: 430px) {
+    font-size: 2.5rem;
+  }
 }
 
 .subHeaderLink {
@@ -34,31 +37,46 @@
     text-decoration: none;
     color: var(--color-grey-light-4);
   }
+  @media screen and (max-width: 430px) {
+    font-size: 1.5rem;
+  }
 }
 
 .headerPrimary {
   color: var(--color-white);
   backface-visibility: hidden;
   margin-bottom: 6rem;
+  // text-align: justify;
 
   &Main {
     display: block;
-    letter-spacing: 1.7rem;
+    // letter-spacing: 1.7rem;
+    letter-spacing: 1.4vw;
+    font-size: 4rem;
 
     @media screen and (min-width: 700px) {
       animation: moveInLeft 1s;
+    }
+    @media screen and (max-width: 600px) {
+      letter-spacing: 1vw;
+      font-size: 2.8rem;
     }
   }
 
   &Sub {
     display: block;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: 400;
-    letter-spacing: 2rem;
-    margin-left: -0.6rem;
+    letter-spacing: 2.5rem;
+    letter-spacing: 1vw;
+    // margin-left: -0.6rem;
     // animation: name duration timing-function delay iteration-count direction fill-mode;
     @media screen and (min-width: 700px) {
       animation: moveInRight 1s;
+    }
+    @media screen and (max-width: 600px) {
+      letter-spacing: 0.8vw;
+      font-size: 1.8rem;
     }
   }
 }
