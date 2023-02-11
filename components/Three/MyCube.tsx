@@ -20,10 +20,8 @@ function MyCube(props: Props) {
     <mesh
       ref={meshRef}
       position={position ? position : [0, 0, 0]}
-      // rotateX={3}
-      // rotateY={0.2}
-      // receiveShadow={true}
-      // castShadow={true}
+      receiveShadow
+      castShadow
     >
       <boxBufferGeometry args={args ? args : [1, 1, 1]} />
       <meshStandardMaterial color={'blue'} />

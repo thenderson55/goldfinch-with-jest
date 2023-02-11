@@ -10,7 +10,7 @@ function Sphere(props: Props) {
   const { position, args } = props;
   return (
     <mesh position={position ? position : [0, 3, 0]}>
-      <pointLight castShadow />
+      {/* <pointLight castShadow />  */}
       <sphereBufferGeometry args={args ? args : [0.2, 30, 10]} />
       <meshPhongMaterial emissive={'red'} />
     </mesh>

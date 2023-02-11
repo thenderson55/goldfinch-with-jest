@@ -5,6 +5,7 @@ import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import MyCube from './MyCube';
 import MySphere from './MySphere';
 import { angleToRadians } from '../../utils';
+import MyFloor from './MyFloor';
 
 export default function MyScene() {
   const orbitControlsRef = React.useRef(null);
@@ -19,19 +20,27 @@ export default function MyScene() {
 
   return (
     <>
-      <PerspectiveCamera makeDefault={true} position={[-20, 5, 20]} />
+      <PerspectiveCamera makeDefault position={[-20, 5, 20]} />
       {/* <Controls /> */}
       {/* <CameraControls /> */}
       <OrbitControls ref={orbitControlsRef} />
-      <ambientLight color={'pink'} />
-      <pointLight position={[10, 10, 10]} castShadow />
+      <ambientLight
+        // color={'purple'}
+        args={[
+          '#ffffff', // color
+          0.25, // intensity
+        ]}
+      />
+      <directionalLight
+        color={'white'}
+        position={[-10, 8, -4]}
+        intensity={1}
+        castShadow
+      />
+      {/* <pointLight position={[10, 10, 10]} castShadow /> */}
       <MySphere position={[-10, 5, -10]} />
       <MyCube />
-
-      <mesh position={[0, -3, 0]} receiveShadow={true}>
-        <boxBufferGeometry args={[20, 1, 10]} />
-        <meshPhysicalMaterial color='green' />
-      </mesh>
+      <MyFloor />
     </>
   );
 }

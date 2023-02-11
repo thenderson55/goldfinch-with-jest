@@ -17,7 +17,7 @@ export default function Three() {
   return (
     <div className={styles.scene}>
       <Canvas
-        shadows={true}
+        shadows
         className={styles.canvas}
         // camera={{
         //   position: [-6, 7, 10],
