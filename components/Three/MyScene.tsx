@@ -7,11 +7,16 @@ import MySphere from './MySphere';
 import { angleToRadians } from '../../utils';
 import MyFloor from './MyFloor';
 
-export default function MyScene() {
+interface Props {
+  isCameraMoving: boolean;
+}
+
+export default function MyScene(props: Props) {
+  const { isCameraMoving } = props;
   const orbitControlsRef = React.useRef(null);
 
   useFrame((state) => {
-    if (orbitControlsRef.current) {
+    if (orbitControlsRef.current && isCameraMoving) {
       const { x, y } = state.mouse;
       orbitControlsRef.current.setAzimuthalAngle(-x * angleToRadians(180));
       orbitControlsRef.current.setPolarAngle((y + 2.5) * angleToRadians(30));

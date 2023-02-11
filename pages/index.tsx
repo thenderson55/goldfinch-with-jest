@@ -65,7 +65,7 @@ const Home: NextPage = () => {
           <div className={styles.headerPrimary}>
             <h1 className={styles.headerPrimaryMain}>THOMAS HENDERSON</h1>
             <span className={styles.headerPrimarySub}>
-              Web and mobile developement
+              Web and mobile development
             </span>
           </div>
           <Link

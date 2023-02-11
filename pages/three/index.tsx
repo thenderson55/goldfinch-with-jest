@@ -14,11 +14,17 @@ import Link from 'next/link';
 import MyScene from '../../components/Three/MyScene';
 
 export default function Three() {
+  // Click on canvas and toggle camera move with mouse
+  const [isCameraMoving, setIsCameraMoving] = React.useState(false);
+
   return (
     <div className={styles.scene}>
       <Canvas
         shadows
         className={styles.canvas}
+        // onClick={(e) => console.log(e)}
+        onClick={() => setIsCameraMoving(!isCameraMoving)}
+
         // camera={{
         //   position: [-6, 7, 10],
         // }}
@@ -46,7 +52,7 @@ export default function Three() {
               HOOOOOME
             </Link>
           </Html> */}
-          <MyScene />
+          <MyScene isCameraMoving={isCameraMoving} />
         </Suspense>
       </Canvas>
     </div>
