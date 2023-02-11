@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import styles from './index.module.scss';
 // import Controls from './Controls';
 import {
@@ -11,6 +11,7 @@ import {
 import MyCube from '../../components/Three/MyCube';
 import MySphere from '../../components/Three/MySphere';
 import Link from 'next/link';
+import MyScene from '../../components/Three/MyScene';
 
 export default function Three() {
   return (
@@ -31,7 +32,7 @@ export default function Three() {
             </Html>
           }
         >
-          <Html center>
+          {/* <Html center>
             <Link
               href='/'
               style={{
@@ -44,20 +45,8 @@ export default function Three() {
             >
               HOOOOOME
             </Link>
-          </Html>
-          <PerspectiveCamera makeDefault={true} position={[-20, 5, 20]} />
-          {/* <Controls /> */}
-          <CameraControls />
-          {/* <OrbitControls /> */}
-          <ambientLight color={'pink'} />
-          <pointLight position={[10, 10, 10]} castShadow />
-          <MySphere position={[-10, 5, -10]} />
-          <MyCube />
-
-          <mesh position={[0, -3, 0]} receiveShadow={true}>
-            <boxBufferGeometry args={[20, 1, 10]} />
-            <meshPhysicalMaterial color='green' />
-          </mesh>
+          </Html> */}
+          <MyScene />
         </Suspense>
       </Canvas>
     </div>
