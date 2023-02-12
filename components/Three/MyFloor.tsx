@@ -11,7 +11,7 @@ function MyFloor(props: Props) {
   return (
     <mesh position={position ? position : [0, -3, 0]} receiveShadow>
       <boxBufferGeometry args={args ? args : [20, 1, 10]} />
-      <meshPhysicalMaterial color='green' />
+      <meshPhysicalMaterial color='magenta' />
     </mesh>
   );
 }

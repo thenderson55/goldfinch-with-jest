@@ -1,11 +1,16 @@
 import React from 'react';
 import { useFrame } from '@react-three/fiber';
 // import Controls from './Controls';
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import {
+  Environment,
+  OrbitControls,
+  PerspectiveCamera,
+} from '@react-three/drei';
 import MyCube from './MyCube';
 import MySphere from './MySphere';
 import { angleToRadians } from '../../utils';
 import MyFloor from './MyFloor';
+import * as THREE from 'three';
 
 interface Props {
   isCameraMoving: boolean;
@@ -46,6 +51,12 @@ export default function MyScene(props: Props) {
       <MySphere position={[-10, 5, -10]} />
       <MyCube />
       <MyFloor />
+      <Environment background>
+        <mesh>
+          <sphereGeometry args={[50, 100, 100]} />
+          <meshBasicMaterial color='#35b3c9' side={THREE.BackSide} />
+        </mesh>
+      </Environment>
     </>
   );
 }
