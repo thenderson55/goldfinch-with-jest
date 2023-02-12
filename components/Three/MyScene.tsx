@@ -48,7 +48,7 @@ export default function MyScene(props: Props) {
         castShadow
       />
       {/* <pointLight position={[10, 10, 10]} castShadow /> */}
-      <MySphere position={[-10, 5, -10]} />
+      <MySphere position={[-5, 5, 0]} />
       <MyCube />
       <MyFloor />
       <Environment background>
