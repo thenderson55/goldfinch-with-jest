@@ -5,6 +5,7 @@ import {
   Environment,
   OrbitControls,
   PerspectiveCamera,
+  Stage,
 } from '@react-three/drei';
 import MyCube from './MyCube';
 import MySphere from './MySphere';
@@ -35,13 +36,13 @@ export default function MyScene(props: Props) {
       {/* <Controls /> */}
       {/* <CameraControls /> */}
       <OrbitControls ref={orbitControlsRef} />
-      <ambientLight
+      {/* <ambientLight
         // color={'purple'}
         args={[
           '#ffffff', // color
           0.25, // intensity
         ]}
-      />
+      /> */}
       <directionalLight
         color={'white'}
         position={[-10, 8, -4]}
@@ -52,7 +53,15 @@ export default function MyScene(props: Props) {
       <MySphere position={[-5, 5, 0]} />
       <MyCube />
       <MyFloor />
-      <ElfFemale />
+      <Stage
+        shadows={false}
+        adjustCamera={false}
+        intensity={1}
+        environment='city'
+        preset='rembrandt'
+      >
+        <ElfFemale />
+      </Stage>
       <Environment background>
         <mesh>
           <sphereGeometry args={[50, 100, 100]} />

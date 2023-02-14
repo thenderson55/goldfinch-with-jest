@@ -35,7 +35,14 @@ type GLTFResult = GLTF & {
 export function ElfFemale(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/models/elf_female.glb') as GLTFResult;
   return (
-    <group {...props} dispose={null}>
+    <group
+      scale={[0.05, 0.05, 0.05]}
+      position={[10, 0, 0]}
+      {...props}
+      dispose={null}
+      receiveShadow={true}
+      castShadow={true}
+    >
       <primitive object={nodes._rootJoint} />
       <skinnedMesh
         geometry={nodes.Object_6.geometry}
@@ -71,4 +78,4 @@ export function ElfFemale(props: JSX.IntrinsicElements['group']) {
   );
 }
 
-useGLTF.preload('/scene-transformed.glb');
+useGLTF.preload('/elf_female.glb');
