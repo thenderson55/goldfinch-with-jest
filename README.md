@@ -28,7 +28,9 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
-  <h2 align="center">KATHY COLLINS</h2>[kathy-collins]
+  <a href="https://kathycollins.co.uk">
+    <h2 align="center">KATHY COLLINS</h2>
+  </a>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -67,7 +69,7 @@ A sandbox site to practice various aspects of web development.
 
 Eventually it will become either a portfolio/e-commerce site for my mother or an inventory and accounts manamgement site for a small shop she helps run.
 
-Currently it displays some basic CSS work. Please click the "FLEX" and "GRID" buttons to see more.
+Currently it displays some basic CSS and Three.js work. Please click the "THREE", "FLEX" and "GRID" buttons to see more.
 
 To run localhost development version:
 
