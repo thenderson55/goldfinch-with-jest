@@ -11,6 +11,7 @@ import MySphere from './MySphere';
 import { angleToRadians } from '../../utils';
 import MyFloor from './MyFloor';
 import * as THREE from 'three';
+import { ElfFemale } from '../Models/EflFemale';
 
 interface Props {
   isCameraMoving: boolean;
@@ -51,6 +52,7 @@ export default function MyScene(props: Props) {
       <MySphere position={[-5, 5, 0]} />
       <MyCube />
       <MyFloor />
+      <ElfFemale />
       <Environment background>
         <mesh>
           <sphereGeometry args={[50, 100, 100]} />
