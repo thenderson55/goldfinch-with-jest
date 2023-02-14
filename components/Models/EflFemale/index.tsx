@@ -33,6 +33,7 @@ type GLTFResult = GLTF & {
 };
 
 export function ElfFemale(props: JSX.IntrinsicElements['group']) {
+  // @ts-ignore
   const { nodes, materials } = useGLTF('/models/elf_female.glb') as GLTFResult;
   return (
     <group
