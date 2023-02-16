@@ -8,6 +8,7 @@ import { MswPhotoList } from '../components/MswPhotoList';
 import dalmation from '../public/dalmation.jpeg';
 import FeaturesCard from '../components/Cards/FeaturesCard';
 import TourCard from '../components/Cards/TourCard';
+import LoadingDots from '../components/Loaders/LoadingDots';
 
 const Home: NextPage = () => {
   // const { data: session, status } = useSession();
@@ -16,6 +17,20 @@ const Home: NextPage = () => {
   return (
     <div className={styles.body}>
       <header className={styles.header}>
+        <div
+          style={{
+            color: 'magenta',
+            fontWeight: 'bold',
+            fontSize: 34,
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <p style={{ marginRight: 10 }}>Loading models</p>
+          <LoadingDots />
+        </div>
         <Image
           src={seamus}
           alt='Seamus'
