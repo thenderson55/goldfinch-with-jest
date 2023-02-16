@@ -12,6 +12,7 @@ import MyCube from '../../components/Three/MyCube';
 import MySphere from '../../components/Three/MySphere';
 import Link from 'next/link';
 import MyScene from '../../components/Three/MyScene';
+import LoadingDots from '../../components/Loaders/LoadingDots';
 
 export default function Three() {
   // Click on canvas and toggle camera move with mouse
@@ -32,8 +33,27 @@ export default function Three() {
         <Suspense
           fallback={
             <Html center>
-              <div style={{ color: 'pink', fontWeight: 'bold', fontSize: 24 }}>
-                PLEASE WAIT
+              <div
+                style={{
+                  color: 'magenta',
+                  fontWeight: 'bold',
+                  fontSize: 34,
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                <p
+                  style={{
+                    marginRight: 10,
+                    overflow: 'hidden',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  Loading models
+                </p>
+                <LoadingDots />
               </div>
             </Html>
           }
