@@ -13,6 +13,7 @@ import { angleToRadians } from '../../utils';
 import MyFloor from './MyFloor';
 import * as THREE from 'three';
 import { ElfFemale } from '../Models/EflFemale';
+import MyText from './MyText';
 
 interface Props {
   isCameraMoving: boolean;
@@ -49,6 +50,7 @@ export default function MyScene(props: Props) {
         intensity={1}
         castShadow
       />
+      <MyText />
       {/* <pointLight position={[10, 10, 10]} castShadow /> */}
       <MySphere position={[-5, 5, 0]} />
       <MyCube />
