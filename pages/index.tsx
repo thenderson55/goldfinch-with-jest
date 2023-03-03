@@ -51,7 +51,7 @@ const Home: NextPage = () => {
             </Link>
           </ul>
 
-          <ul className={styles.headerLinksWrapper}>
+          {/* <ul className={styles.headerLinksWrapper}>
             <h3 className={styles.subHeader}>NEXT.JS</h3>
             <Link href='/items' className={styles.subHeaderLink}>
               ITEMS
@@ -59,7 +59,7 @@ const Home: NextPage = () => {
             <Link href='/shipwrecks' className={styles.subHeaderLink}>
               SHIPWRECKS
             </Link>
-          </ul>
+          </ul> */}
         </div>
         <div className={styles.headerTextBox}>
           <div className={styles.headerPrimary}>
